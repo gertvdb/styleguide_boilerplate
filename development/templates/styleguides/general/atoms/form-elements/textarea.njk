@@ -1,0 +1,29 @@
+{# ------------------------#}
+{# -------Code block-------#}
+{# ------------------------#}
+{% macro code() %}
+	<div class="a-input">
+		<label for="input-textarea">Remarks</label>
+		<div class="a-input__field-holder">
+			<textarea name="input-textarea" id="input-textarea" cols="30" rows="5" placeholder="Your message"></textarea>
+		</div>
+		<small>Feedback, suggestions, ideas, ... we would love to hear from you!</small>
+	</div>
+{% endmacro %}
+
+{# ----------------------------#}
+{# ------Styleguide block------#}
+{# ----------------------------#}
+{% macro styleguide() %}
+	<h4 class="styleguide__sub-title js-scroll-nav__sub-title">Textarea</h4>
+	<small>/sass/atoms/form-elements/general.scss</small>
+	<br/><br/>
+
+	{{code()}}
+
+	<div class="styleguide__highlight-box">
+		<code class="js-encode-html prettyprint">
+			{{code()}}
+		</code>
+	</div>
+{% endmacro %}

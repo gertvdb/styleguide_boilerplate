@@ -1,0 +1,16 @@
+// -------------------------------------------------------------------
+// :: Z-INDEX
+// -------------------------------------------------------------------
+
+// these z-indexes are pre-defined to prevent a wildspread of z-indexes
+// try to avoid adding new z-index here, if needed you can always use $z-index-base + 1
+
+$z-index-lowest: -1;
+$z-index-lower: 0;
+$z-index-low: 1;
+
+$z-index-base: 10;
+
+$z-index-high: 100;
+$z-index-higher: 1000;
+$z-index-highest: 9999;

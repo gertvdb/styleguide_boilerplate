@@ -1,0 +1,106 @@
+// -------------------------------------------------------------------
+// :: CSS SHAPES
+// -------------------------------------------------------------------
+// Shorthand methods for creating CSS shapes. Shapes may looked blurry
+// on hdpi screens when hardware acceleration is being applied.
+//
+// Inspired by:
+// - https://css-tricks.com/examples/ShapesOfCSS
+
+
+// -------------------------------------------------------------------
+// :: TRIANGLE
+// -------------------------------------------------------------------
+// .css-triangle {
+//		@include FLOW-css-triangle("up", 20px, #F00);
+//		@include FLOW-css-triangle("right", 2em, #F00, true);
+// }
+
+@mixin FLOW-css-triangle($_direction, $_size, $_color: null, $_eq: false) {
+
+	content: '';
+
+	// Set triangle base for regular
+	// and equilateral triangles
+
+	$_eq-size: $_size;
+	@if $_eq { $_eq-size: $_size * 2 * 0.866; }
+
+	// Set triangle directions
+	// and base styles
+
+	@if $_direction == "up" {
+		border-left: $_size solid transparent !important;
+		border-right: $_size solid transparent  !important;
+		border-bottom: $_eq-size solid $_color;
+	}
+
+	@if $_direction == "down" {
+		border-left: $_size solid transparent !important;
+		border-right: $_size solid transparent !important;
+		border-top: $_eq-size solid $_color;
+	}
+
+	@if $_direction == "left" {
+		border-top: $_size solid transparent !important;
+		border-bottom: $_size solid transparent !important;
+		border-right: $_eq-size solid $_color;
+	}
+
+	@if $_direction == "right" {
+		border-top: $_size solid transparent !important;
+		border-bottom: $_size solid transparent !important;
+		border-left: $_eq-size solid $_color;
+	}
+
+}
+
+
+// -------------------------------------------------------------------
+// :: TRIANGLE WITH BORDER
+// -------------------------------------------------------------------
+// .css-triangle {
+//		@include FLOW-css-triangle("up", 20px, $white, $tc-brightgray);
+// }
+
+@mixin FLOW-css-triangle-with-border($_direction, $_size, $_fill: $white, $_border-color: transparent){
+	content: '';
+	position: absolute;
+	background-color: $_fill;
+	border-top: 1px solid $_border-color;
+	border-left: 1px solid $_border-color;
+	width: $_size;
+	height: $_size;
+
+	@if $_direction == "up" {
+		transform: rotate(45deg);
+		top: -$_size / 2;
+		@if $_border-color == transparent{
+			box-shadow: -2px -2px 3px 0 rgba($black, 0.2);
+		}
+	}
+
+	@if $_direction == "down" {
+		transform: rotate(-135deg);
+		bottom: -$_size / 2;
+		@if $_border-color == transparent{
+			box-shadow: -2px -2px 3px 0 rgba($black, 0.2);
+		}
+	}
+
+	@if $_direction == "left" {
+		transform: rotate(-45deg);
+		left: -$_size / 2;
+		@if $_border-color == transparent{
+			box-shadow: -2px -2px 3px 0 rgba($black, 0.2);
+		}
+	}
+
+	@if $_direction == "right" {
+		transform: rotate(135deg);
+		right: -$_size / 2;
+		@if $_border-color == transparent{
+			box-shadow: -2px -2px 3px 0 rgba($black, 0.2);
+		}
+	}
+}

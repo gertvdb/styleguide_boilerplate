@@ -1,0 +1,18 @@
+{% set htmlParameters = {
+		'isStyleguide' : true,
+		'bodyClass': '',
+		'rootPath' : '',
+		'pageName' : 'styleguide'
+	}
+%}
+
+
+{% include "styleguides/general/pages/_includes/_html_head.njk" %}
+
+{% include "sandbox/components/navigation.njk" %}
+
+<section class="sandbox-iframe__wrapper">
+	<iframe src="http://localhost:9000/component/{{requestedComponent.componentPath}}" name="test" height="600" width="600">You need a Frames Capable browser to view this content.</iframe>
+</section>
+
+{% include "styleguides/general/pages/_includes/_html_footer.njk" %}

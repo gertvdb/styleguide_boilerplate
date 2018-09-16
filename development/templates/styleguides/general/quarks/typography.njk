@@ -1,0 +1,158 @@
+{# ----------------------------#}
+{# ------Styleguide block------#}
+{# ----------------------------#}
+{% macro styleguide(DATA) %}
+	<h1 class="styleguide__title js-scroll-nav__sub-title">Typography</h1>
+	<small>/sass/base/_quarks/_typography.scss</small>
+
+
+	<h4 class="styleguide__sub-title">Reading experience</h4>
+	<p class="styleguide__p">
+		Typography is the atomic element of good interface design as it defines branding,
+		layout, composition &amp; rhythm. Note that it's not just about choosing the right
+		typeface, it's also about tone of voice, microcopy. Head over to
+		<a href="http://www.ibm.com/design/language/framework/visual/typography.shtml" title="IBM Design Language" target="_blank">IBM Design Language</a>
+		for an in-depth overview on the elements of typography.
+		<br /><br />
+		Good reading experiences have the right amount of characters per line.
+		If a line is too long users will have a hard time focusing, if a line
+		is too short the eye will have to travel back too often, breaking the
+		reader's rhythm. An optimal line length is <a href="http://baymard.com/blog/line-length-readability/" title="Readability: the optimal line length" target="_blank">50-75 characters</a>,
+		which is about 10-12 words or <a href="http://www.maxdesign.com.au/articles/em/" title="Ideal line length for content" target="_blank">25-33 &times; base font-size (1em)</a>.
+		To <a href="http://johndjameson.com/blog/guidelines-for-letterspacing-type" title="Guidelines for letter-spacing typography" target="_blank">increase readability</a> of typographic elements, default letter-spacing
+		values for headings &amp; small text are adjusted.
+	</p>
+
+	<h4 class="styleguide__sub-title">Font stack</h4>
+	<div>
+		{% for font  in DATA.FONT_FAMILY %}
+			<small class="styleguide__info">{{ font }}</small>
+			<h1 class="styleguide__typo__preview" style="font-family: '{{font}}' !important">
+				The quick brown <br>
+				fox jumps over the <br>
+				lazy dog
+			</h1>
+		{% endfor %}
+	</div>
+
+	<hr />
+
+	<small class="styleguide__info">Heading 1 - &lt;h1&gt; </small>
+	<h1>Good design is good business</h1>
+
+	<small class="styleguide__info">Heading 2 - &lt;h2&gt;</small>
+	<h2>Good design is always obvious, while great design is always transparent</h2>
+
+	<small class="styleguide__info">Heading 3 - &lt;h3&gt;</small>
+	<h3>While everything is designed, only few things are designed to excell</h3>
+
+	<div class="styleguide__highlight-box">
+		<code class="js-encode-html prettyprint">
+			<h1>Heading 1</h1>
+			<h2>Heading 2</h2>
+			<h3>Heading 3</h3>
+		</code>
+	</div>
+
+	<hr />
+
+	<small class="styleguide__info">Heading 4 - &lt;h4&gt;</small>
+	<h4>Content is king and should always precede design. Design in the absence of content is not design, but decoration.</h4>
+
+	<small class="styleguide__info">Paragraph - &lt;p&gt;</small>
+	<p>Many desperate acts of design (e.g. gradients, drop shadows, and the gratuitous use of transparency) are perpetuated in the absence of a strong concept. Good ideas provide a framework for design, guiding the work.</p>
+
+	<div class="styleguide__highlight-box">
+		<code class="js-encode-html prettyprint">
+			<h4>Heading 4</h4>
+			<p>Paragraph</p>
+		</code>
+	</div>
+
+	<hr />
+
+	<small class="styleguide__info">Heading 5 - &lt;h5&gt;</small>
+	<h5>Online design trends change more often than the wind and slightly less often than my socks. Good design is timeless, good design creates culture. Culture shapes value and value determinates the future.</h5>
+
+	<div class="styleguide__highlight-box">
+		<code class="js-encode-html prettyprint">
+			<h5>Heading 5</h5>
+		</code>
+	</div>
+
+	<hr />
+
+	<small class="styleguide__info">Heading 6 - &lt;h6&gt;</small>
+	<h6>Always design a thing by considering it in its next larger context - a chair in a room, a room in a house, a house in an environment, an environment in a city plan.</h6>
+
+	<small class="styleguide__info">Small text - &lt;small&gt;</small>
+	<small>People think that design is styling. Design is not style. It's not about giving shape to the shell and not giving a damn about the guts. Good design is a renaissance attitude that combines technology, cognitive science, human need, and beauty to produce something that the world didn't know it was missing.</small>
+
+	<div class="styleguide__highlight-box">
+		<code class="js-encode-html prettyprint">
+			<h6>Heading 6</h6>
+			<small>Small text</small>
+		</code>
+	</div>
+
+	<hr />
+
+	<small class="styleguide__info">
+		Blockquote - &lt;blockquote&gt; <br />
+		Author/source - &lt;cite&gt;
+	</small>
+
+	<blockquote>
+		Great design will not sell an inferior product,
+		but it will enable great products to achieve
+		their maximum potential.
+		<cite>Thomas J. Watson Jr.</cite>
+	</blockquote>
+
+	<div class="styleguide__highlight-box">
+		<code class="js-encode-html prettyprint">
+			<blockquote>
+				Good design will not sell an inferior product...
+				<cite>Thomas J. Watson Jr.</cite>
+			</blockquote>
+		</code>
+	</div>
+
+	<hr />
+
+	<small class="styleguide__info">Hyperlinks - &lt;a href=""&gt;, &lt;span class="is-hyperlink"&gt;</small>
+	<a href="#" title="#">This is a hyperlink</a><br />
+	<span class="is-hyperlink">This looks like a hyperlink</span>
+
+	<div class="styleguide__highlight-box">
+		<code class="js-encode-html prettyprint">
+			<a href="#" title="Always provide a title">Hyperlink</a>
+			<span class="is-hyperlink">This looks like a hyperlink</span>
+		</code>
+	</div>
+
+	<small class="styleguide__info">Strong - &lt;strong&gt;</small>
+	<strong>This text is strong</strong><br />
+
+	<small class="styleguide__info">Emphasized - &lt;em&gt;</small>
+	<em>This text is emphasized</em><br />
+
+	<small class="styleguide__info">Quote - &lt;q&gt;</small>
+	<q>This text is quoted</q><br />
+
+	<small class="styleguide__info">Highlighted - &lt;mark&gt;</small>
+	<mark>This text is highlighted</mark><br />
+
+	<small class="styleguide__info">Obsolete/deleted/updated - &lt;del&gt;</small>
+	<del>This text is obsolete/deleted/updated</del>
+
+	<div class="styleguide__highlight-box">
+		<code class="js-encode-html prettyprint">
+			<strong>This text is strong</strong>
+			<em>This text is emphasized</em>
+			<q>This text is quoted</q>
+			<mark>This text is highlighted</mark>
+			<del>This text is obsolete/deleted/updated</del>
+		</code>
+	</div>
+{% endmacro %}

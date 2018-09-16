@@ -1,0 +1,59 @@
+// -------------------------------------------------------------------
+// :: FONT-SIZES
+// -------------------------------------------------------------------
+// Base-font-sizes should be set in base/_typography.scss
+//
+// - http://www.awayback.com/revised-font-stack
+// - http://practicaltypography.com/system-fonts.html
+
+// ultra, mega, large, medium, normal, small, tiny, micro (don't go further than -xx)
+// -------------------------------------------------------------------
+// :: FONT-FAMILY
+// -------------------------------------------------------------------
+
+@include get-font("Akkurat Std", "../fonts/AkkuratStd-Light", 300);
+@include get-font("Akkurat Std", "../fonts/AkkuratStd-Regular", 400);
+@include get-font("Akkurat Std", "../fonts/AkkuratStd-Bold", 700);
+@include get-font("GT Walsheim", "../fonts/gt-walsheim-web", 400);
+@include get-font("GT Walsheim", "../fonts/gt-walsheim-bold", 700);
+
+$font-family-heading: "GT Walsheim";
+$font-family-body: "Akkurat Std";
+
+// -------------------------------------------------------------------
+// :: FONT-SIZE
+// -------------------------------------------------------------------
+$font-size-mega: 25px;
+$font-size-xxlarge: 28px;
+$font-size-xlarge: 22px;
+$font-size-large: 18px;
+$font-size: 14px;
+$font-size-medium: 16px;
+$font-size-small: 13px;
+
+// -------------------------------------------------------------------
+// :: LINE-HEIGHT
+// -------------------------------------------------------------------
+$line-height-large:	40px;
+$line-height-medium: 25px;
+$line-height:	26px;
+$line-height-small: 22px;
+
+// -------------------------------------------------------------------
+// :: FONT WEIGHT
+// -------------------------------------------------------------------
+$font-weight-thin: 			100;
+$font-weight-light: 		300;
+$font-weight-normal: 		400;
+$font-weight-semibold: 	500;
+$font-weight-bold: 			700;
+
+// -------------------------------------------------------------------
+// :: TEXT-SHAODW
+// -------------------------------------------------------------------
+$text-shadow-x: 0;
+$text-shadow-y: 0;
+$text-shadow-blur: 10px;
+$text-shadow-color: $font-color;
+
+$text-shadow: $text-shadow-x $text-shadow-y $text-shadow-blur $text-shadow-color;

@@ -1,0 +1,19 @@
+// -------------------------------------------------------------------
+// :: STYLEGUIDE GRID
+// -------------------------------------------------------------------
+.styleguide__grid div,
+.styleguide__slider .m-slider__item{
+	background: $brand-bg;
+	box-shadow: inset 0 0 0 1px $brand-border;
+	padding: 0.3rem;
+}
+
+.styleguide__rowgrid{
+	height: 800px;
+}
+
+.styleguide__rowgrid > div {
+	padding: 0;
+	height: 100%;
+	box-shadow: none;
+}

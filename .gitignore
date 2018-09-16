@@ -1,0 +1,13 @@
+.DS_Store
+.idea/
+.sass-cache/
+.temp/
+node_modules/
+*.log
+development/fonts/icons.*
+development/sass/base/_quarks/_icon-names.scss
+development/templates/pages/playground
+deploy/
+dist/
+config.json
+*.css

@@ -1,0 +1,68 @@
+{# ------------------------#}
+{# -------Code block-------#}
+{# ------------------------#}
+{% macro code() %}
+	<div class="a-input is-success">
+		<label for="input-name">Name</label>
+		<div class="a-input__field-holder">
+			<input type="text" name="input-name" id="input-name" value="Peter Grant" placeholder="Your name" />
+			<small class="a-tooltip a-tooltip--up is-success">
+				<span>What a lovely name!</span>
+			</small>
+		</div>
+		<small>Tell the user what kind of input is expected, add a <a href="#" title="">clickthrough as needed</a></small>
+	</div>
+
+	<div class="a-input is-warning">
+		<label for="input-password-validate">Password</label>
+		<div class="a-input__field-holder">
+			<input type="password" name="input-password" id="input-password-validate" value="123456" placeholder="Your password" />
+			<small class="a-tooltip a-tooltip--up is-warning">
+				<span>Your password should be at least 6 characters. Be tricky!</span>
+			</small>
+		</div>
+		<small>Your password should be at least 6 characters. Be tricky!</small>
+	</div>
+
+	<div class="a-input is-error">
+		<label for="input-email-validate">Email</label>
+		<div class="a-input__field-holder">
+			<input type="email" name="input-email-validate" id="input-email-validate" value="hello@petergrant.com" placeholder="your-email@domain.com" />
+			<small class="a-tooltip a-tooltip--up is-error">
+				<span>This email is already registered. Do you want to <a href="#" title="">login</a> or <a href="#" title="">recover password</a>?</span>
+			</small>
+		</div>
+		<small>Don't worry, we won't spam you. Read our <a href="#" title="">privacy policy</a>.</small>
+	</div>
+{% endmacro %}
+
+{# ----------------------------#}
+{# ------Styleguide block------#}
+{# ----------------------------#}
+{% macro styleguide() %}
+	<h4 class="styleguide__sub-title js-scroll-nav__sub-title">Inline validation</h4>
+	<small>/sass/atoms/form-elements/general.scss</small>
+	<p class="styleguide__p">
+		Always provide immediate/inline feedback on user interaction.
+		Feedback messages are informative and provide an easy escape or
+		alternative/following action. The tone of voice should be human
+		and add personality to the experience/brand.
+	</p>
+
+	{{code()}}
+
+	<div class="styleguide__highlight-box">
+		<code class="js-encode-html prettyprint">
+			<div class="a-input [is-error]">
+				<label for="input-name">Name</label>
+				<div class="a-input__field-holder">
+					<input type="text" placeholder="Your name" />
+					<small class="a-tooltip a-tooltip--up [is-error]">
+						<span>What a lovely name!</span>
+					</small>
+				</div>
+				<small>Tell the user what kind of input is expected.</small>
+			</div>
+		</code>
+	</div>
+{% endmacro %}

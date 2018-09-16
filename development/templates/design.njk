@@ -1,0 +1,30 @@
+{% set htmlParameters = {
+		'isStyleguide' : true,
+		'bodyClass': '',
+		'rootPath' : '../',
+		'pageName' : 'Index'
+	}
+%}
+
+{% include "styleguides/general/pages/_includes/_html_head.njk" %}
+
+<div class="styleguide__section-title"><h1 class="styleguide__section-title--header">Design</h1></div>
+<main>
+	<section>
+		<div class="styleguide__index-container">
+			<article>
+				<h2> Algemeen </h2>
+				<h4> Visual design </h4>
+				<p> De bedoeling van deze design system is om bij aanpassingen en toekomstige uitbrieidngen steeds consistent te kunnen werken. De design system bevat de basis van de styleguide en de te gebruiken componenten in de designs. </p>
+				<ul>
+	    			<li>
+						<a href="" target='_blank'> Visual design system </a><br/>
+						<small> laatste update 03.04.2018 </small>
+					</li>
+				</ul>
+			</article>
+
+		</div>
+	</section>
+</main>
+{% include "styleguides/general/pages/_includes/_html_footer.njk" %}

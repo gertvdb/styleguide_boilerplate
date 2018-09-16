@@ -1,0 +1,21 @@
+// sass-lint:disable no-vendor-prefixes
+// -------------------------------------------------------------------
+// :: PLACEHOLDERS
+// -------------------------------------------------------------------
+// Change base styling for placeholder text on input fields
+// Note: Styling the placeholder text is not supported on older
+// browsers, use a html5-placeholder ployfill for that
+//
+// Background info:
+// - http://davidwalsh.name/html5-placeholder
+// - http://davidwalsh.name/placeholder-overflow
+// - http://jamesallardice.github.io/Placeholders.js
+
+@mixin FLOW-input-placeholder() {
+
+	&::-webkit-input-placeholder { @content; text-overflow: ellipsis; }
+	&:-ms-input-placeholder { @content; text-overflow: ellipsis; }
+	&::-moz-placeholder { @content; text-overflow: ellipsis; }
+	&:-moz-placeholder { @content; text-overflow: ellipsis; }
+
+}

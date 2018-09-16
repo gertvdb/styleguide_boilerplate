@@ -1,0 +1,53 @@
+// -------------------------------------------------------------------
+// :: STYLEGUIDE TITLE AND TEXTS
+// -------------------------------------------------------------------
+.styleguide__section-title{
+	padding: 10rem;
+	text-align: center;
+	background-color: $primary-color;
+	color: $s_white;
+
+	h1{
+		font-size: 2em;
+		margin-bottom: 1rem;
+		@include FLOW-at($screen-sm){
+			font-size: 7em;
+		}
+	}
+
+	p{
+		font-size: 1.3em;
+	}
+}
+
+.styleguide__title {
+	padding-top: 2em;
+	margin-top: 2em;
+	border-top: 1px solid $brand-border;
+}
+
+.styleguide__title + small{
+	opacity: 0.6;
+}
+
+.styleguide__sub-title {
+	margin-top: 2.5em;
+	font-weight: bold;
+}
+
+p.styleguide__p{
+	margin: 1.5em 0;
+	font-size: 14px;
+}
+
+.styleguide__sub-title + p.styleguide__p {
+	margin-bottom: 3.5em;
+	margin-top: 0;
+}
+
+.styleguide__info {
+	color: $font-color;
+	margin: 2.5em auto 0.7em;
+	display: block;
+	opacity: 0.5;
+}

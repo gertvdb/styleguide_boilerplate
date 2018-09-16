@@ -1,0 +1,207 @@
+// -------------------------------------------------------------------
+// :: GENERAL RADIO & CHECKBOX CLASSES
+// -------------------------------------------------------------------
+
+.a-toggle{
+	margin: 0.5em 0;
+	line-height: rem(20px);
+	vertical-align: middle;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+
+	label{
+		@include clearfloat();
+		position: relative;
+		float: left;
+		margin-right: 1em;
+		margin-top: 0;
+	}
+
+	// Style inputs
+	// and icons
+
+	input {
+		@include spread();
+		cursor: pointer;
+		opacity: 0;
+		z-index: 3;
+		top: -2px;
+	}
+
+	.toggle__holder{
+		@extend %__input;
+
+		padding: 0;
+		width: rem(20px);
+		height: rem(20px);
+		margin: 0 0.5em 1em 0;
+		transition: all 100ms ease-in-out;
+		border: $border-simple;
+		background: $white;
+		position: relative;
+		top: rem(-2px);
+		float: left;
+
+		[class*="icon"]{
+			font-size: 13px;
+		}
+	}
+}
+
+.a-toggle--block {
+	display: block;
+
+	> label {
+		float: none;
+		padding-left: 1.75rem;
+		margin-right: 0;
+		margin-bottom: 1.5rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.toggle__holder {
+		position: absolute;
+		left: 0;
+		margin: 0;
+	}
+}
+
+.a-toggle--radio,
+.a-toggle--checkbox {
+	input:checked ~ .toggle__holder{
+		border-color: $primary-color;
+	}
+}
+
+
+// -------------------------------------------------------------------
+// :: RADIO CLASSES
+// -------------------------------------------------------------------
+
+
+.a-toggle--radio .toggle__holder{
+	border-radius: 50%;
+}
+
+.a-toggle--radio .toggle__holder:before {
+	content: '';
+	width: rem(6px);
+	height: rem(6px);
+	margin: rem(6px);
+	border-radius: inherit;
+	background: $border-color;
+	display: block;
+	transition: opacity $animation-fast;
+	opacity: 0;
+}
+
+.a-toggle--radio label:hover .toggle__holder:before {
+	opacity: 1;
+}
+
+.a-toggle--radio input:checked ~ .toggle__holder:before {
+	background: $primary-color;
+	opacity: 1;
+}
+
+// -------------------------------------------------------------------
+// :: CHECKBOX CLASSES
+// -------------------------------------------------------------------
+
+.a-toggle--checkbox .toggle__holder > span {
+	opacity: 0;
+	color: $border-color;
+	position: absolute;
+	left: 2px;
+	top: 1px;
+	transition: opacity $animation-fast;
+}
+
+.a-toggle--checkbox label:hover .toggle__holder > span {
+	@include FLOW-at($screen-sm) {
+		opacity: 1;
+	}
+}
+
+.a-toggle--checkbox input:checked ~  .toggle__holder > span {
+	color: $primary-color;
+	opacity: 1;
+}
+
+// -------------------------------------------------------------------
+// :: SWITCH
+// -------------------------------------------------------------------
+
+.a-toggle--switch .toggle__holder {
+	width: rem(48px);
+	height: rem(24px);
+	border-radius: rem(12px);
+}
+
+.a-toggle--switch input:checked + .toggle__holder {
+	border-color: $border-color;
+}
+
+// Circle button
+
+.a-toggle--switch .toggle__button  {
+	content: "";
+	display: block;
+	border-radius: 100%;
+	width: rem(20px);
+	height: rem(20px);
+	margin: rem(1px);
+	background: $ui-red;
+	opacity: 1;
+	z-index: 3;
+	position: relative;
+	transition: all 0.2s ease-out;
+}
+
+.a-toggle--switch input:checked + .toggle__holder .toggle__button {
+	transform: translateX(rem(23px));
+	background: $ui-green;
+}
+
+
+
+// Icon decorators
+
+.toggle__button > span{
+	width: 20px;
+	display: block;
+	text-align: center;
+	border: none;
+	color: $white;
+	background: transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all 0.15s ease-in;
+	z-index: 4;
+}
+
+.a-toggle--switch .toggle__on {
+	opacity: 0;
+}
+
+.a-toggle--switch .toggle__off {
+	opacity: 1;
+}
+
+// States
+
+.a-toggle--switch input:checked + .toggle__holder .toggle__button{
+
+	.toggle__on {
+		opacity: 1;
+	}
+
+	.toggle__off {
+		opacity: 0;
+	}
+}

@@ -1,0 +1,23 @@
+// -------------------------------------------------------------------
+// :: STYLEGUIDE ICONS
+// -------------------------------------------------------------------
+.styleguide__icons li {
+	width: 24%;
+	margin: 0.5em 0.5%;
+	text-align: center;
+}
+
+.styleguide__icons li:before {
+	font-size: 4em;
+	margin-bottom: 0.2em;
+	display: inline-block;
+}
+
+.styleguide__icons.small__icons li:before {
+	font-size: 2em;
+}
+
+.styleguide__icons small {
+	color: $brand-text;
+	display: block;
+}

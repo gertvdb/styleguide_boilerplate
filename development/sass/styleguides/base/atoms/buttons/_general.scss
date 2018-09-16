@@ -1,0 +1,84 @@
+// -------------------------------------------------------------------
+// :: BUTTONS
+// -------------------------------------------------------------------
+// Use hyperlinks for navigation, buttons for everything else
+// Form buttons (input[type="submit", reset, ...) are normalized
+// in base/_forms.scss, but use .button classes for styling
+
+@include FLOW-normalize-buttons();
+
+
+// -------------------------------------------------------------------
+// :: BUTTON
+// -------------------------------------------------------------------
+// Solid button with full background color
+
+@mixin FLOW-button($_color: $white, $_background: $primary-color, $_border: $primary-color) {
+
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	display: inline-block;
+	cursor: pointer;
+	font-size: $font-size;
+
+	transition: all 100ms ease-in-out;
+	padding: 1em 1.2em 0.8em;
+	border: 1px solid $_border;
+
+	color: $_color;
+	background: $_background;
+
+	// States
+
+	&:not([disabled]):hover {
+		background: darken($_background, 10%);
+		border-color: darken($_border, 10%);
+	}
+
+	&:not([disabled]):active {
+		background: lighten($_background, 10%);
+		border-color: darken($_border, 10%);
+	}
+
+	&[disabled] {
+		background: $grey-light;
+		border-color: $grey-light;
+		color: $font-color-medium;
+	}
+
+}
+
+
+// -------------------------------------------------------------------
+// :: GENERAL BUTTON
+// -------------------------------------------------------------------
+
+.a-button{
+	@include FLOW-button();
+}
+
+
+// -------------------------------------------------------------------
+// :: DECORATED BUTTONS
+// -------------------------------------------------------------------
+// Decorated buttons with icons before or after a text label
+
+.a-button [class*='icon'] {
+	display: inline-block;
+	line-height: 1;
+	vertical-align: text-top;
+}
+
+// Size & positioning
+// inside buttons
+
+.a-button [class*='icon']:before {
+	position: relative;
+}
+
+.a-button span + [class*='icon'],
+.a-button [class*='icon'] + span {
+	margin-left: 1em;
+	margin-top: 0;
+}

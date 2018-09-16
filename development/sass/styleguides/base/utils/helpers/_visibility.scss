@@ -1,0 +1,114 @@
+// -------------------------------------------------------------------
+// :: VISIBILITY HELPERS
+// -------------------------------------------------------------------
+
+// HIDE VISUALLY, BUT STILL ACCESSIBLE FOR SCREENREADERS
+
+.u-visually-hidden{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+// TOGGLE VISBILITY BASED ON VIEWPORT WIDTH
+
+.u-visible-xs {
+
+	@include FLOW-at($screen-xs) {
+		display: none !important;
+	}
+}
+
+.u-visible-sm {
+	display: none !important;
+
+	@include FLOW-at($screen-sm) {
+		display: block !important;
+	}
+
+	@include FLOW-at($screen-md) {
+		display: none !important;
+	}
+}
+
+.u-visible-md {
+	display: none !important;
+
+	@include FLOW-at($screen-md) {
+		display: block !important;
+	}
+
+	@include FLOW-at($screen-lg) {
+		display: none !important;
+	}
+}
+
+.u-visible-lg {
+	display: none !important;
+
+	@include FLOW-at($screen-lg) {
+		display: block !important;
+	}
+}
+
+.u-visible-xs-sm {
+	display: block !important;
+
+	@include FLOW-at($screen-md) {
+		display: none !important;
+	}
+}
+
+.u-visible-md-lg {
+	display: none !important;
+
+	@include FLOW-at($screen-md) {
+		display: block !important;
+	}
+}
+
+.u-hidden-xs {
+	display: none !important;
+
+	@include FLOW-at($screen-xs) {
+		display: block !important;
+	}
+}
+
+.u-hidden-sm {
+
+	@include FLOW-between($screen-sm, $screen-md) {
+		display: none !important;
+	}
+}
+
+.u-hidden-md {
+
+	@include FLOW-between($screen-md, $screen-lg) {
+		display: none !important;
+	}
+}
+
+.u-hidden-lg {
+
+	@include FLOW-at($screen-lg) {
+		display: none !important;
+	}
+}
+
+.u-hidden-xs-sm {
+	display: none !important;
+
+	@include FLOW-at($screen-sm) {
+		display: block !important;
+	}
+}
+
+.u-hidden-md-lg {
+
+	@include FLOW-at($screen-md) {
+		display: none !important;
+	}
+}

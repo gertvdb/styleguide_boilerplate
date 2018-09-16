@@ -1,0 +1,71 @@
+{# ----------------------------#}
+{# ------Styleguide block------#}
+{# ----------------------------#}
+{% macro styleguide(DATA) %}
+	<h1 class="styleguide__title js-scroll-nav__sub-title">Colors</h1>
+	<small>/sass/base/_quarks/_colors.scss</small>
+
+	{#  Primary colors #}
+	<h4 class="styleguide__sub-title">Primary colors</h4>
+	<p class="styleguide__p">
+		Always provide different shades of the primary colors. For a more high-level approach on color use,
+		head over to <a href="http://www.ibm.com/design/language/framework/visual/color.shtml" title="IBM Design Language" target="_blank">IBM Design Language</a>.
+	</p>
+
+	<ul class="a-inline-list styleguide__colors">
+		{% for name, color  in DATA.COLORS.PRIMARY_COLORS %}
+			<li style="background-color: {{ color.value }}"><small><strong>${{ name }}</strong><br />{{ color.raw }}</small></li>
+		{% endfor %}
+	</ul>
+
+	{#  Secondary colors #}
+	<h4 class="styleguide__sub-title">Secondary colors</h4>
+	<p class="styleguide__p">
+		Always provide different shades of the secondary colors. For a more high-level approach on color use,
+		head over to <a href="http://www.ibm.com/design/language/framework/visual/color.shtml" title="IBM Design Language" target="_blank">IBM Design Language</a>.
+	</p>
+
+	<ul class="a-inline-list styleguide__colors">
+		{% for name, color  in DATA.COLORS.SECONDARY_COLORS %}
+			<li style="background-color: {{ color.value }}"><small><strong>${{ name }}</strong><br />{{ color.raw }}</small></li>
+		{% endfor %}
+	</ul>
+
+	{#  Text colors#}
+	<h4 class="styleguide__sub-title">Text colors</h4>
+	<p class="styleguide__p">
+		Use different shades for text to express the hierarchy of information.
+		Text, icons, borders and dividers will benefit when their color is defined
+		with alpha values, as a result they will work on any background. Text colors
+		are derived from primary black/white colors.
+	</p>
+
+	<ul class="a-inline-list styleguide__colors">
+		{% for name, color  in DATA.COLORS.FONT_COLORS %}
+			<li style="background-color: {{ color.value }}"><small><strong>${{ name }}</strong><br />{{ color.raw }}</small></li>
+		{% endfor %}
+	</ul>
+
+	{#  Border colors #}
+	<h4 class="styleguide__sub-title">Border colors</h4>
+	<ul class="a-inline-list styleguide__colors">
+		{% for name, color  in DATA.COLORS.BORDER_COLORS %}
+			<li style="background-color: {{ color.value }}"><small><strong>${{ name }}</strong><br />{{ color.raw }}</small></li>
+		{% endfor %}
+	</ul>
+
+	{#  UI COLORS #}
+	<h4 class="styleguide__sub-title">UI-kit colors</h4>
+	<p class="styleguide__p">
+		Primary colors for interaction feedback, notifications and states:
+		error (red), warning (orange), highlight (yellow), success (green)
+		and information (blue). UI-kit colors should always be aligned
+		with the tone of voice of the application/brand.
+	</p>
+
+	<ul class="a-inline-list styleguide__colors">
+		{% for name, color in DATA.COLORS.UI_COLORS %}
+			<li style="background-color: {{ color.value }}"><small><strong>${{ name }}</strong><br />{{ color.raw }}</small></li>
+		{% endfor %}
+	</ul>
+{% endmacro %}

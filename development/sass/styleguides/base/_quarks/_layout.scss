@@ -1,0 +1,25 @@
+// -------------------------------------------------------------------
+// :: GLOBAL LAYOUT
+// -------------------------------------------------------------------
+
+
+//******** MARGINS ************//
+// Set a vertical rhythm throught the entire platform
+
+*{
+	margin: 0;
+}
+
+main * + *{
+	margin-top: 1.5rem;
+}
+
+li,
+dt,
+dd,
+br,
+th,
+td,
+small{
+	margin-top: 0;
+}

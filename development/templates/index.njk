@@ -1,0 +1,49 @@
+{% set htmlParameters = {
+		'isStyleguide' : true,
+		'bodyClass': '',
+		'rootPath' : '',
+		'pageName' : 'Index'
+	}
+%}
+
+{% include "styleguides/general/pages/_includes/_html_head.njk" %}
+
+<div class="styleguide__section-title"><h1 class="styleguide__section-title--header">{{CONFIG.PROJECT_TITLE}}</h1></div>
+<main>
+	<section>
+		<div class="styleguide__index-container">
+			<article>
+
+				<div class="styleguide__blocks">
+					<a class="styleguide__block" href="/design{{EXTENSION}}">
+						{# <div class="styleguide__block__image">
+							<img src="/img/styleguide/design.png" alt="">
+						</div> #}
+						<div class="styleguide__block__content">
+							<h3> Design</h3>
+							<p>
+								Blader door de designs van de verschillende platformen en kom te weten hoe deze eruit zullen komen te zien. Hoe zal het platform werken, er visueel uitzien en hoe zal een gebruiker in interactie gaan hiermee?
+							</p>
+							<div class="a-button">more info</div>
+						</div>
+					</a>
+
+					<a class="styleguide__block" href="/styleguides{{EXTENSION}}">
+						{# <div class="styleguide__block__image">
+							<img src="/img/styleguide/styleguide.png" alt="">
+						</div> #}
+						<div class="styleguide__block__content">
+							<h3> Styleguide </h3>
+							<p>
+								Gebruik onze styleguide om consistente ervaringen te creëren over de verschillende platformen en toestellen heen. We maken een oplijsting van alle belangrijke elementen die het merk van de ‘Vlaamse Overheid’ uitstraalt.
+							</p>
+							<div class="a-button">more info</div>
+						</div>
+					</a>
+				</div>
+			</article>
+		</div>
+	</section>
+</main>
+
+{% include "styleguides/general/pages/_includes/_html_footer.njk" %}

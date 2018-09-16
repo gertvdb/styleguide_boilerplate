@@ -1,0 +1,20 @@
+{% set htmlParameters = {
+		'isStyleguide' : true,
+		'bodyClass': '',
+		'rootPath' : '',
+		'pageName' : 'styleguide'
+	}
+%}
+
+
+{% include "styleguides/general/pages/_includes/_html_head.njk" %}
+
+	{# {% import requestedComponent.path as component %}
+
+	{% if component.code %}
+		{{component.code()}}
+	{% else %}
+		No code function in the component
+	{% endif %} #}
+
+{% include "styleguides/general/pages/_includes/_html_footer.njk" %}

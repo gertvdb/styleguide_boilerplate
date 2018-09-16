@@ -1,0 +1,13 @@
+// -------------------------------------------------------------------
+// :: SANDBOX HEADER
+// -------------------------------------------------------------------
+.sandbox-header {
+	align-items: center;
+	background-color: $brand-sandbox-header-bg;
+	color: $brand-sandbox-header-text;
+	border-bottom: none;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 55px;
+	width: 100%;
+}

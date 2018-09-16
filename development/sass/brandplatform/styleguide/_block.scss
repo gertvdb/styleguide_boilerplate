@@ -1,0 +1,33 @@
+// -------------------------------------------------------------------
+// :: STYLEGUIDE CONTACT
+// -------------------------------------------------------------------
+.styleguide__blocks{
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 50px;
+	justify-content: space-between;
+}
+
+.styleguide__block {
+	box-shadow: 0 0 30px 0 rgba($black, 0.08);
+	color: $black;
+	display: flex;
+	padding: 50px;
+	margin-bottom: 50px;
+	margin-top: 0;
+	width: 48%;
+	text-decoration: none;
+
+	&:hover {
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	img {
+		margin-right: 30px;
+	}
+
+	&__image {
+		width: 200px;
+	}
+}

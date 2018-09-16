@@ -1,0 +1,53 @@
+// -------------------------------------------------------------------
+// :: LISTS
+// -------------------------------------------------------------------
+// By default lists are not included in base/_normalize.scss
+// So each class extending the default (e.g. inline-list) must
+// handle the reset in itself.
+
+//ul,
+//ol {
+//  padding-left: 0;
+//}
+
+
+// -------------------------------------------------------------------
+// :: INLINE LISTS
+// -------------------------------------------------------------------
+// There are 2 different strategies to implement inline-lists,
+// each with their own specific quirks to deal with
+//
+// 1) Using float: left
+// This method forces us to add a clearfix on the parent element
+// and has no way of centering list-content without providing a
+// fixed width and margin: auto to the parent element
+//
+// 2) Using display: inline-block
+// This basically does the same, but includes the option of
+// centering list-content - by adding text-align: center to
+// the parent element
+//
+// However...
+// - inline-block is not supported in <IE8
+// - this method adds additional margins in un-minified markup
+// - list-content always need to be wrapped in something (li)
+//
+// - http://theamazingweb.net/2013/06/24/fixing-display-inline-block
+// - http://css-tricks.com/fighting-the-space-between-inline-block-elements
+// - http://alistapart.com/article/taminglists
+
+.a-inline-list {
+	letter-spacing: -0.28em;
+	padding-left: 0;
+}
+
+.a-inline-list > * {
+	letter-spacing: normal;
+	display: inline-block;
+}
+
+.a-list-type-none {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}

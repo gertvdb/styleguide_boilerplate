@@ -1,0 +1,35 @@
+// -------------------------------------------------------------------
+// :: STYLEGUIDE CONTAINER
+// -------------------------------------------------------------------
+.styleguide__container {
+	position: relative;
+	text-align: center;
+	padding: 0 0 7%;
+
+	main {
+		margin: 0 auto;
+		width: 90%;
+		text-align: left;
+
+		@include FLOW-at($screen-sm) {
+			max-width: 75em;
+			width: 80%;
+		}
+	}
+}
+
+.styleguide__index-container {
+	width: 90%;
+	max-width: 1140px;
+	position: relative;
+	margin: 0 auto 2rem;
+
+	> *{
+		margin: 0;
+	}
+
+	> article{
+		letter-spacing: normal;
+		padding: 5rem 0;
+	}
+}

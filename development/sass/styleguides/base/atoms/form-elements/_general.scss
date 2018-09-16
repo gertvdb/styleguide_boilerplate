@@ -1,0 +1,102 @@
+// -------------------------------------------------------------------
+// :: FORMS
+// -------------------------------------------------------------------
+// Every form should have an action- and method-attribute
+// The submit button should be added as input[type=submit]
+//
+// Every input should have a label with corresponding for-, id- and
+// name-attributes. Labels are always placed before inputs, nesting
+// is not allowed (except for checkboxes and radio's)
+
+@include FLOW-normalize-forms();
+
+
+// -------------------------------------------------------------------
+// :: BASE
+// -------------------------------------------------------------------
+
+%__input{
+	font-size: rem($font-size);
+	padding: 0.6rem 0.6rem 0.4rem;
+	background-color: $white;
+	border: $border-simple;
+	border-radius: 0;
+	width: 100%;
+	transition: border 100ms ease-in-out;
+
+	@include FLOW-input-placeholder() {
+		color: $font-color-medium;
+		font-style: italic;
+	}
+}
+
+.a-input {
+	@include clearfloat();
+	margin-bottom: 1.5em;
+}
+
+.a-input select,
+.a-input textarea,
+.a-input input:not(.a-button){
+	@extend %__input;
+}
+
+.a-input select,
+.a-input textarea{
+	width: 100%;
+}
+
+.a-input select:focus,
+.a-input textarea:focus,
+.a-input input:focus{
+	border-color: $border-color-active;
+}
+
+.a-input input[disabled],
+.a-input select[disabled],
+.a-input textarea[disabled],
+[class*='input__'][disabled] [class*='icon'] {
+	background-color: $border-color;
+}
+
+.a-input label{
+	font-weight: 100;
+	font-size: rem($font-size);
+	margin-bottom: 0.25rem;
+	display: block;
+}
+
+
+
+.a-input .a-input__field-holder {
+	position: relative;
+	margin: 0;
+}
+
+
+.a-input small:not(.a-tooltip){
+	padding: 0.85rem 0.25rem;
+}
+
+.a-input a {
+	position: relative;
+	z-index: 2;
+}
+
+// Resize options for textarea
+// vertical/horizontal/both/none
+
+textarea {
+	resize: vertical;
+}
+
+
+// general class for inputs with buttons ( f.ex. uploads, datepicker, etc )
+
+.a-input--with-button .a-button{
+	opacity: 1;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0.6rem 1rem 0.4rem;
+}

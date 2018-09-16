@@ -1,0 +1,39 @@
+{
+	"PROJECT_TITLE": "Project",
+	"PROJECT_DESCRIPTION": "Styleguide for ...",
+	"PROJECT_URL": "http://[PROJECT NAME].brandplatform.be",
+	"CDN_URL": "https://cdn.brandplatform.be/[PROJECT NAME]",
+
+	"FTP": false,
+	"FTP_HOST": "",
+	"FTP_USER": "",
+	"FTP_PASS": "",
+	"FTP_PATH": "",
+
+	"DIST_FTP": false,
+	"DIST_FTP_HOST": "",
+	"DIST_FTP_USER": "",
+	"DIST_FTP_PASS": "",
+	"DIST_FTP_PATH": "",
+
+	"DEMO_SCP": false,
+	"DEMO_SCP_HOST": "178.62.253.81",
+	"DEMO_SCP_USER": "brandplatform",
+	"DEMO_SCP_PASS": "",
+	"DEMO_SCP_PATH": "/var/www/brandplatform.be/[PROJECT NAME]",
+
+	"CDN_SCP": false,
+	"CDN_SCP_HOST": "178.62.253.81",
+	"CDN_SCP_USER": "brandplatform",
+	"CDN_SCP_PASS": "",
+	"CDN_SCP_PATH": "/var/www/brandplatform.be_CDN/[PROJECT NAME]/dist",
+
+	"SLACK": false,
+	"SLACK_HOOK": "",
+	"SLACK_CHANNEL": "#styleguide",
+	"SLACK_EMOJI": ":party:",
+	"SLACK_NAME": "STYLEBOT",
+
+	"GIT": false,
+	"DELIVER_GIT": ""
+}

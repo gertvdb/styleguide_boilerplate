@@ -1,0 +1,67 @@
+// -------------------------------------------------------------------
+// :: COLORS
+// -------------------------------------------------------------------
+
+// Avoid using these color-variables in your styling.
+// They are mainly meant for easy recognisability, not for direct referencing in your code.
+// Use contextual colours in your CSS styling to define colours throughout the interface.
+// This way you can easily change a colour just by changing the reference below, without having to dig in all your CSS files.
+
+$black: #000000;
+$grey-extra-dark: #2F3742;
+$grey-dark: #20262F;
+$grey: #979797;
+$grey-light: #F6F9FB;
+$white: #FFFFFF;
+
+$blue: #0F50FF;
+
+$grey-blue: #D9E5F6;
+$grey-blue-dark: #93ADD1;
+
+$pastel-red: #FFB4C2;
+$pastel-orange: #FCE7AC;
+$pastel-green: #E6F1CE;
+$pastel-blue: #CAEDF3;
+
+
+// -------------------------------------------------------------------
+// :: MAIN CONTEXTUAL COLORS
+// -------------------------------------------------------------------
+
+// These colours will end up in the styleguide:
+// only the following prefixes work: primary, secondary, font-color, border-color & ui.
+
+// THESE COLOUR VARIABLES SHOULD BE USED IN YOUR CSS.
+
+$primary-color: $blue;
+$secondary-color: $grey-dark;
+
+$font-color: $grey-extra-dark;
+$font-color-medium: $grey-dark;
+$font-color-light: $grey;
+$font-color-disabled: $grey-light;
+
+$border-color: $grey-blue;
+$border-color-active: $grey-blue-dark;
+
+$ui-red: $pastel-red;
+$ui-orange: $pastel-orange;
+$ui-green: $pastel-green;
+$ui-blue: $pastel-blue;
+
+$box-shadow-color: rgba($black, 0.1);
+
+
+// -------------------------------------------------------------------
+// :: EXTRA CONTEXTUAL COLORS
+// -------------------------------------------------------------------
+
+// These colours will NOT end up in the styleguide.
+// Most of these colours should be the same ones as the main contextual colours, they're just being used in different places.
+
+// THESE COLOUR VARIABLES SHOULD BE USED IN YOUR CSS.
+// Variables are free, add as many as you need ;)
+
+$background-color: $grey-light;
+$background-color-dark: $black;

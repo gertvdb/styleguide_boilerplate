@@ -1,0 +1,64 @@
+{# ------------------------#}
+{# -------Code block-------#}
+{# ------------------------#}
+{% macro code() %}
+	<ul class="a-inline-list">
+		<li>List item</li>
+		<li>List item</li>
+		<li>List item</li>
+	</ul>
+{% endmacro %}
+
+{# ----------------------------#}
+{# ------Styleguide block------#}
+{# ----------------------------#}
+{% macro styleguide() %}
+	<h1 class="styleguide__title js-scroll-nav__sub-title">Lists</h1>
+	<small>/sass/base/_lists.scss</small>
+
+
+	<h4 class="styleguide__sub-title">Implementation</h4>
+	<p class="styleguide__p">
+		By default lists are not included in base/_normalize.scss.
+		Each class extending the default (e.g. inline-list) must handle
+		the reset in itself. Usually this means resetting the padding-left
+		value and adjust the list-style property.
+	</p>
+
+	<ul>
+		<li>Sed ut perspiciatis unde omnis</li>
+		<li>Sed ut perspiciatis unde omnis</li>
+		<li>Label for nested list items
+			<ul>
+				<li>Nested list items</li>
+				<li>Nested list items</li>
+				<li>Nested list items</li>
+			</ul>
+		</li>
+	</ul>
+
+	<br />
+
+	<ol>
+		<li>Sed ut perspiciatis unde omnis</li>
+		<li>Sed ut perspiciatis unde omnis</li>
+		<li>Label for nested list items
+			<ul>
+				<li>Nested list items</li>
+				<li>Nested list items</li>
+				<li>Nested list items</li>
+			</ul>
+		</li>
+	</ol>
+
+	<h1 class="styleguide__title js-scroll-nav__sub-title">Inline Lists</h1>
+	<small>/sass/base/_lists.scss</small>
+
+	{{code()}}
+
+	<div class="styleguide__highlight-box">
+		<code class="js-encode-html prettyprint">
+			{{code()}}
+		</code>
+	</div>
+{% endmacro %}

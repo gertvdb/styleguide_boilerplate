@@ -1,0 +1,51 @@
+// sass-lint:disable no-color-literals
+// -------------------------------------------------------------------
+// :: MEDIA QUERIES
+// -------------------------------------------------------------------
+
+@mixin FLOW-at($_min-width) {
+	@media screen and (min-width: $_min-width) {
+
+		@content;
+
+		// Show feedback on the current breakpoint if
+		// $debug-mode is set true (shown in px and em)
+		// Note: only applied to the html-element
+
+		@if $debug-mode and inspect(nth(&, 1)) == "html" {
+			&:before {
+
+				$_val: strip-unit($_min-width);
+				$_px: $_val * 16;
+				$_col: $_val * 3.25;
+
+				content: 'BREAKPOINT\A #{$_min-width} - #{$_px}px';
+				background: rgba($_col, 0, 255 - $_col, 0.7);
+				font-family: sans-serif;
+				white-space: pre;
+				font-size: 11px;
+				line-height: 1;
+				padding: 0.5em;
+				color: #FFFFFF;
+
+				position: fixed;
+				z-index: 999999;
+				top: 40px;
+				right: 0;
+
+			}
+		}
+	}
+}
+
+@mixin FLOW-to($_max-width) {
+	@media screen and (max-width: $_max-width - rem(1px)) {
+		@content;
+	}
+}
+
+@mixin FLOW-between($_min-width, $_max-width) {
+	@media screen and (min-width: $_min-width) and (max-width: $_max-width) {
+		@content;
+	}
+}

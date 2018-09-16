@@ -1,0 +1,13 @@
+// -------------------------------------------------------------------
+// :: ANIMATIONS
+// -------------------------------------------------------------------
+$animation-fast-duration: 220ms;
+$animation-medium-duration: 660ms;
+$animation-slow-duration: 1000ms;
+$animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+$animation-easing-smooth: cubic-bezier(0.77, 0.2, 0.05, 1);
+
+$animation-fast: $animation-fast-duration $animation-easing;
+$animation-medium: $animation-medium-duration $animation-easing;
+$animation-slow: $animation-slow-duration $animation-easing;
+$animation-smooth: 0.5s  $animation-easing-smooth;

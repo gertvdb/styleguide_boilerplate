@@ -1,0 +1,69 @@
+// -------------------------------------------------------------------
+// :: LAYOUT HELPERS
+// -------------------------------------------------------------------
+// To provide screen readers an optimal experience
+// add hidden DOM-elements with additional info
+//
+// - http://css-tricks.com/places-its-tempting-to-use-display-none-but-dont
+
+
+// -------------------------------------------------------------------
+// :: LAYOUT VISIBILITY
+// -------------------------------------------------------------------
+
+.u-hide {
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px;
+	padding: 0;
+	border: none;
+	clip: rect(0 0 0 0);
+	position: absolute;
+	overflow: hidden;
+}
+
+
+// -------------------------------------------------------------------
+// :: LAYOUT SCROLLING
+// -------------------------------------------------------------------
+
+.u-scrollable {
+	overflow-y: scroll;
+}
+
+.u-no-scroll {
+	overflow: hidden;
+
+	@include FLOW-at($screen-lg) {
+		overflow: visible;
+	}
+}
+
+.u-no-overflow {
+	overflow: hidden;
+}
+
+
+// -------------------------------------------------------------------
+// :: LAYOUT CLEARANCE
+// -------------------------------------------------------------------
+
+%u-clearfix {
+	@include clearfloat;
+}
+
+.u-clearfix {
+	@extend %u-clearfix;
+}
+
+// -------------------------------------------------------------------
+// :: INTERACTIONS
+// -------------------------------------------------------------------
+
+.u-no-pointer-events {
+	pointer-events: none;
+}
+
+.u-all-pointer-events {
+	pointer-events: all;
+}

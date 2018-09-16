@@ -1,0 +1,37 @@
+// sass-lint: disable-all
+// -------------------------------------------------------------------
+// :: CONVERT PX TO REM
+// -------------------------------------------------------------------
+// Important: rem-units are not supported on <IE9
+// and we don't provide a fallback
+//
+// - http://caniuse.com/#search=rem
+
+@function rem($_value) {
+	@return #{$_value / 16px}rem;
+}
+
+
+// -------------------------------------------------------------------
+// :: COVERT PX TO EM
+// -------------------------------------------------------------------
+// Em values are always relative to the parent element so
+// you might need to provide context-value (eg. font-size
+// of the parent element) to get the correct value
+//
+// - font-size: em(16px) => 1em
+// - font-size: em(16px, 24px) => 0.666em
+
+@function em($_value, $_context: 16px) {
+	@return #{$_value / $_context}em;
+}
+
+
+// -------------------------------------------------------------------
+// :: STRIP UNIT
+// -------------------------------------------------------------------
+// Strips a value from its unit
+
+@function strip-unit($_value) {
+	@return $_value / ($_value * 0 + 1);
+}

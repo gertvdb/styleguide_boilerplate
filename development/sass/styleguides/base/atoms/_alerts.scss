@@ -1,0 +1,55 @@
+// -------------------------------------------------------------------
+// :: ALERTS
+// -------------------------------------------------------------------
+
+.a-alert {
+	color: $font-color-medium;
+	border: $border-simple;
+	padding: 0.907rem;
+
+	p{
+		margin: 0;
+	}
+}
+
+.a-alert [class*='icon']:before {
+	font-size: 1.65em;
+	line-height: 0;
+	position: relative;
+	margin-right: 0.3em;
+	top: -0.065em;
+}
+
+.a-alert a {
+	color: inherit;
+}
+
+
+// -------------------------------------------------------------------
+// :: ALERT CLASSES
+// -------------------------------------------------------------------
+
+.a-alert:not(.is-error):not(.is-warning):not(.is-success):not(.is-information):not(.has-no-background) {
+	background: $background-color;
+}
+
+.a-alert.is-error {
+	background: $ui-red;
+	border-color: darken($ui-red, 35%);
+}
+
+.a-alert.is-warning {
+	background: $ui-orange;
+	border-color: darken($ui-orange, 35%);
+}
+
+.a-alert.is-success {
+	background: $ui-green;
+	border-color: darken($ui-green, 35%);
+}
+
+.a-alert.is-information {
+	background: $ui-blue;
+	border-color: darken($ui-blue, 35%);
+}
+

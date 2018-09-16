@@ -1,0 +1,46 @@
+{# ------------------------#}
+{# -------Code block-------#}
+{# ------------------------#}
+{% macro code() %}
+	<div class="a-alert" role="alert" aria-live="assertive">
+		<p class="icon-alert">
+			This is a <a href="#" title="">feedback message</a>.
+		</p>
+	</div>
+	<div class="a-alert is-error">
+		<p class="icon-alert">
+			Something went wrong, please <a href="#" title="">try again</a>.
+		</p>
+	</div>
+	<div class="a-alert is-warning">
+		<p class="icon-alert">
+			Perhaps you meant <a href="#" title="">something else</a>.
+		</p>
+	</div>
+	<div class="a-alert is-success">
+		<p class="icon-checkmark">
+			Now how about <a href="#" title="">adding some more</a>.
+		</p>
+	</div>
+	<div class="a-alert is-information">
+		<p class="icon-alert">
+			<a href="#" title="">Some features</a> might not work.
+		</p>
+	</div>
+{% endmacro %}
+
+{# ----------------------------#}
+{# ------Styleguide block------#}
+{# ----------------------------#}
+{% macro styleguide() %}
+	<h4 class="styleguide__sub-title js-scroll-nav__sub-title">Alerts</h4>
+	<small>/sass/atoms/alerts.scss</small>
+
+	{{code()}}
+
+	<div class="styleguide__highlight-box">
+		<code class="js-encode-html prettyprint">
+			{{code()}}
+		</code>
+	</div>
+{% endmacro %}

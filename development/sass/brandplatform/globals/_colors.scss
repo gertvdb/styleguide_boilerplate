@@ -1,0 +1,48 @@
+// -------------------------------------------------------------------
+// :: LMR COLOURS
+// -------------------------------------------------------------------
+
+// Let's prefix our internal colours to avoid conflicts with the client's colour pallette
+
+$s_black: #000000;
+$s_grey-dark: #262525;
+$s_grey: #373737;
+$s_grey-light: #E1E6EB;
+$s_grey-light-extra: #F7F9FB;
+$s_white: #FFFFFF;
+
+$s_blue: #0F50FF;
+
+// -------------------------------------------------------------------
+// :: BRANDPLATFORM UI
+// -------------------------------------------------------------------
+
+$brand-bg: $s_grey-light-extra;
+$brand-bg-inverted: $s_grey-dark;
+$brand-border: $s_grey-light;
+$brand-shadow: $s_grey-light;
+$brand-text: $s_grey-dark;
+$brand-text-inverted: $white;
+
+
+// CODE BLOCKS
+$brand-prettyprint-atn: #008080;
+$brand-prettyprint-atv: #DD1144;
+$brand-prettyprint-tag: #000080;
+$brand-prettyprint-pln: #616367;
+
+
+// -------------------------------------------------------------------
+// :: BRANDPLATFORM SANDBOX
+// -------------------------------------------------------------------
+
+// HEADER
+$brand-sandbox-header-bg: $s_blue;
+$brand-sandbox-header-text: $s_white;
+
+// NAVIGATION
+$brand-sandbox-nav-border: lighten($s_blue, 10%);
+$brand-sandbox-nav-header-bg: $s_grey-dark;
+$brand-sandbox-nav-list-bg: $s_grey;
+
+$brand-contact: #F4F4F4;

@@ -1,0 +1,54 @@
+// -------------------------------------------------------------------
+// :: MIMMICKS A TABLE LAYOUT WITH VERTICALLY CENTERED CONTENT
+// -------------------------------------------------------------------
+
+%__u-table-layout {
+	display: table;
+	width: 100%;
+
+	> *{
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.a-button-group{
+		text-align: right;
+		padding-left: 1rem;
+
+		.a-button{
+			margin: 0 0 1rem;
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	@include FLOW-at($screen-md){
+		.a-button-group{
+			white-space: nowrap;
+
+			.a-button{
+				margin: 0 1rem 0 0;
+
+				&:last-child{
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
+
+%__u-table-layout__main{
+	width: 100%;
+}
+
+.u-table-layout{
+	@extend %__u-table-layout;
+}
+
+.u-table-layout__main{
+	@extend %__u-table-layout__main;
+}
+
+

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+
+	<!-- OPTIMIZE PAGE-LOAD //////////////////////////////////////////
+	- http://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/extend.md
+	- http://developers.google.com/speed/pagespeed/service/FlushResourcesEarly
+	- http://developers.google.com/speed/pagespeed/service/PreResolveDns
+	- http://daker.me/2013/05/5-html5-features-you-need-to-know.html
+
+	Resolve and caching DNS lookups initiates downloads faster
+	Browsers do this by default for assets present in the markup
+	Enable 'dns-prefetch' when dealing with cross-domain assets
+	(eg. API-calls, injected urls, 3rd party libs, ...)
+	-->
+
+	<!--link rel="dns-prefetch" href="//google-analytics.com" /-->
+
+	<!--
+    Use 'prefetch' to preload assets once this page has finished
+    loading or 'prerender' to preload entire pages (with assets)
+    This results in faster downloads of assets and pages when
+    needed (eg. load ondemand, navigating to another page, ...)
+    <link rel="prefetch" href="[ SOME-ASSET-OR-ANOTHER-PAGE ]" />
+    <link rel="prerender" href="[ ANOTHER-PAGE ]" />
+    -->
+
+	<!--
+    Use 'subresource' to flush assets early, this lets the
+    browser know which assets to proiritize and load first
+    <link rel="subresource" href="[ SOME-ASSET ]" />
+    -->
+
+	<!-- CSS /////////////////////////////////////////////////////////
+	- https://github.com/filamentgroup/loadCSS
+
+	Using 'gulp-usemin' to concatenate CSS files in production
+	Following a Mobile First approach, all media queries are
+	combined in a separate file
+
+	Note: <link ... media="screen and (min-width: 40em)" />
+	only defines when CSS will be applied, it will not block
+	the file from being downloaded
+	-->
+
+	{% if htmlParameters.isStyleguide %}
+		<link rel="stylesheet" href="/css/main.css" />
+	{% else %}
+		<link rel="stylesheet" href="/css/base.css" />
+	{% endif %}
+
+
+	<!-- SEO /////////////////////////////////////////////////////////
+	- http://support.google.com/webmasters/bin/answer.py?hl=nl&answer=79812&topic=2371375&ctx=topic
+	- http://www.iacquire.com/blog/18-meta-tags-every-webpage-should-have-in-2013
+	- http://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/extend.md
+	- http://moz.com/blog/meta-data-templates-123
+
+	Set meta-data and force search engines to display this information
+	in search results (this prevents caching of meta-data)
+	-->
+
+	<title>{{CONFIG.PROJECT_TITLE}} - {{ htmlParameters.pageName }}</title>
+
+	<meta name="description" content="{{ CONFIG.PROJECT_DESCRIPTION }}" />
+	<meta name="robots" content="noodp, noydir" />
+
+	<!--
+    Signal search engines to 'use-this-URL-for-this-page', use this
+    when parameters (# or ?) are used to control the display state
+    <link rel="canonical" href="http://www.{{ URL }}" />
+    -->
+
+
+	<!-- META-TAGS FOR MOBILE ////////////////////////////////////////
+	- http://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
+	- http://www.metatags.nl/mobiele_metatags_voor_de_smartphone
+	- http://github.com/h5bp/mobile-boilerplate/wiki/The-Markup
+
+	Let search engines know this page is optimized for mobile devices
+	and enable smooth font rendering on IE Mobile
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="MobileOptimized" content="320" />
+	<meta http-equiv="cleartype" content="on" />
+	-->
+
+	<!--
+	Set the viewport for IOS to enable media queries and prevent phone
+	numbers from being displayed as hyperlinks (IOS default behavior)
+	Note: don't disable the ability to zoom, it's bad UX
+	-->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="format-detection" content="telephone=no" />
+
+	<!-- FAVICONS -->
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/meta/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="/img/meta/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/img/meta/favicon-16x16.png" sizes="16x16">
+	{#<link rel="manifest" href="{{ htmlParameters.rootPath }}/manifest.json">#}
+	{#<link rel="mask-icon" href="{{ htmlParameters.rootPath }}img/favicon/safari-pinned-tab.svg" color="#ef4b4a">#}
+	<link rel="shortcut icon" href="/img/meta/favicon.ico">
+	<meta name="msapplication-config" content="/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+
+
+	<!-- 3RD PARTY SCRIPTS ///////////////////////////////////////////
+	In some cases it's better to host 3rd party libraries (like jQuery)
+	on a CDN, providing we have a local fallback in place
+	-->
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+
+</head>
+<body class="{{ htmlParameters.bodyClass }}{% if htmlParameters.isStyleguide %} styleguide{% endif %}" data-extension="{{EXTENSION}}" data-styleguide="general">
+
+<!-- NOSCRIPT ////////////////////////////////////////////////////
+    SPA's (Single Page Applications) commonly require javascript
+    If this is disabled, provide users with a feedback message
+    <noscript>
+
+        {{ CONFIG.PROJECT_TITLE }} requires javascript, which is not enabled in your browser.
+        Here are instructions on <a href="http://www.enable-javascript.com/" target="_blank">how to enable javaScript</a> in your browser.
+
+    </noscript>
+    -->
+
+
+<!-- LET'S FLOW ////////////////////////////////////////////////// -->

@@ -1,0 +1,43 @@
+// -------------------------------------------------------------------
+// :: PADDING CLASSES & EXTENDS
+// -------------------------------------------------------------------
+
+// %__u-padding{
+// 	padding: $default-padding-mobile;
+//
+// 	@include FLOW-at($screen-sm){
+// 		padding: $default-padding;
+// 	}
+// }
+//
+// %__u-padding--vertical{
+// 	padding-top: $default-padding-mobile;
+// 	padding-bottom: $default-padding-mobile;
+//
+// 	@include FLOW-at($screen-sm){
+// 		padding-top: $default-padding;
+// 		padding-bottom: $default-padding;
+// 	}
+// }
+//
+// %__u-padding--horizontal {
+// 	padding-left: $default-padding-mobile;
+// 	padding-right: $default-padding-mobile;
+//
+// 	@include FLOW-at($screen-sm){
+// 		padding-left: $default-padding;
+// 		padding-right: $default-padding;
+// 	}
+// }
+//
+// .u-padding{
+// 	@extend %__u-padding;
+// }
+//
+// .u-padding--vertical{
+// 	@extend %__u-padding--vertical;
+// }
+//
+// .u-padding--horizontal {
+// 	@extend %__u-padding--horizontal;
+// }

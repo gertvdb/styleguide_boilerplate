@@ -1,0 +1,75 @@
+{# ----------------------------#}
+{# ------Styleguide block------#}
+{# ----------------------------#}
+{% macro styleguide(DATA) %}
+	<h1 class="styleguide__title js-scroll-nav__sub-title">Globals</h1>
+	<small>/sass/base/_globals.scss</small>
+
+	{#  Global #}
+	<section>
+		<h4 class="styleguide__sub-title"> Globals </h4>
+		<code class="prettyprint">
+			{% for name, content  in DATA.GLOBALS_GLOBAL %}
+				${{ name }} = {{ content.value }} <br>
+			{% endfor %}
+		</code>
+	</section>
+
+	{#  Media #}
+	<section>
+		<h4 class="styleguide__sub-title"> Media </h4>
+		<code class="prettyprint">
+			{% for name, content  in DATA.GLOBALS_MEDIA %}
+				${{ name }} = {{ content.value }} <br>
+			{% endfor %}
+		</code>
+	</section>
+
+	{#  Fonts #}
+	<section>
+		<h4 class="styleguide__sub-title"> Fonts </h4>
+		<code class="prettyprint">
+			{% for name, content  in DATA.GLOBALS_FONTS %}
+				${{ name }} = {{ content.value }} <br>
+			{% endfor %}
+		</code>
+	</section>
+
+	{#  Layout #}
+	<section>
+		<h4 class="styleguide__sub-title">Layout </h4>
+		<code class="prettyprint">
+			{% for name, content  in DATA.GLOBALS_LAYOUT %}
+				${{ name }} = {{ content.value }} <br>
+			{% endfor %}
+		</code>
+	</section>
+
+	{#  Z-index #}
+	<section>
+		<h4 class="styleguide__sub-title"> Z-index </h4>
+		<code class="prettyprint">
+			{% for name, content  in DATA.GLOBALS_Z_INDEX %}
+				${{ name }} = {{ content.value }} <br>
+			{% endfor %}
+		</code>
+	</section>
+
+	{#  Animations #}
+	<section>
+		<h4 class="styleguide__sub-title"> Animations </h4>
+		<code class="prettyprint">
+			{% for name, content  in DATA.GLOBALS_ANIMATIONS %}
+				${{ name }} = {{ content.value }} <br>
+			{% endfor %}
+		</code>
+	</section>
+
+{% endmacro %}
+
+
+{% macro description() %}
+	<code class="js-encode-html prettyprint">
+		{{code()}}
+	</code>
+{% endmacro %}

@@ -1,0 +1,52 @@
+// -------------------------------------------------------------------
+// :: TEXT HELPERES
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+// :: ALIGN BLOCK WITH TEXT-ALIGN
+// -------------------------------------------------------------------
+
+.u-block-left {
+	text-align: left;
+
+	> div:first-child {
+		display: inline-block;
+	}
+}
+
+.u-block-right {
+	text-align: right;
+
+	> div:first-child {
+		display: inline-block;
+	}
+}
+
+.u-block-center {
+	text-align: center;
+
+	> div:first-child {
+		display: inline-block;
+	}
+}
+
+// -------------------------------------------------------------------
+// :: ALIGN BLOCK WITH FLEXBOX
+// -------------------------------------------------------------------
+.u-block-flex-left {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.u-block-flex-right {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+}
+
+.u-block-flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

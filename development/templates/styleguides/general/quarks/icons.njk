@@ -1,0 +1,27 @@
+{# ----------------------------#}
+{# ------Styleguide block------#}
+{# ----------------------------#}
+{% macro styleguide(DATA) %}
+
+	<h1 class="styleguide__title js-scroll-nav__sub-title">Icons</h1>
+	<small>/sass/base/_quarks/_icons.scss</small>
+
+
+	<h4 class="styleguide__sub-title">Implementation</h4>
+	<p class="styleguide__p">
+		The icon-set is converted with a custom Gulp iconfont-task.
+	</p>
+
+	<ul class="a-inline-list styleguide__icons small__icons">
+		{% for icon in DATA.ICONS %}
+			<li class="icon-{{ icon }}"><small>.icon-{{ icon }}</small></li>
+		{% endfor %}
+	</ul>
+
+	<div class="styleguide__highlight-box">
+		<code class="js-encode-html prettyprint">
+			<span class="icon-[name]"></span>
+		</code>
+	</div>
+
+{% endmacro %}

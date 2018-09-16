@@ -1,0 +1,23 @@
+// -------------------------------------------------------------------
+// :: STYLEGUIDE LAYOUT
+// -------------------------------------------------------------------
+body.styleguide{
+	overflow-x: hidden;
+}
+
+.styleguide__index{
+	padding: 5em;
+}
+
+.styleguide__block {
+	width: 100%;
+	margin-bottom: 1rem;
+	}
+
+.styleguide__pages a{
+	text-decoration: none;
+
+	&:hover{
+		text-decoration: underline;
+	}
+}

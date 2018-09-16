@@ -1,0 +1,22 @@
+// -------------------------------------------------------------------
+// :: ROUND BUTTONS
+// -------------------------------------------------------------------
+// Round buttons extend base button styles
+// by adding a border-radius value
+
+.a-button-rounded {
+	border-radius: 50%;
+	position: relative;
+}
+
+// Round buttons with
+// text labels beneath
+// Quick prototype
+
+.a-button-rounded span:not([class*='icon']) {
+	width: 200%;
+	transform: translate(-50%, 150%);
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+}

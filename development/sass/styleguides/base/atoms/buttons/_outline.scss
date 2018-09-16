@@ -1,0 +1,12 @@
+// -------------------------------------------------------------------
+// :: OUTLINE BUTTONS
+// -------------------------------------------------------------------
+// outline buttons extend base button styles
+// they have a border, border-radius & transparent background
+
+
+.a-button--outline{
+	@include FLOW-button($_color: $font-color, $_background: transparent, $_border: $border-color);
+	text-transform: uppercase;
+	border-radius: $border-radius;
+}

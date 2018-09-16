@@ -1,0 +1,33 @@
+// -------------------------------------------------------------------
+// :: RESPONSIVE HELPER CLASSES
+// -------------------------------------------------------------------
+
+%__u-hidden-on-mobile{
+	@include FLOW-to($screen-sm){
+		display: none;
+	}
+}
+
+%__u-hidden-on-tablet-and-up{
+	@include FLOW-at($screen-sm){
+		display: none;
+	}
+}
+
+%__u-hidden-on-tablet-and-down{
+	@include FLOW-to($screen-md){
+		display: none;
+	}
+}
+
+.u-hidden-on-mobile{
+	@extend %__u-hidden-on-mobile;
+}
+
+.u-hidden-on-tablet-and-up{
+	@extend %__u-hidden-on-tablet-and-up;
+}
+
+.u-hidden-on-tablet-and-down{
+	@extend %__u-hidden-on-tablet-and-down;
+}

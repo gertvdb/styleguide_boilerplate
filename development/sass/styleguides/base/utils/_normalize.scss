@@ -1,0 +1,188 @@
+//sass-lint:disable-all
+// -------------------------------------------------------------------
+// :: NORMALIZE.CSS
+// -------------------------------------------------------------------
+// Adopting a component-driven archtitecture (atomic design)
+// so we use a (custom) minimal version of the normalize.css
+//
+// Some normalizing are handled in the context of components:
+// - typography in base/_typography.scss
+// - inputs in base/_inputs.scss
+// - buttons in base/_buttons.scss
+// - ...
+//
+// Background & inspiration:
+// - http://bradfrostweb.com/blog/post/atomic-web-design
+// - https://github.com/necolas/normalize.css
+// - https://github.com/railsware/applepie
+
+html {
+	// Prevent text size adjust after orientation change
+	// without disabling zoom (with the viewport meta-tag)
+	text-size-adjust: 100%;
+
+	// Remove gray highlight when users
+	// tap on a link in Mobile Safari (IOS)
+	// http://css-tricks.com/snippets/css/remove-gray-highlight-when-tapping-links-in-mobile-safari
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+	// Enable smooth fonts - USE WITH CAUTION!
+	// Support for this is not consistent and
+	// differences in rendering are noticable
+	//-moz-osx-font-smoothing: grayscale;
+	// -webkit-font-smoothing: antialiased;
+
+	// Fix broken box-model (1/2)
+	// http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+	box-sizing: border-box;
+
+	// Enable javascript pointer events on
+	// IE Mobile by disabling events in CSS
+	// http://msdn.microsoft.com/en-us/library/ie/hh673557(v=vs.85).aspx
+	//-ms-touch-action: none;
+}
+
+// Fix broken
+// box-model (2/2)
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+// Correct 'block' display
+// not defined in IE 8/9
+
+article,
+aside,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+
+
+// -------------------------------------------------------------------
+// :: BUTTONS
+// -------------------------------------------------------------------
+// Normalizing buttons is an opt-in operation, if a project has
+// no buttons there's no need to normalize in the generated output
+// Keep things DRY and avoid code bloat
+
+@mixin FLOW-normalize-buttons() {
+
+	// Correct font properties not being inherited
+	// Address overflow set to hidden in IE 8/9/10/11
+	// Remove Mobile Firefox button gradient - http://davidwalsh.name/remove-mobile-firefox-button-gradient
+	// Remove glowing outline when receiving focus
+
+	button {
+		font: inherit;
+		overflow: visible;
+		cursor: pointer;
+		//background-image: none;
+		outline: 0;
+	}
+
+	// Remove inner padding and
+	// border in Firefox 4+
+
+	::-moz-focus-inner {
+		padding: 0;
+		border: none;
+	}
+
+	// Disabled state
+
+	[disabled][disabled] {
+		cursor: not-allowed;
+		opacity: 0.3;
+
+		// IE8 and earlier support
+		// filter: alpha(opacity=25);
+	}
+
+}
+
+
+// -------------------------------------------------------------------
+// :: FORMS
+// -------------------------------------------------------------------
+// Normalizing forms is an opt-in operation, if a project has
+// no forms there's no need to normalize in the generated output
+// Keep things DRY and avoid code bloat
+
+@mixin FLOW-normalize-forms() {
+
+	// Address Firefox 4+ setting line-height
+	// using !important in the UA stylesheet
+
+	input {
+		line-height: normal;
+	}
+
+	// Address inconsistent text-transform
+	// inheritance in Firefox, IE and Opera
+
+	select {
+		text-transform: none;
+	}
+
+	// Correct colors not being inherited
+	// Known issue: affects color of disabled elements
+	// Correct font properties not being inherited
+	// Remove glowing outline when receiving focus
+	// Address margins set differently in FF 4+, Safari and Chrome
+	// Reset input types on IOS
+
+	input,
+	select,
+	textarea {
+		color: inherit;
+		font: inherit;
+		outline: 0;
+		margin: 0;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+	}
+
+	// Hide OS controls for Windows
+	// http://msdn.microsoft.com/en-us/library/windows/apps/hh465742.aspx
+
+	::-ms-expand {
+		display: none;
+	}
+
+	// Improve usability and consistency
+	// with other button and input types
+
+	select,
+	input[type="submit"],
+	input[type="reset"] {
+		cursor: pointer;
+	}
+
+	// It's recommended that you don't attempt to style these
+	// Firefox doesn't respect box-sizing, padding or width
+	// Address box sizing set to content-box in IE 8/9/10
+	// Remove excess padding in IE 8/9/10
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		box-sizing: border-box;
+		padding: 0;
+	}
+
+	// Remove vertical
+	// scrollbar in IE8+
+
+	textarea {
+		vertical-align: top;
+		overflow: auto;
+	}
+
+}
+

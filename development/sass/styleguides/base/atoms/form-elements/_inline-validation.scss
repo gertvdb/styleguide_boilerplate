@@ -1,0 +1,77 @@
+// -------------------------------------------------------------------
+// :: FEEDBACK STATES
+// -------------------------------------------------------------------
+// There are 4 possible feedback states: error, success, warning and
+// information. These should be styled based on the UI-kit colors
+
+
+.a-input.is-error select,
+.a-input.is-error textarea,
+.a-input.is-error input:not([class*='button']) {
+	background: $ui-red;
+
+	&:focus {
+		border-color: darken($ui-red, 25%);
+	}
+}
+
+.a-input.is-error .unit{
+	background: $ui-red;
+}
+
+.a-input.is-warning select,
+.a-input.is-warning textarea,
+.a-input.is-warning input:not([class*='button']) {
+	background: $ui-orange;
+
+	&:focus {
+		border-color: darken($ui-orange, 35%);
+	}
+}
+
+.a-input.is-warning .unit{
+	background: $ui-orange;
+}
+
+.a-input.is-success select,
+.a-input.is-success textarea,
+.a-input.is-success input:not([class*='button']) {
+	background: $ui-green;
+
+	&:focus {
+		border-color: darken($ui-green, 35%);
+	}
+}
+
+
+// Show errors
+// on focus
+
+.a-input[class*='is-'] input:focus + [class*='tooltip'] {
+	opacity: 1;
+}
+
+
+// Tooltip messages
+// in feedback states
+
+.a-input [class*='tooltip'] {
+	margin-top: 0.35rem;
+	position: absolute;
+	z-index: 3;
+	top: 100%;
+	left: 0;
+
+	transition: opacity 200ms ease-in-out;
+	opacity: 0;
+}
+
+.a-input [class*='tooltip'] [class*='icon'] {
+	position: absolute;
+	left: 0.8em;
+	top: 0.8em;
+
+	&:before {
+		font-size: 1.45em;
+	}
+}

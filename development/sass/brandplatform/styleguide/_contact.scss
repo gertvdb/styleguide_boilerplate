@@ -1,0 +1,23 @@
+// -------------------------------------------------------------------
+// :: STYLEGUIDE CONTACT
+// -------------------------------------------------------------------
+.styleguide__contact {
+	display: flex;
+	margin-top: 50px;
+}
+
+.styleguide__contact__items {
+	background-color: $brand-contact;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 100px;
+	width: 100%;
+	padding: 50px 50px 20px;
+	margin-top: 0;
+}
+
+.styleguide__contact__item {
+	margin-bottom: 30px;
+	margin-top: 0;
+	width: 50%;
+}

@@ -1,0 +1,87 @@
+// -------------------------------------------------------------------
+// :: STYLEGUIDE HIGHLIGHT BOX
+// -------------------------------------------------------------------
+.styleguide__highlight-box {
+	position: relative;
+	margin-top: 2em;
+	overflow: hidden;
+	border: 1px solid $brand-border;
+
+	a{
+		position: absolute;
+		top: 0;
+		right: 0;
+		background-color: $brand-bg-inverted;
+		transition: background-color 0.2s ease-in;
+		display: block;
+		min-width: 5.5rem;
+		padding: 10px;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 11px;
+		text-decoration: none;
+		color: $brand-text-inverted;
+		margin: 0;
+
+		&:hover{
+			background-color: $primary-color;
+		}
+	}
+}
+
+.input + .styleguide__highlight-box {
+	margin-bottom: 1.5em;
+	margin-top: 0;
+}
+
+.styleguide__highlight-box code {
+	margin-top: -1px;
+	background-color: $brand-bg;
+	color: $brand-text;
+	line-height: 22px;
+	display: block;
+	transition: color 0.2s ease-in;
+	padding: 22px 80px 22px 22px;
+	background-image: repeating-linear-gradient(to top, transparent 0, transparent 21px, $brand-border 22px, $brand-border 22px);
+}
+
+.styleguide__highlight-box.is-open{
+	height: auto;
+
+	code{
+		color: $brand-text;
+	}
+}
+
+.styleguide__highlight-box .styleguide__info {
+	margin: 0;
+}
+
+.styleguide__highlight-box + .styleguide__sub-title{
+	border-top: 1px solid $brand-border;
+	margin-top: 3rem;
+	padding-top: 4rem;
+}
+
+// -------------------------------------------------------------------
+// :: STYLEGUIDE PRETTYPRINT
+// -------------------------------------------------------------------
+
+
+.prettyprint {
+	.atn {
+		color: $brand-prettyprint-atn;
+	}
+
+	.atv {
+		color: $brand-prettyprint-atv;
+	}
+
+	.tag {
+		color: $brand-prettyprint-tag;
+	}
+
+	.pln {
+		color: $brand-prettyprint-pln;
+	}
+}

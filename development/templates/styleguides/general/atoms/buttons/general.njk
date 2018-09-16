@@ -1,0 +1,34 @@
+{# ------------------------#}
+{# -------Code block-------#}
+{# ------------------------#}
+{% macro code() %}
+	<a href="#buttons" class="a-button styleguide__button" title="Primary button">Primary button</a>
+	<button class="a-button styleguide__button" disabled title="Disabled state">Disabled state</button>
+	<br />
+
+	<button class="a-button styleguide__button" title="Icon button">
+		<span class="icon-close"></span><span class="is-hidden">Icon button</span>
+	</button>
+
+	<button class="a-button styleguide__button" title="With icon before">
+		<span class="icon-close"></span><span>With icon before</span>
+	</button>
+
+	<button class="a-button styleguide__button" title="With icon after">
+		<span>With icon after</span><span class="icon-close"></span>
+	</button>
+{% endmacro %}
+
+{# ----------------------------#}
+{# ------Styleguide block------#}
+{# ----------------------------#}
+{% macro styleguide() %}
+
+	{{code()}}
+
+	<div class="styleguide__highlight-box">
+		<code class="js-encode-html prettyprint">
+			{{code()}}
+		</code>
+	</div>
+{% endmacro %}

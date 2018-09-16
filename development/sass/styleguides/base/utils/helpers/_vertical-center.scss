@@ -1,0 +1,12 @@
+// -------------------------------------------------------------------
+// :: VERTICAL CENTERING WITH FLEXBOX
+// -------------------------------------------------------------------
+
+%__u-vertical-center{
+	display: flex;
+	align-items: center;
+}
+
+.u-vertical-center{
+	@extend %__u-vertical-center;
+}

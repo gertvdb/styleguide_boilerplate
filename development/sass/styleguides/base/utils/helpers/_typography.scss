@@ -1,0 +1,76 @@
+// -------------------------------------------------------------------
+// :: TEXT HELPERES
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+// :: TEXT STYLE CLASSES
+// -------------------------------------------------------------------
+
+.u-text-bold {
+	font-weight: bold;
+}
+
+.u-text-italic {
+	font-style: italic;
+}
+
+.u-text-underline {
+	text-decoration: underline;
+}
+
+
+// -------------------------------------------------------------------
+// :: TEXT ALIGNMENT CLASSES
+// -------------------------------------------------------------------
+
+.u-text-left {
+	text-align: left;
+}
+
+.u-text-center {
+	text-align: center;
+}
+
+.u-text-right {
+	text-align: right;
+}
+
+.u-text-justify {
+	text-align: justify;
+}
+
+
+// -------------------------------------------------------------------
+// :: TEXT TRANSFORMATION CLASSES
+// -------------------------------------------------------------------
+
+.u-text-lowercase {
+	text-transform: lowercase;
+}
+
+.u-text-uppercase {
+	text-transform: uppercase;
+}
+
+.u-text-capitalize {
+	text-transform: capitalize;
+}
+
+
+// -------------------------------------------------------------------
+// :: TEXT COLOR CLASSES
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+// :: TEXT OVERFLOW CLASSES
+// -------------------------------------------------------------------
+
+%u-text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.u-text-truncate {
+	@extend %u-text-truncate;
+}

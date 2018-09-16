@@ -1,0 +1,41 @@
+{# ------------------------#}
+{# -------Code block-------#}
+{# ------------------------#}
+{% macro code() %}
+	<button class="a-button a-button--outline styleguide__button" title="Secondary button">Secondary button</button>
+
+	<br />
+
+	<button class="a-button a-button--outline  styleguide__button" title="Icon button">
+		<span class="icon-close"></span><span class="is-hidden">Icon button</span>
+	</button>
+
+	<button class="a-button a-button--outline  styleguide__button" title="With icon before">
+		<span class="icon-close"></span><span>With icon before</span>
+	</button>
+
+	<button class="a-button a-button--outline styleguide__button" title="With icon after">
+		<span>With icon after</span><span class="icon-close"></span>
+	</button>
+
+	<button class="a-button a-button--outline styleguide__button" disabled title="Disabled state">Disabled state</button>
+{% endmacro %}
+
+
+{# ----------------------------#}
+{# ------Styleguide block------#}
+{# ----------------------------#}
+{% macro styleguide() %}
+	<h4 class="styleguide__sub-title">Secondary buttons</h4>
+	<p class="styleguide__p">
+		Buttons for in-line interactions, as used in toolbars (eg. close, add, remove, ...)
+	</p>
+
+	{{code()}}
+
+	<div class="styleguide__highlight-box">
+		<code class="js-encode-html prettyprint">
+			{{code()}}
+		</code>
+	</div>
+{% endmacro %}

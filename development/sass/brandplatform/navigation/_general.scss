@@ -1,0 +1,14 @@
+// -------------------------------------------------------------------
+// :: STICKY IN-PAGE NAVIGATION
+// -------------------------------------------------------------------
+// Using scrollNav.js - http://scrollnav.com
+
+.js-scroll-nav {
+	@include FLOW-at($screen-sm) {
+		padding-left: 24%;
+	}
+
+	@include FLOW-at($screen-md) {
+		padding-left: 14%;
+	}
+}

@@ -1,0 +1,84 @@
+// -------------------------------------------------------------------
+// :: STYLEGUIDE NAV - LIST
+// -------------------------------------------------------------------
+.sg-scrollnav{
+	background: $brand-bg;
+	border-right: 1px solid $brand-border;
+	position: fixed;
+	height: 100%;
+	top: 0;
+	overflow-y: auto !important;
+	padding: 2em;
+	display: none;
+	margin: 0;
+
+
+	@include FLOW-at($screen-sm) {
+		display: block;
+		width: 25% !important;
+	}
+
+	@include FLOW-at($screen-md) {
+		width: 15% !important;
+	}
+
+	li{
+		padding: 0.25em 0;
+		list-style: none;
+	}
+
+	li ol{
+		margin: 0;
+		max-height: 0;
+		opacity: 0;
+		overflow: hidden;
+		padding: 0;
+
+		li a {
+			color: $font-color;
+			text-transform: capitalize;
+			padding: 0;
+
+
+			&:first-child {
+				color: $font-color;
+				padding: 0;
+			}
+
+			&:hover{
+				color: $primary-color;
+			}
+
+
+			&.is-active {
+				margin-top: 0;
+			}
+		}
+	}
+
+	a{
+		color: $font-color;
+		font-size: 0.9em;
+		display: block;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	li:first-child a{
+		color: $font-color;
+		padding: 1.5em 0;
+		padding-top: 0.25em;
+	}
+
+	a.is-active{
+		color: $primary-color !important;
+		margin-top: 0;
+
+		& + ol{
+			transition: opacity 0.4s;
+			max-height: 99999em;
+			padding-bottom: 1.5em;
+			opacity: 1;
+		}
+	}
+}
