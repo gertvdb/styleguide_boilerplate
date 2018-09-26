@@ -4,9 +4,7 @@ var config = require('../gulp/config/config.json');
 var styleguides = [
 	{
 		name: 'general',
-		folders: [ {'name' : 'guidelines',
-				'description' : 'general best practices & tips'
-			},{
+		folders: [{
 				'name' : 'quarks',
 				'description' : 'Intangible, style-related properties that can be used throughout the platform.'
 			},{

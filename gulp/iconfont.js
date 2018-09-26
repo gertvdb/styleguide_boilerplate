@@ -19,7 +19,7 @@ var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
 var rename = require('gulp-rename');
 
-gulp.task('iconfont', function() {
+gulp.task('iconfont', function () {
 	// Set svg-sources, optimize svg
 	// and start creating the font
 	return gulp.src('development/fonts/icon-sources/*.svg')
@@ -35,7 +35,7 @@ gulp.task('iconfont', function() {
 			appendCodePoints: true,
 			formats: ['woff2', 'woff', 'ttf', 'eot', 'svg']
 
-		})).on('glyphs', function(glyphs, options) {
+		})).on('glyphs', function (glyphs, options) {
 			// Create the __icons.scss file based
 			// on the template and inject font-name
 			// path and CSS class-name

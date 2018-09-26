@@ -13,8 +13,9 @@ var yargs = require('yargs');
 var versionsFilePath = 'version.json';
 
 
-gulp.task('semver', function(){
-	var versions = JSON.parse(require('fs').readFileSync('version.json', 'utf8'));
+gulp.task('semver', function () {
+	var versions = JSON.parse(require('fs')
+		.readFileSync('version.json', 'utf8'));
 
 	var argv = yargs.usage('Usage: gulp [task] <options>')
 		.example("gulp [task] -m 'update message' --patch", "updates the version with 1 patch number")
@@ -46,9 +47,18 @@ gulp.task('semver', function(){
 
 	currentVersion = currentVersion.split('.');
 
-	if(argv.patch){	currentVersion[2]++; }
-	if(argv.minor){	currentVersion[1]++; currentVersion[2] = 0;}
-	if(argv.major){	currentVersion[0]++; currentVersion[1] = 0; currentVersion[2] = 0;}
+	if (argv.patch) {
+		currentVersion[2]++;
+	}
+	if (argv.minor) {
+		currentVersion[1]++;
+		currentVersion[2] = 0;
+	}
+	if (argv.major) {
+		currentVersion[0]++;
+		currentVersion[1] = 0;
+		currentVersion[2] = 0;
+	}
 	currentVersion = currentVersion.join('.');
 
 
@@ -69,7 +79,7 @@ gulp.task('semver', function(){
 			'current_version': currentVersion,
 			'changelog': changelog
 		}))
-		.pipe(gulp.dest("."),{overwrite: true});
+		.pipe(gulp.dest("."), {overwrite: true});
 
 });
 
@@ -82,13 +92,15 @@ var insert = require('gulp-insert');
 var config = require('../gulp/config/config.json');
 
 
-gulp.task('inject-versioning', function(){
-	var versions = require('../'+versionsFilePath);
+gulp.task('inject-versioning', function () {
+	var versions = require('../' + versionsFilePath);
 
 	return gulp.src(['dist/**'])
 		.pipe(plumber())
-		.pipe(gulpIf('*.css', insert.prepend("/* "+config.PROJECT_TITLE + " v"+versions.current_version + " */\n\n")))
-		.pipe(gulpIf('*.js', insert.prepend("/* "+config.PROJECT_TITLE + " v"+versions.current_version + " */\n\n")))
+		.pipe(gulpIf('*.css', insert.prepend("/* " + config.PROJECT_TITLE + " v" + versions.current_version + " */\n\n")))
+		.pipe(gulpIf('*.js', insert.prepend("/* " + config.PROJECT_TITLE + " v" + versions.current_version + " */\n\n")))
 
-		.pipe(gulp.dest(function(file) { return file.base; }),{overwrite: true});
+		.pipe(gulp.dest(function (file) {
+			return file.base;
+		}), {overwrite: true});
 });

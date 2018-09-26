@@ -9,22 +9,22 @@ var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
 var merge = require('merge-stream');
 
-gulp.task('copy', function() {
+gulp.task('copy', function () {
 
 	var htaccessStream;
 
-	if(process.env.deployLocation == 'dist'){
+	if (process.env.deployLocation == 'dist') {
 		htaccessStream = gulp.src('development/meta/__cdn_htaccess.txt')
 			.pipe(plumber())
 			.pipe(rename('.htaccess'))
 			.pipe(gulp.dest(process.env.deployLocation));
-	}else{
+	}
+	else {
 		htaccessStream = gulp.src('development/meta/__htaccess.txt')
 			.pipe(plumber())
 			.pipe(rename('.htaccess'))
 			.pipe(gulp.dest(process.env.deployLocation));
 	}
-
 
 
 	var browserConfigStream = gulp.src('development/meta/__browserconfig.xml')

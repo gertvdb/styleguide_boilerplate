@@ -9,7 +9,7 @@ var plumber = require('gulp-plumber');
 var zip = require('gulp-zip');
 
 
-gulp.task('create-dist-zip', function() {
+gulp.task('create-dist-zip', function () {
 
 	return gulp.src([
 		'dist/**/*',

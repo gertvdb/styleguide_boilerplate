@@ -9,7 +9,7 @@ var plumber = require('gulp-plumber');
 var imagemin = require('gulp-imagemin');
 var merge = require('merge-stream');
 
-gulp.task('images', function() {
+gulp.task('images', function () {
 
 	var options = {
 		optimizationLevel: 2,

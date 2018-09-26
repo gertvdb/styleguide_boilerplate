@@ -18,7 +18,7 @@ var autoprefixer = require("autoprefixer"); //https://github.com/postcss/autopre
 var cssnano = require("cssnano"); // https://github.com/ben-eb/cssnano
 var mqpacker = require("css-mqpacker"); // https://www.npmjs.com/package/css-mqpacker
 
-gulp.task('sass', function() {
+gulp.task('sass', function () {
 
 	var sourcemapOptions = {
 		includeContent: false,
@@ -40,11 +40,11 @@ gulp.task('sass', function() {
 
 });
 
-gulp.task('sass-dist', function(){
+gulp.task('sass-dist', function () {
 
 	var postcssConfig = [
 		// Autoprefix
-		autoprefixer({ browsers: ["last 2 version"] }),
+		autoprefixer({browsers: ["last 2 version"]}),
 		// optimize
 		cssnano(),
 		//merge media queries
@@ -53,7 +53,8 @@ gulp.task('sass-dist', function(){
 
 	return gulp.src([
 		'development/sass/**/*.scss',
-		'!development/sass/**/styleguide.scss'])
+		'!development/sass/**/styleguide.scss'
+	])
 		.pipe(plumber())
 		.pipe(sass({
 
@@ -69,17 +70,19 @@ gulp.task('sass-dist', function(){
 
 var sassLint = require('gulp-sass-lint');
 
-gulp.task('sass-lint', function() {
+gulp.task('sass-lint', function () {
 
-	//TODO: once inline disabling of linters is available, we can reduce the ignored files in the glob.
+	//TODO: once inline disabling of linters is available, we can reduce the
+  // ignored files in the glob.
 
 	return gulp.src([
-	 	'development/sass/**/*.scss'])
-			.pipe(sassLint({
-				configFile: "gulp/config/.sass_lint.yml",
-				options: {
-					'merge-default-rules': true
-				}
-			}))
-			.pipe(sassLint.format());
+		'development/sass/**/*.scss'
+	])
+		.pipe(sassLint({
+			configFile: "gulp/config/.sass_lint.yml",
+			options: {
+				'merge-default-rules': true
+			}
+		}))
+		.pipe(sassLint.format());
 });

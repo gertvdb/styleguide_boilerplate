@@ -12,14 +12,14 @@ var changed = require('gulp-changed');
 var htmlhint = require('gulp-htmlhint');
 var globals = require('../server/globals');
 
-gulp.task('render-templates', function() {
+gulp.task('render-templates', function () {
 
 	return gulp.src([
-			'development/templates/*.njk',
-			'development/templates/**/*.njk',
-			'development/templates/**/pages/**/*.njk',
-			'!development/templates/**/pages/_includes**/*.njk'
-		])
+		'development/templates/*.njk',
+		'development/templates/**/*.njk',
+		'development/templates/**/pages/**/*.njk',
+		'!development/templates/**/pages/_includes**/*.njk'
+	])
 		.pipe(plumber())
 		.pipe(nunjucks.compile(globals.getTemplateDataBuild()))
 		.pipe(rename({extname: ".html"}))
@@ -28,10 +28,10 @@ gulp.task('render-templates', function() {
 
 });
 
-gulp.task('html-lint', function(){
+gulp.task('html-lint', function () {
 	return gulp.src([
-			'.temp/**/*.html'
-		])
+		'.temp/**/*.html'
+	])
 		.pipe(plumber())
 		.pipe(htmlhint('gulp/config/htmlhint.htmlhintrc'))
 		.pipe(htmlhint.reporter())

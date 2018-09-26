@@ -19,60 +19,13 @@
 					and coding projects for {{PROJECT_TITLE}}. If you're new here, have a look through some of the topics
 					on the left.
 				</p>
-				<br/>
-				<h5>USEFUL LINKS TO READ:</h5>
-				<br/>
-				<ul>
-					<li>
-						<a href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic WebDesign</a>
-					</li>
-					<li>
-						<a href="http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/">BEMIT: Taking the BEM Naming Convention a Step Further</a>
-					</li>
-					<li>
-						<a href="http://csswizardry.com/2016/05/the-importance-of-important/">The Importance of !important: Forcing Immutability in CSS</a>
-					</li>
-				</ul>
 				<br/><br/><hr/><br/><br/>
 				<h1>Changelog</h1>
 				<div class="styleguide__changelog">
-					<ul>
-						{% for log in VERSION_INFO.changelog %}
-							<li><strong>{{ log.version }}:</strong>&emsp;{{ log.message }}</li>
-						{% endfor %}
-						<li>
-							<a href="#" class="js-toggle-changelog">show more</a>
-						</li>
-					</ul>
+					{% for log in VERSION_INFO.changelog %}
+						<h5>{{ log.version }}:&emsp;{{ log.message }}</h5>
+					{% endfor %}
 				</div>
-				<br/><br/><hr/><br/><br/>
-				<h1>Usage</h1>
-				<p class="styleguide__p">
-				The build stylesheets and assets can be found on a CDN server:
-				</p>
-				<div class="styleguide__highlight-box">
-					<code>
-						{{ CONFIG.CDN_URL }}/dist/latest/...<br>
-						{{ CONFIG.CDN_URL }}/dist/[version-number]/...
-					</code>
-				</div>
-				<p class="styleguide__p">
-					the following file structure is available there:
-				</p>
-				<ul>
-					<li><code>css/main.min.css</code> &emsp; The minimized css-code</li>
-					<li><code>fonts/*</code> &emsp; the fonts that are referenced from the css-file</li>
-					<li><code>img/*</code> &emsp; optimized images, as referenced in the styleguide or css</li>
-					<li><code>js/*</code> &emsp; javascript files if needed</li>
-					<li><code>apple-touch-icon-precomposed.png</code></li>
-					<li><code>favicon.ico</code></li>
-					<li><code>tile.jpg</code></li>
-					<li><code>tile-large.jpg</code></li>
-				</ul>
-				<p class="styleguide__p">
-					For example put the following code in the <code>head</code> of your project to apply the styling
-				</p>
-
 			</main>
 		</div>
 	</section>

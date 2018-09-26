@@ -2,25 +2,17 @@
 
 process.env.deployLocation = '.temp';
 
-var gulp = require('gulp'),
-	config = require('./gulp/config/config.json');
-
-var build = require('./gulp/build'),
-	clean = require('./gulp/clean'),
-	copy = require('./gulp/copy'),
-	distribute = require('./gulp/distribute'),
-	ftp = require('./gulp/ftp'),
-	scp = require('./gulp/scp'),
-	iconfont = require('./gulp/iconfont'),
-	images = require('./gulp/images'),
-	push = require('./gulp/push'),
-	scripts = require('./gulp/scripts'),
-	semver = require('./gulp/semver'),
-	watch = require('./gulp/watch'),
-	slack = require('./gulp/slack'),
-	styles = require('./gulp/styles'),
-	templates = require('./gulp/templates');
-
+var gulp = require('gulp');
+var build = require('./gulp/build');
+var clean = require('./gulp/clean');
+var copy = require('./gulp/copy');
+var distribute = require('./gulp/distribute');
+var iconfont = require('./gulp/iconfont');
+var images = require('./gulp/images');
+var semver = require('./gulp/semver');
+require('./gulp/watch');
+require('./gulp/styles');
+require('./gulp/scripts');
 
 // -------------------------------------------------------------------
 // :: GULP BUILD
@@ -34,11 +26,7 @@ gulp.task('default', ['watch'], function () {
 });
 
 
-gulp.task('build', [
-
-	'clean'
-
-], function (callback) {
+gulp.task('build', ['clean'], function (callback) {
 	var run = require('run-sequence').use(gulp);
 
 	process.env.deployLocation = 'deploy';
@@ -47,7 +35,6 @@ gulp.task('build', [
 		console.log('##### BUILD SUCCEEDED! #####');
 		callback();
 	});
-
 });
 
 
@@ -56,15 +43,12 @@ gulp.task('distribute', function (callback) {
 
 	process.env.deployLocation = 'dist';
 
-	var deploymentsToRun = ['dummie'];
-	if (config.DIST_FTP) {
-		deploymentsToRun.push('upload-dist');
-	}
-	if (config.CDN_SCP) {
-		deploymentsToRun.push('upload-cdn-scp');
-	}
-
-	run('iconfont', ['images', 'copy', 'sass-dist', 'scripts-dist'], 'inject-versioning', 'create-dist-zip', deploymentsToRun, function () {
+	run('iconfont', [
+		'images',
+		'copy',
+		'sass-dist',
+		'scripts-dist'
+	], 'inject-versioning', 'create-dist-zip', function () {
 		console.log('##### DISTRIBUTE SUCCEEDED! #####');
 		callback();
 	});
@@ -75,30 +59,8 @@ gulp.task('distribute', function (callback) {
 gulp.task('deploy', function (callback) {
 	var run = require('run-sequence').use(gulp);
 
-	var deploymentsToRun = ['dummie'];
-	if (config.FTP) {
-		deploymentsToRun.push('upload-deploy');
-	}
-	if (config.DEMO_SCP) {
-		deploymentsToRun.push('upload-demo-scp');
-	}
-	if (config.DIST_FTP || config.CDN_SCP) {
-		deploymentsToRun.push('distribute');
-	}
-
-	var messagingToRun = ['dummie'];
-	if (config.SLACK) {
-		messagingToRun.push('slack');
-	}
-
-	run('semver', 'clean', 'build', deploymentsToRun, messagingToRun, function () {
+	run('semver', 'clean', 'build', function () {
 		console.log('##### DEPLOY SUCCEEDED! #####');
 		callback();
 	});
-});
-
-//dummie task to prevent empty task array's
-gulp.task('dummie', function (callback) {
-	//do nothing
-	return callback();
 });

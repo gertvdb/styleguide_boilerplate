@@ -19,11 +19,11 @@ gulp.task('create-build', [
 	'sass-dist',
 	'scripts'
 
-], function() {
+], function () {
 
 	var replaceCssExtentionsStream = gulp.src([
-			'deploy/**/*.html'
-		])
+		'deploy/**/*.html'
+	])
 		.pipe(plumber())
 		.pipe(replace('.css', '.min.css'))
 		.pipe(gulp.dest('deploy'));
