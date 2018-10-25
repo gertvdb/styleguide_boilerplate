@@ -6,7 +6,6 @@
 // server or build task
 //
 // - https://www.npmjs.org/package/gulp-plumber
-// - https://www.npmjs.org/package/gulp-imagemin
 // - https://www.npmjs.org/package/gulp-iconfont
 // - https://www.npmjs.org/package/gulp-consolidate
 // - https://www.npmjs.org/package/lodashs
@@ -14,7 +13,6 @@
 
 var gulp = require('gulp');
 var plumber = require('gulp-plumber');
-var imagemin = require('gulp-imagemin');
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
 var rename = require('gulp-rename');
@@ -24,7 +22,6 @@ gulp.task('iconfont', function () {
 	// and start creating the font
 	return gulp.src('development/fonts/icon-sources/*.svg')
 		.pipe(plumber())
-		.pipe(imagemin())
 		.pipe(iconfont({
 
 			// Set file-name for the font and append

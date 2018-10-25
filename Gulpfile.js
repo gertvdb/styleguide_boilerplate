@@ -3,22 +3,78 @@
 process.env.deployLocation = '.temp';
 
 var gulp = require('gulp');
-var build = require('./gulp/build');
 var clean = require('./gulp/clean');
 var copy = require('./gulp/copy');
 var distribute = require('./gulp/distribute');
 var iconfont = require('./gulp/iconfont');
-var images = require('./gulp/images');
 var semver = require('./gulp/semver');
-require('./gulp/watch');
+var templates = require('./gulp/templates');
+var styles = require('./gulp/styles');
+var scripts = require('./gulp/scripts');
+
+
+var gls = require('gulp-live-server');
+var chokidar = require('chokidar');
+
+var gulpServer = require('./server');
+
+var build = require('./gulp/build');
 require('./gulp/styles');
 require('./gulp/scripts');
+
+gulp.task('watch', gulp.series(['sass', 'scripts']), function () {
+    var server = gls.new(gulpServer);
+    server.start();
+
+    // Watcher
+    gulp.watch('development/fonts/icon-sources/*.svg', ['iconfont']);
+    gulp.watch('development/sass/**/*.scss', ['sass', 'sass-lint']);
+    gulp.watch('development/**/*.js', ['scripts']);
+
+    gulp.watch([
+        '.temp/**/*.js',
+        'development/img/**',
+        'development/fonts/*.*',
+        '.temp/**/*.css'
+    ], function (event) {
+        server.notify(event);
+    });
+
+    // Templates
+    chokidar.watch('development/templates/**/*.njk', {ignoreInitial: true})
+        .on('change', function (path) {
+            server.notify({
+                type: 'changed',
+                path: __dirname.replace('gulp', '') + path
+            });
+        });
+
+    chokidar.watch('development/templates/**/*.njk', {ignoreInitial: true})
+        .on('add', function (path) {
+            server.stop().then(function () {
+                server.start().then(function () {
+                    server.notify.apply(server)
+                });
+            });
+        });
+
+    chokidar.watch('development/templates/**/*.njk', {ignoreInitial: true})
+        .on('unlink', function (path) {
+
+            server.stop().then(function () {
+                server.start();
+                server.notify.apply(server)
+            });
+        });
+
+});
+
 
 // -------------------------------------------------------------------
 // :: GULP BUILD
 // -------------------------------------------------------------------
 
-gulp.task('default', ['watch'], function () {
+gulp.task('default', gulp.series('watch'), function() {
 	// Auto-open browser window
 	// - https://www.npmjs.org/package/opn
 
@@ -26,7 +82,7 @@ gulp.task('default', ['watch'], function () {
 });
 
 
-gulp.task('build', ['clean'], function (callback) {
+gulp.task('build', gulp.series('clean'), function(callback) {
 	var run = require('run-sequence').use(gulp);
 
 	process.env.deployLocation = 'deploy';
@@ -37,14 +93,12 @@ gulp.task('build', ['clean'], function (callback) {
 	});
 });
 
-
 gulp.task('distribute', function (callback) {
 	var run = require('run-sequence').use(gulp);
 
 	process.env.deployLocation = 'dist';
 
 	run('iconfont', [
-		'images',
 		'copy',
 		'sass-dist',
 		'scripts-dist'

@@ -13,13 +13,7 @@ var replace = require('gulp-replace');
 
 var merge = require('merge-stream');
 
-gulp.task('create-build', [
-
-	'render-templates',
-	'sass-dist',
-	'scripts'
-
-], function () {
+gulp.task('create-build', gulp.series(['render-templates', 'sass-dist', 'scripts']), function() {
 
 	var replaceCssExtentionsStream = gulp.src([
 		'deploy/**/*.html'
