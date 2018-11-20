@@ -6,7 +6,6 @@ var gulp = require('gulp');
 var clean = require('./gulp/clean');
 var copy = require('./gulp/copy');
 var distribute = require('./gulp/distribute');
-var iconfont = require('./gulp/iconfont');
 var semver = require('./gulp/semver');
 var templates = require('./gulp/templates');
 var styles = require('./gulp/styles');
@@ -27,7 +26,6 @@ gulp.task('watch', gulp.series(['sass', 'scripts']), function () {
     server.start();
 
     // Watcher
-    gulp.watch('development/fonts/icon-sources/*.svg', ['iconfont']);
     gulp.watch('development/sass/**/*.scss', ['sass', 'sass-lint']);
     gulp.watch('development/**/*.js', ['scripts']);
 
@@ -87,7 +85,7 @@ gulp.task('build', gulp.series('clean'), function(callback) {
 
 	process.env.deployLocation = 'deploy';
 
-	run(['iconfont', 'images', 'copy'], 'create-build', function () {
+	run(['images', 'copy'], 'create-build', function () {
 		console.log('##### BUILD SUCCEEDED! #####');
 		callback();
 	});
@@ -98,7 +96,7 @@ gulp.task('distribute', function (callback) {
 
 	process.env.deployLocation = 'dist';
 
-	run('iconfont', [
+	run([
 		'copy',
 		'sass-dist',
 		'scripts-dist'

@@ -25,7 +25,6 @@ module.exports = {
 
 		data.CONFIG = config;
 		data.COLORS = this.getColors();
-		data.ICONS = this.getIcons();
 		data.GLOBALS_GLOBAL = sassVars('development/sass/base/globals/_global.scss');
 		data.GLOBALS_MEDIA = sassVars('development/sass/base/globals/_media.scss');
 		data.GLOBALS_FONTS = sassVars('development/sass/base/globals/_typography.scss');
@@ -58,19 +57,6 @@ module.exports = {
 
 	getColors: function () {
 		return this.sortColors(sassVars('development/sass/base/globals/_colors.scss'));
-	},
-
-	getIcons: function () {
-		var response = [];
-		var icons = glob.sync("development/fonts/icon-sources/*.svg");
-		for (var i in icons) {
-			var filename = icons[i].split('/');
-			filename = filename[filename.length - 1];
-			filename = filename.split('.')[0];
-			response.push(filename);
-		}
-
-		return response;
 	},
 
 	getNav: function () {
