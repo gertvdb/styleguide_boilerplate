@@ -1,41 +1,76 @@
 {# ------------------------#}
 {# -------Code block-------#}
 {# ------------------------#}
-{% macro code() %}
-	<button class="a-button a-button--outline styleguide__button" title="Secondary button">Secondary button</button>
 
-	<br />
-
-	<button class="a-button a-button--outline  styleguide__button" title="Icon button">
-		<span class="icon-close"></span><span class="is-hidden">Icon button</span>
-	</button>
-
-	<button class="a-button a-button--outline  styleguide__button" title="With icon before">
-		<span class="icon-close"></span><span>With icon before</span>
-	</button>
-
-	<button class="a-button a-button--outline styleguide__button" title="With icon after">
-		<span>With icon after</span><span class="icon-close"></span>
-	</button>
-
-	<button class="a-button a-button--outline styleguide__button" disabled title="Disabled state">Disabled state</button>
+{% macro buttonSecondaryLink(text, href) %}
+	<a href="{{ href }}" class="a-button a-button--outline" title="{{ text }}">{{ text }}</a>
 {% endmacro %}
 
+{% macro buttonSecondary(text) %}
+	<button class="a-button a-button--outline" title="{{ text }}">{{ text }}</button>
+{% endmacro %}
+
+{% macro buttonSecondarySubmit(text) %}
+	<input type="submit" class="a-button a-button--outline" value="{{ text }}">
+{% endmacro %}
+
+
+{% macro buttonSecondaryLinkDisabled(text) %}
+	<a class="a-button a-button--outline" disabled title="{{ text }}">{{ text }}</a>
+{% endmacro %}
+
+{% macro buttonSecondaryDisabled(text) %}
+	<button class="a-button a-button--outline" disabled title="{{ text }}">{{ text }}</button>
+{% endmacro %}
+
+{% macro buttonSecondarySubmitDisabled(text) %}
+	<input type="submit" class="a-button a-button--outline" disabled value="{{ text }}">
+{% endmacro %}
 
 {# ----------------------------#}
 {# ------Styleguide block------#}
 {# ----------------------------#}
 {% macro styleguide() %}
-	<h4 class="styleguide__sub-title">Secondary buttons</h4>
+
+	<h4 class="styleguide__sub-title">Secondary button</h4>
 	<p class="styleguide__p">
-		Buttons for in-line interactions, as used in toolbars (eg. close, add, remove, ...)
+		Use &lt;a&gt; for navigation, &lt;button&gt; for everything else.
+		Submit/reset buttons are the only exceptions, using &lt;input [type="submit"]&gt;
+		to trigger default browser behaviour associated with submitting form input.
 	</p>
 
-	{{code()}}
+    {% set buttonSecondary = buttonSecondary(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+    {{ buttonSecondary }}
+
+    {% set buttonSecondaryLink = buttonSecondaryLink(DATA.CONFIG.TEXT_DUMMY_XSMALL, '#') %}
+    {{ buttonSecondaryLink }}
+
+    {% set buttonSecondarySubmit = buttonSecondarySubmit(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+    {{ buttonSecondarySubmit }}
+
+    {% set buttonSecondaryDisabled = buttonSecondaryDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+    {{ buttonSecondaryDisabled }}
+
+    {% set buttonSecondaryLinkDisabled = buttonSecondaryLinkDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+    {{ buttonSecondaryLinkDisabled }}
+
+    {% set buttonSecondarySubmitDisabled = buttonSecondarySubmitDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+    {{ buttonSecondarySubmitDisabled }}
+
 
 	<div class="styleguide__highlight-box">
-		<code class="js-encode-html prettyprint">
-			{{code()}}
-		</code>
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+            	{{ buttonSecondary | forceescape | nl2br }}
+                {{ buttonSecondaryLink | forceescape | nl2br }}
+                {{ buttonSecondarySubmit | forceescape | nl2br }}
+                {{ buttonSecondaryDisabled | forceescape | nl2br }}
+                {{ buttonSecondaryLinkDisabled | forceescape | nl2br }}
+                {{ buttonSecondarySubmitDisabled | forceescape | nl2br }}
+			</code>
+		</pre>
+
 	</div>
+
 {% endmacro %}

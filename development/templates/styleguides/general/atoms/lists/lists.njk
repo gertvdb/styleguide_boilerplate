@@ -1,0 +1,96 @@
+{# ------------------------#}
+{# -------Code block-------#}
+{# ------------------------#}
+{% macro listUl() %}
+	<ul class="a-list">
+		<li>Sed ut perspiciatis unde omnis</li>
+		<li>Sed ut perspiciatis unde omnis</li>
+		<li>Label for nested list items
+			<ul>
+				<li>Nested list items</li>
+				<li>Nested list items</li>
+				<li>Nested list items</li>
+			</ul>
+		</li>
+	</ul>
+{% endmacro %}
+
+{% macro listOl() %}
+	<ol class="a-list">
+		<li>Sed ut perspiciatis unde omnis</li>
+		<li>Sed ut perspiciatis unde omnis</li>
+		<li>Label for nested list items
+			<ul>
+				<li>Nested list items</li>
+				<li>Nested list items</li>
+				<li>Nested list items</li>
+			</ul>
+		</li>
+	</ol>
+{% endmacro %}
+
+{% macro inlineList() %}
+	<ul class="a-inline-list">
+		<li>List item</li>
+		<li>List item</li>
+		<li>List item</li>
+	</ul>
+{% endmacro %}
+
+
+{# ----------------------------#}
+{# ------Styleguide block------#}
+{# ----------------------------#}
+{% macro styleguide() %}
+
+	<h4 class="styleguide__sub-title js-scroll-nav__sub-title">Unnumbered list</h4>
+	<p class="styleguide__p">
+		A basic unnumbered list element.
+	</p>
+
+
+    {% set listUl = listUl() %}
+    {{ listUl }}
+	<div class="styleguide__highlight-box">
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ listUl | forceescape | nl2br}}
+			</code>
+		</pre>
+	</div>
+
+	<h4 class="styleguide__sub-title js-scroll-nav__sub-title">Numbered list</h4>
+	<p class="styleguide__p">
+		A basic numbered list element.
+	</p>
+
+
+    {% set listOl = listOl() %}
+    {{ listOl }}
+	<div class="styleguide__highlight-box">
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ listOl | forceescape | nl2br}}
+			</code>
+		</pre>
+	</div>
+
+	<h4 class="styleguide__sub-title js-scroll-nav__sub-title">Numbered list</h4>
+	<p class="styleguide__p">
+		A inline list element.
+	</p>
+
+    {% set inlineList = inlineList() %}
+    {{ inlineList }}
+	<div class="styleguide__highlight-box">
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ inlineList | forceescape | nl2br}}
+			</code>
+		</pre>
+	</div>
+
+{% endmacro %}

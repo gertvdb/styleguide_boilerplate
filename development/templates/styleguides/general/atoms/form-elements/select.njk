@@ -1,21 +1,23 @@
 {# ------------------------#}
 {# -------Code block-------#}
 {# ------------------------#}
-{% macro code() %}
-	<div class="a-input">
-		<label for="input-select">Default select</label>
+{% macro selectField(label, placeholder, description) %}
+	<div class="a-input a-select">
+		<label for="input-select">{{ label }}</label>
 		<div class="a-input__field-holder">
 			<select name="input-selected" id="input-select">
-				<option value="" disabled selected>Make your selection...</option>
+				<option value="" disabled selected>{{ placeholder }}</option>
 				<option value="1">Option 1</option>
 				<option value="2">Option 2</option>
 				<option value="3">Option 3</option>
 				<option value="4" disabled>Option 4 disabled</option>
 				<option value="5">Option 5</option>
 			</select>
-			<span class="icon-arrow-down"></span>
+			<span class="a-select_icon">
+				<span class="a-select__down"></span>
+			</span>
 		</div>
-		<small>To mimic placeholder styling, add a 'has-no-value' class to the &lt;select&gt;</small>
+		<small>{{ description }}</small>
 	</div>
 {% endmacro %}
 
@@ -23,15 +25,19 @@
 {# ------Styleguide block------#}
 {# ----------------------------#}
 {% macro styleguide() %}
-	<h4 class="styleguide__sub-title js-scroll-nav__sub-title">Select</h4>
-	<small>/sass/atoms/form-elements/select.scss</small>
-	<br/><br/>
+	<h4 class="styleguide__sub-title">Select</h4>
+	<p class="styleguide__p">
+		A form element building block for selects.
+	</p>
 
-	{{code()}}
-
+    {% set selectField = selectField('Select', 'Make a wise choice...', 'Hurry up and make a choice!') %}
+    {{ selectField }}
 	<div class="styleguide__highlight-box">
-		<code class="js-encode-html prettyprint">
-			{{code()}}
-		</code>
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ selectField | forceescape | nl2br}}
+			</code>
+		</pre>
 	</div>
 {% endmacro %}

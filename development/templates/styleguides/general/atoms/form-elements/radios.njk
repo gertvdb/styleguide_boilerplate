@@ -1,0 +1,50 @@
+{# ------------------------#}
+{# -------Code block-------#}
+{# ------------------------#}
+
+{% macro radioField(label, key) %}
+    <div class="a-input a-toggle a-toggle--radio">
+        <label for="input-radio-{{ key }}">
+            <input id="input-radio-{{ key }}" type="radio" name="input-radio" value="{{ key }}"/>
+            <span class="a-toggle__input">
+				<span class="a-toggle__round"></span>
+			</span>
+            <span class="a-toggle__label">
+                {{ label }}
+            </span>
+        </label>
+    </div>
+{% endmacro %}
+
+{% macro radiosField(label) %}
+    <div class="a-input">
+        <label for="input-radios">{{ label }}</label>
+        <div class="a-input__field-holder">
+            {{ radioField('Radio 1', '1') }}
+            {{ radioField('Radio 2', '2') }}
+            {{ radioField('Radio 3', '3') }}
+            {{ radioField('Radio 4', '4') }}
+        </div>
+    </div>
+{% endmacro %}
+
+{# ----------------------------#}
+{# ------Styleguide block------#}
+{# ----------------------------#}
+{% macro styleguide() %}
+    <h4 class="styleguide__sub-title">Radios</h4>
+    <p class="styleguide__p">
+        A form element building block for multiple radio buttons. (a single radio button doesn't exists per definition).
+    </p>
+
+    {% set radiosField = radiosField('Radios') %}
+    {{ radiosField }}
+    <div class="styleguide__highlight-box">
+        <div class="styleguide__highlight-box__header">Code Sample</div>
+        <pre>
+			<code class="html">
+				{{ radiosField | forceescape | nl2br}}
+			</code>
+		</pre>
+    </div>
+{% endmacro %}

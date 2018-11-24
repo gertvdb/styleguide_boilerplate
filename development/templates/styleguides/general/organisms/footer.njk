@@ -5,30 +5,27 @@
 {# ============================================================ #}
 {# :: CODE #}
 {# ============================================================ #}
-{% macro code() %}
+{% macro footer() %}
 
-<footer>
-
-	<p>THIS IS THE FOOTER OF THE PAGE</p>
-
-</footer>
+<footer></footer>
 
 {% endmacro %}
 
-{# ============================================================ #}
-{# :: STYLEGUIDE #}
-{# ============================================================ #}
+{# ----------------------------#}
+{# ------Styleguide block------#}
+{# ----------------------------#}
 {% macro styleguide() %}
-	<h1 class="styleguide__title js-scroll-nav__sub-title">Footer</h1>
+	<h4 class="styleguide__sub-title js-scroll-nav__sub-title">Footer</h4>
 	<small>/sass/base/organisms/_footer.scss</small>
 
-  <br />
-  <br />
-	{{code()}}
-
+    {% set footer = footer() %}
+    {{ footer }}
 	<div class="styleguide__highlight-box">
-		<code class="js-encode-html prettyprint">
-			{{code()}}
-		</code>
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ footer | forceescape | nl2br}}
+			</code>
+		</pre>
 	</div>
 {% endmacro %}

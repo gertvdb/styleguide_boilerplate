@@ -1,49 +1,83 @@
 {% set htmlParameters = {
 		'isStyleguide' : true,
 		'bodyClass': '',
-		'rootPath' : '',
-		'pageName' : 'Index'
+		'rootPath' : '/',
+		'pageName' : 'styleguide'
 	}
 %}
-
 {% include "styleguides/general/pages/_includes/_html_head.njk" %}
 
-<div class="styleguide__section-title"><h1 class="styleguide__section-title--header">{{CONFIG.PROJECT_TITLE}}</h1></div>
-<main>
-	<section>
-		<div class="styleguide__index-container">
-			<article>
-
-				<div class="styleguide__blocks">
-					<a class="styleguide__block" href="/design{{EXTENSION}}">
-						{# <div class="styleguide__block__image">
-							<img src="/img/styleguide/design.png" alt="">
-						</div> #}
-						<div class="styleguide__block__content">
-							<h3> Design</h3>
-							<p>
-								Blader door de designs van de verschillende platformen en kom te weten hoe deze eruit zullen komen te zien. Hoe zal het platform werken, er visueel uitzien en hoe zal een gebruiker in interactie gaan hiermee?
-							</p>
-							<div class="a-button">more info</div>
-						</div>
-					</a>
-
-					<a class="styleguide__block" href="/styleguides{{EXTENSION}}">
-						{# <div class="styleguide__block__image">
-							<img src="/img/styleguide/styleguide.png" alt="">
-						</div> #}
-						<div class="styleguide__block__content">
-							<h3> Styleguide </h3>
-							<p>
-								Gebruik onze styleguide om consistente ervaringen te creëren over de verschillende platformen en toestellen heen. We maken een oplijsting van alle belangrijke elementen die het merk van de ‘{{CONFIG.PROJECT_TITLE}}’ uitstraalt.
-							</p>
-							<div class="a-button">more info</div>
-						</div>
-					</a>
+<div class="js-scroll-nav">
+	{#  Introduction #}
+	<section class="styleguide">
+		<div class="styleguide__container">
+			<main>
+				<h1 class="styleguide__title js-scroll-nav__title">General Styleguide</h1><br/>
+				<h5>version: {{VERSION_INFO.current_version}}</h5>
+				<p class="styleguide__p">
+					Welcome to the awesome <strong>{{DATA.CONFIG.PROJECT_TITLE}}</strong> styleguide! This is a guide & code repository
+					for designing and coding projects for <strong>{{DATA.CONFIG.PROJECT_TITLE}}</strong>.
+					We want to make it easy for you so we designed a visual language to use in your apps while respecting our brand
+					and legal/licensing restrictions. Hope you like it!!
+				</p>
+				<br/><br/><hr/><br/><br/>
+				<h1>Changelog</h1>
+				<div class="styleguide__changelog">
+					{% for log in VERSION_INFO.changelog %}
+						<h5>{{ log.version }}:&emsp;{{ log.message }}</h5>
+					{% endfor %}
 				</div>
-			</article>
+			</main>
 		</div>
 	</section>
-</main>
+
+	{#  Styleguide components #}
+	{% asyncEach name in DATA.STYLEGUIDES.GENERAL.NAV %}
+		<div class="styleguide__section-title">
+			<h1 class="js-scroll-nav__title">{{name.main}}</h1>
+			<p>{{name.description}}</p>
+		</div>
+
+
+		<section class="styleguide">
+			<div class="styleguide__container">
+				<main>
+					{#  Specific pages code #}
+					{% if name.main == "pages" %}
+						<h1 class="styleguide__title js-scroll-nav__sub-title">Templates</h1>
+						<p class="styleguide__p">
+							We provide a few example page templates to show how all our components work together on a page.
+						</p>
+
+						{% for folder, templates in DATA.STYLEGUIDES.GENERAL.PAGES %}
+							{% if folder !== '_root' %}
+								<h4>{{ folder }}</h4>
+							{% endif %}
+							<ul>
+								{% for template in templates %}
+									<li><a href="/styleguides/general/pages/{{ template.path }}{{DATA.EXTENSION}}">{{ template.name }}</a></li>
+								{% endfor %}
+							</ul>
+
+							<br>
+							<br>
+						{% endfor %}
+
+					{% endif %}
+
+					{#  Components #}
+					{% asyncEach sub in name.sub %}
+						{% import sub.path as component %}
+
+						{% if component.styleguide %}
+							{{component.styleguide(DATA)}}
+						{% endif %}
+					{% endeach %}
+
+				</main>
+			</div>
+		</section>
+	{% endeach %}
+</div>
 
 {% include "styleguides/general/pages/_includes/_html_footer.njk" %}

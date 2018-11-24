@@ -13,7 +13,7 @@
 
 	<ul class="a-inline-list styleguide__colors">
 		{% for name, color  in DATA.COLORS.PRIMARY_COLORS %}
-			<li style="background-color: {{ color.value }}"><small><strong>${{ name }}</strong><br />{{ color.raw }}</small></li>
+			<li style="background-color: {{ color.value }}"><small><strong>${{ name }}</strong><br />{{ color.value }}</small></li>
 		{% endfor %}
 	</ul>
 
@@ -25,7 +25,7 @@
 
 	<ul class="a-inline-list styleguide__colors">
 		{% for name, color  in DATA.COLORS.SECONDARY_COLORS %}
-			<li style="background-color: {{ color.value }}"><small><strong>${{ name }}</strong><br />{{ color.raw }}</small></li>
+			<li style="background-color: {{ color.value }}"><small><strong>${{ name }}</strong><br />{{ color.value }}</small></li>
 		{% endfor %}
 	</ul>
 
@@ -40,15 +40,18 @@
 
 	<ul class="a-inline-list styleguide__colors">
 		{% for name, color  in DATA.COLORS.FONT_COLORS %}
-			<li style="background-color: {{ color.value }}"><small><strong>${{ name }}</strong><br />{{ color.raw }}</small></li>
+			<li style="background-color: {{ color.value }}"><small><strong>${{ name }}</strong><br />{{ color.value }}</small></li>
 		{% endfor %}
 	</ul>
 
 	{#  Border colors #}
 	<h4 class="styleguide__sub-title">Border colors</h4>
+	<p class="styleguide__p">
+		Keep border colors as subtle as possible.
+	</p>
 	<ul class="a-inline-list styleguide__colors">
 		{% for name, color  in DATA.COLORS.BORDER_COLORS %}
-			<li style="background-color: {{ color.value }}"><small><strong>${{ name }}</strong><br />{{ color.raw }}</small></li>
+			<li style="background-color: {{ color.value }}"><small><strong>${{ name }}</strong><br />{{ color.value }}</small></li>
 		{% endfor %}
 	</ul>
 
@@ -63,7 +66,7 @@
 
 	<ul class="a-inline-list styleguide__colors">
 		{% for name, color in DATA.COLORS.UI_COLORS %}
-			<li style="background-color: {{ color.value }}"><small><strong>${{ name }}</strong><br />{{ color.raw }}</small></li>
+			<li style="background-color: {{ color.value }}"><small><strong>${{ name }}</strong><br />{{ color.value }}</small></li>
 		{% endfor %}
 	</ul>
 {% endmacro %}

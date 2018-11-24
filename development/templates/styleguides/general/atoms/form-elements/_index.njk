@@ -2,23 +2,6 @@
 {# ------Styleguide block------#}
 {# ----------------------------#}
 {% macro styleguide() %}
-	<h1 class="styleguide__title">Forms Elements</h1>
-
-
-	<h4 class="styleguide__sub-title">General principle</h4>
-	<p class="styleguide__p">
-		Each input field should have a label and inform users about the kind of
-		input they need to provide. This info-text switches functionality during
-		the user flow: information becomes inline validation/immediate feedback.
-		The tone of voice should be human and add personality to the experience/brand.
-	</p>
-
-	<h4 class="styleguide__sub-title">Implementation</h4>
-	<p class="styleguide__p">
-		Every form should have an action- and method-attribute. To encourage default
-		browser behaviour, the submit button should be added as input[type=submit].
-		Every input should have a label with corresponding for-, id- and name-attributes.
-		Labels are always placed before inputs, nesting is not allowed (except for
-		checkboxes and radio's).
-	</p>
-	{% endmacro %}
+	<h1 class="styleguide__title js-scroll-nav__sub-title">Forms Elements</h1>
+	<small>/sass/atoms/form-elements/*.scss</small>
+{% endmacro %}

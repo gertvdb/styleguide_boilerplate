@@ -19,7 +19,7 @@ select[disabled].has-no-value {
 	color: $font-color-medium;
 }
 
-.input select + [class*='icon'] {
+.a-select select + .a-select__down {
 	color: $font-color-medium;
 	margin: 0.35rem 0.9rem;
 	pointer-events: none;
@@ -28,11 +28,28 @@ select[disabled].has-no-value {
 	top: 3px;
 }
 
-.input select + [class*='icon']:before {
-	font-size: 1.65em;
-	line-height: 0;
+.a-select {
+	.a-select_icon {
+		width: 1em;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		right: 1em;
+	}
+
+	.a-select__down {
+		display: block;
+		border-bottom: 2px solid $border-color;
+		border-right: 2px solid $border-color;
+		width: 0.6em;
+		height: 0.7em;
+		top: calc(50% - 0.1em);
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%) rotate(45deg);
+		position: absolute;
+	}
 }
 
-.input select.has-no-value + [class*='icon'] {
-	color: $font-color-medium;
+.a-select select:focus ~ .a-select_icon .a-select__down {
+	border-color: $border-color-active;
 }

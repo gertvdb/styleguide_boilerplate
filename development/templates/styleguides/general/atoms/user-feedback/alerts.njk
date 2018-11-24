@@ -1,30 +1,42 @@
 {# ------------------------#}
 {# -------Code block-------#}
 {# ------------------------#}
-{% macro code() %}
+{% macro alertFeedback(message) %}
 	<div class="a-alert" role="alert" aria-live="assertive">
 		<p class="icon-alert">
-			This is a <a href="#" title="">feedback message</a>.
+			This is a <a href="#" title="">{{ message }}</a>.
 		</p>
 	</div>
+{% endmacro %}
+
+{% macro errorFeedback(message) %}
 	<div class="a-alert is-error">
 		<p class="icon-alert">
-			Something went wrong, please <a href="#" title="">try again</a>.
+			{{ message }}
 		</p>
 	</div>
+{% endmacro %}
+
+{% macro warningFeedback(message) %}
 	<div class="a-alert is-warning">
 		<p class="icon-alert">
-			Perhaps you meant <a href="#" title="">something else</a>.
+			{{ message }}
 		</p>
 	</div>
+{% endmacro %}
+
+{% macro successFeedback(message) %}
 	<div class="a-alert is-success">
 		<p class="icon-checkmark">
-			Now how about <a href="#" title="">adding some more</a>.
+			{{ message }}.
 		</p>
 	</div>
+{% endmacro %}
+
+{% macro infoFeedback(message) %}
 	<div class="a-alert is-information">
 		<p class="icon-alert">
-			<a href="#" title="">Some features</a> might not work.
+			{{ message }}
 		</p>
 	</div>
 {% endmacro %}
@@ -34,13 +46,71 @@
 {# ----------------------------#}
 {% macro styleguide() %}
 	<h4 class="styleguide__sub-title js-scroll-nav__sub-title">Alerts</h4>
-	<small>/sass/atoms/alerts.scss</small>
+	<p class="styleguide__p">
+		An alert component to provide feedback messages to the user.
+	</p>
 
-	{{code()}}
 
+    {% set alertFeedback = alertFeedback('This is a feedback message.') %}
+    {{ alertFeedback }}
 	<div class="styleguide__highlight-box">
-		<code class="js-encode-html prettyprint">
-			{{code()}}
-		</code>
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ alertFeedback | forceescape | nl2br}}
+			</code>
+		</pre>
 	</div>
+	<p class="styleguide__p"></p>
+
+    {% set errorFeedback = errorFeedback('This is a feedback message.') %}
+    {{ errorFeedback }}
+	<div class="styleguide__highlight-box">
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ errorFeedback | forceescape | nl2br}}
+			</code>
+		</pre>
+	</div>
+	<p class="styleguide__p"></p>
+
+    {% set warningFeedback = warningFeedback('This is a feedback message.') %}
+    {{ warningFeedback }}
+	<div class="styleguide__highlight-box">
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ warningFeedback | forceescape | nl2br}}
+			</code>
+		</pre>
+	</div>
+	<p class="styleguide__p"></p>
+
+    {% set successFeedback = successFeedback('This is a feedback message.') %}
+    {{ successFeedback }}
+	<div class="styleguide__highlight-box">
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ successFeedback | forceescape | nl2br}}
+			</code>
+		</pre>
+	</div>
+	<p class="styleguide__p"></p>
+
+    {% set infoFeedback = infoFeedback('This is a feedback message.') %}
+    {{ infoFeedback }}
+	<div class="styleguide__highlight-box">
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ infoFeedback | forceescape | nl2br}}
+			</code>
+		</pre>
+	</div>
+	<p class="styleguide__p"></p>
+
+
+
 {% endmacro %}

@@ -144,20 +144,20 @@ h6 {
 // :: DECORATORS
 // -------------------------------------------------------------------
 
-a,
+a[href^="*"],
 .is-hyperlink {
 	color: $primary-color;
 	background: transparent;
 }
 
-a:hover,
-a:active {
+a[href^="*"]:hover,
+a[href^="*"]:active {
 	text-decoration: none;
 }
 
-a:hover,
-a:active,
-a:focus {
+a[href^="*"]:hover,
+a[href^="*"]:active,
+a[href^="*"]:focus {
 	outline: none;
 }
 
@@ -194,6 +194,7 @@ cite {
 	font-family: $font-family-body;
 	font-style: normal;
 	display: block;
+	margin-top: 1em;
 }
 
 cite:before {

@@ -21,7 +21,6 @@
 	background-color: $white;
 	border: $border-simple;
 	border-radius: 0;
-	width: 100%;
 	transition: border 100ms ease-in-out;
 
 	@include FLOW-input-placeholder() {
@@ -42,7 +41,8 @@
 }
 
 .a-input select,
-.a-input textarea{
+.a-input textarea,
+.a-input input:not([type='checkbox']):not([type='radio']) {
 	width: 100%;
 }
 
@@ -50,6 +50,10 @@
 .a-input textarea:focus,
 .a-input input:focus{
 	border-color: $border-color-active;
+}
+
+::placeholder {
+	color: lighten($font-color, 5%) !important;
 }
 
 .a-input input[disabled],

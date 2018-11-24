@@ -11,14 +11,15 @@
 // :: FONT-FAMILY
 // -------------------------------------------------------------------
 
-@include get-font("Akkurat Std", "../fonts/AkkuratStd-Light", 300);
-@include get-font("Akkurat Std", "../fonts/AkkuratStd-Regular", 400);
-@include get-font("Akkurat Std", "../fonts/AkkuratStd-Bold", 700);
-@include get-font("GT Walsheim", "../fonts/gt-walsheim-web", 400);
-@include get-font("GT Walsheim", "../fonts/gt-walsheim-bold", 700);
+@include get-font("Lato", "../fonts/Lato-Light", 300);
+@include get-font("Lato", "../fonts/Lato-Regular", 400);
+@include get-font("Lato", "../fonts/Lato-Bold", 700);
+@include get-font("OpenSans", "../fonts/OpenSans-Light", 300);
+@include get-font("OpenSans", "../fonts/OpenSans-Regular", 400);
+@include get-font("OpenSans", "../fonts/OpenSans-Bold", 700);
 
-$font-family-heading: "GT Walsheim";
-$font-family-body: "Akkurat Std";
+$font-family-heading: "Lato";
+$font-family-body: "OpenSans";
 
 // -------------------------------------------------------------------
 // :: FONT-SIZE
@@ -54,6 +55,6 @@ $font-weight-bold: 			700;
 $text-shadow-x: 0;
 $text-shadow-y: 0;
 $text-shadow-blur: 10px;
-$text-shadow-color: $font-color;
+$text-shadow-color: #2F3742;
 
 $text-shadow: $text-shadow-x $text-shadow-y $text-shadow-blur $text-shadow-color;

@@ -6,6 +6,20 @@
 	margin-top: 2em;
 	overflow: hidden;
 	border: 1px solid $brand-border;
+	box-shadow: 1px 1px 2em #E1E6EB;
+	border-radius: 4px 4px 0 0;
+
+	.styleguide__highlight-box__header {
+		background-color: $white;
+		border-bottom: 1px solid $brand-border;
+		padding: 10px 25px;
+		width: 100%;
+		font-size: 12px;
+	}
+
+	pre {
+		white-space: normal;
+	}
 
 	a{
 		position: absolute;
@@ -42,7 +56,10 @@
 	display: block;
 	transition: color 0.2s ease-in;
 	padding: 22px 80px 22px 22px;
-	background-image: repeating-linear-gradient(to top, transparent 0, transparent 21px, $brand-border 22px, $brand-border 22px);
+}
+
+.styleguide__highlight-box code br:first-child {
+	display: none;
 }
 
 .styleguide__highlight-box.is-open{

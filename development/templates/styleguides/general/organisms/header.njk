@@ -3,36 +3,29 @@
 {# ============================================================ #}
 
 {# ============================================================ #}
-{# :: DATA #}
-{# ============================================================ #}
-
-{# ============================================================ #}
 {# :: CODE #}
 {# ============================================================ #}
-{% macro code() %}
+{% macro header() %}
 
-<header>
-
-	<h1>THIS IS THE HEADER OF THE PAGE</h1>
-
-</header>
+	<header></header>
 
 {% endmacro %}
 
-{# ============================================================ #}
-{# :: STYLEGUIDE #}
-{# ============================================================ #}
+{# ----------------------------#}
+{# ------Styleguide block------#}
+{# ----------------------------#}
 {% macro styleguide() %}
-	<h1 class="styleguide__title js-scroll-nav__sub-title">Header</h1>
+	<h4 class="styleguide__sub-title js-scroll-nav__sub-title">Header</h4>
 	<small>/sass/base/organisms/_header.scss</small>
 
-  <br />
-  <br />
-	{{code()}}
-
+    {% set header = header() %}
+    {{ header }}
 	<div class="styleguide__highlight-box">
-		<code class="js-encode-html prettyprint">
-			{{code()}}
-		</code>
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ header | forceescape | nl2br}}
+			</code>
+		</pre>
 	</div>
 {% endmacro %}

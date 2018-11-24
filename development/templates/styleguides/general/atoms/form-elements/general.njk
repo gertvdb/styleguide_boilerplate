@@ -1,83 +1,179 @@
 {# ------------------------#}
 {# -------Code block-------#}
 {# ------------------------#}
-{% macro code() %}
-	<div class="a-input">
-		<label for="input-text">Text input</label>
-		<div class="a-input__field-holder">
-			<input type="text" name="input-text" id="input-text" placeholder="Placeholder" />
-		</div>
-		<small>Tell the user what kind of input is expected, add a <a href="#" title="">clickthrough as needed</a></small>
-	</div>
 
+{% macro textField(label, placeholder, description) %}
 	<div class="a-input">
-		<label for="input-email">Email</label>
+		<label for="input-text">{{ label }}</label>
 		<div class="a-input__field-holder">
-			<input type="email" name="input-email" id="input-email" placeholder="your-email@domain.com" />
+			<input type="text" name="input-text" id="input-text" placeholder="{{ placeholder }}" />
 		</div>
-		<small>Don't worry, we won't spam you. Read our <a href="#" title="">privacy policy</a>.</small>
-	</div>
-
-	<div class="a-input">
-		<label for="input-password">Password</label>
-		<div class="a-input__field-holder">
-			<input type="password" name="input-password" id="input-password" placeholder="Your password" />
-		</div>
-		<small>Passwords should be 6 characters or more. Be tricky!</small>
-	</div>
-
-	<div class="a-input">
-		<label for="input-number">Amount</label>
-		<div class="a-input__field-holder">
-			<input type="number" name="input-number" id="input-number" placeholder="3" min="0" step="0.5" max="20" />
-		</div>
-		<small>Not what you expected? Please contact our <a href="#" title="">customer support</a>.</small>
-	</div>
-
-	<div class="a-input">
-		<label for="input-telephone">Phone number</label>
-		<div class="a-input__field-holder">
-			<input type="tel" name="input-telephone" id="input-telephone" placeholder="+32 &times;&times;&times; &times;&times; &times;&times; &times;&times;" />
-		</div>
-		<small>Don't worry, we only contact you when it's absolutely necessary.</small>
-	</div>
-
-	<div class="a-input">
-		<label for="input-url">Website</label>
-		<div class="a-input__field-holder">
-			<input type="url" name="input-url" id="input-url" placeholder="http://" />
-		</div>
-		<small>Tell us a little bit more about yourself.</small>
-	</div>
-
-	<div class="a-input">
-		<label for="input-search">Search</label>
-		<div class="a-input__field-holder">
-			<input type="search" name="input-search" id="input-search" placeholder="Type to search" />
-		</div>
-		<small>Can't find what you're looking for? Try our <a href="#" title="">frequently asked questions</a></small>
+		<small>{{ description }}</small>
 	</div>
 {% endmacro %}
+
+{% macro emailField(label, placeholder, description) %}
+	<div class="a-input">
+		<label for="input-email">{{ label }}</label>
+		<div class="a-input__field-holder">
+			<input type="email" name="input-email" id="input-email" placeholder="{{ placeholder }}" />
+		</div>
+		<small>{{ description }}</small>
+	</div>
+{% endmacro %}
+
+{% macro passwordField(label, placeholder, description) %}
+	<div class="a-input">
+		<label for="input-password">{{ label }}</label>
+		<div class="a-input__field-holder">
+			<input type="password" name="input-password" id="input-password" placeholder="{{ placeholder }}" />
+		</div>
+		<small>{{ description }}</small>
+	</div>
+{% endmacro %}
+
+{% macro numberField(label, placeholder, description) %}
+	<div class="a-input">
+		<label for="input-number">{{ label }}</label>
+		<div class="a-input__field-holder">
+			<input type="number" name="input-number" id="input-number" placeholder="{{ placeholder }}" min="0" step="0.5" max="20" />
+		</div>
+		<small>{{ description }}</small>
+	</div>
+{% endmacro %}
+
+{% macro phoneField(label, placeholder, description) %}
+	<div class="a-input">
+		<label for="input-telephone">{{ label }}</label>
+		<div class="a-input__field-holder">
+			<input type="tel" name="input-telephone" id="input-telephone" placeholder="{{ placeholder }}" />
+		</div>
+		<small>{{ description }}</small>
+	</div>
+{% endmacro %}
+
+{% macro websiteField(label, placeholder, description) %}
+	<div class="a-input">
+		<label for="input-url">{{ label }}</label>
+		<div class="a-input__field-holder">
+			<input type="url" name="input-url" id="input-url" placeholder="{{ placeholder }}" />
+		</div>
+		<small>{{ description }}</small>
+	</div>
+{% endmacro %}
+
+{% macro searchField(label, placeholder, description) %}
+	<div class="a-input">
+		<label for="input-search">{{ label }}</label>
+		<div class="a-input__field-holder">
+			<input type="search" name="input-search" id="input-search" placeholder="{{ placeholder }}" />
+		</div>
+		<small>{{ description }}</small>
+	</div>
+{% endmacro %}
+
 
 {# ----------------------------#}
 {# ------Styleguide block------#}
 {# ----------------------------#}
 {% macro styleguide() %}
-	<h4 class="styleguide__sub-title js-scroll-nav__sub-title">Default inputs</h4>
-	<small>/sass/atoms/form-elements/general.scss</small>
-	<br/><br/>
+	<h4 class="styleguide__sub-title">Textfield</h4>
+	<p class="styleguide__p">
+		A form element building block for all textfield variations.
+	</p>
 
-	{{code()}}
-
+    {% set textField = textField('Text input', 'Enter your text here', 'Tell the user what kind of input is expected, add a clickthrough as needed') %}
+    {{ textField }}
 	<div class="styleguide__highlight-box">
-		<code class="js-encode-html prettyprint">
-			<div class="a-input">
-				<label for="input-text">Text input</label>
-				<div class="a-input__field-holder">
-					<input type="text" placeholder="Placeholder" />
-				</div>
-				<small>Tell the user what kind of input is expected, add a <a href="#" title="">clickthrough as needed</a></small>
-			</div>
-		</code>
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ textField | forceescape | nl2br}}
+			</code>
+		</pre>
+	</div>
+
+	<p class="styleguide__p">&nbsp;</p>
+
+
+    {% set emailField = emailField('Email', 'info@your-domein.com', 'Don\'t worry, we won\'t spam you.') %}
+    {{ emailField }}
+	<div class="styleguide__highlight-box">
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ emailField | forceescape | nl2br}}
+			</code>
+		</pre>
+	</div>
+
+	<p class="styleguide__p">&nbsp;</p>
+
+
+    {% set passwordField = passwordField('Password', 'Enter your password here', 'Passwords should be 6 characters or more. Be tricky!') %}
+    {{ passwordField }}
+	<div class="styleguide__highlight-box">
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ passwordField | forceescape | nl2br}}
+			</code>
+		</pre>
+	</div>
+
+	<p class="styleguide__p">&nbsp;</p>
+
+
+    {% set numberField = numberField('Amount', '3', 'Select the number of products you want to order.') %}
+    {{ numberField }}
+	<div class="styleguide__highlight-box">
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ numberField | forceescape | nl2br}}
+			</code>
+		</pre>
+	</div>
+
+	<p class="styleguide__p">&nbsp;</p>
+
+
+    {% set phoneField = phoneField('Phone number', '+32 ××× ×× ×× ××', 'Don\'t worry, we only contact you when it\'s absolutely necessary.') %}
+    {{ phoneField }}
+	<div class="styleguide__highlight-box">
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ phoneField | forceescape | nl2br}}
+			</code>
+		</pre>
+	</div>
+
+	<p class="styleguide__p">&nbsp;</p>
+
+
+    {% set websiteField = websiteField('Website', 'https://', 'Tell us a little bit more about yourself.') %}
+    {{ websiteField }}
+	<div class="styleguide__highlight-box">
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+				{{ websiteField | forceescape | nl2br}}
+			</code>
+		</pre>
+	</div>
+
+	<p class="styleguide__p">&nbsp;</p>
+
+
+    {% set searchField = searchField('Search', 'Type to search', 'Can\'t find what you\'re looking for? Try our frequently asked questions.') %}
+    {{ searchField }}
+	<div class="styleguide__highlight-box">
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<pre>
+			<code class="html">
+            	{{ searchField | forceescape | nl2br}}
+			</code>
+		</pre>
 	</div>
 {% endmacro %}
