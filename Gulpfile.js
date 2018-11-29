@@ -2,6 +2,9 @@
 
 process.env.deployLocation = '.temp';
 
+const opn = require('opn');
+const runSequence = require('gulp4-run-sequence');
+
 var gulp = require('gulp');
 var clean = require('./gulp/clean');
 var copy = require('./gulp/copy');
@@ -10,13 +13,9 @@ var semver = require('./gulp/semver');
 var templates = require('./gulp/templates');
 var styles = require('./gulp/styles');
 var scripts = require('./gulp/scripts');
-
-
 var gls = require('gulp-live-server');
 var chokidar = require('chokidar');
-
 var gulpServer = require('./server');
-
 var build = require('./gulp/build');
 require('./gulp/styles');
 require('./gulp/scripts');
@@ -75,44 +74,26 @@ gulp.task('watch', gulp.series(['sass', 'scripts']), function () {
 gulp.task('default', gulp.series('watch'), function() {
 	// Auto-open browser window
 	// - https://www.npmjs.org/package/opn
-
-	require('opn')('http://localhost:9000');
+    opn('http://localhost:9000');
 });
 
+gulp.task('build', (done) => {
+    process.env.deployLocation = 'deploy';
 
-gulp.task('build', gulp.series('clean'), function(callback) {
-	var run = require('run-sequence').use(gulp);
-
-	process.env.deployLocation = 'deploy';
-
-	run(['images', 'copy'], 'create-build', function () {
-		console.log('##### BUILD SUCCEEDED! #####');
-		callback();
-	});
+    return gulp.series([
+        'clean',
+        'copy',
+        'create-build',
+    ])(done);
 });
 
-gulp.task('distribute', function (callback) {
-	var run = require('run-sequence').use(gulp);
+gulp.task('distribute', (done) => {
+    process.env.deployLocation = 'dist';
 
-	process.env.deployLocation = 'dist';
-
-	run([
-		'copy',
-		'sass-dist',
-		'scripts-dist'
-	], 'inject-versioning', 'create-dist-zip', function () {
-		console.log('##### DISTRIBUTE SUCCEEDED! #####');
-		callback();
-	});
-
-});
-
-
-gulp.task('deploy', function (callback) {
-	var run = require('run-sequence').use(gulp);
-
-	run('semver', 'clean', 'build', function () {
-		console.log('##### DEPLOY SUCCEEDED! #####');
-		callback();
-	});
+    return gulp.series([
+        'clean',
+        gulp.parallel('copy', 'sass-dist', 'scripts-dist'),
+        'inject-versioning',
+        'create-dist-zip',
+    ])(done);
 });

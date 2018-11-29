@@ -10,12 +10,14 @@ var nunjucks_env = null;
 app.use(require('connect-livereload')({
 	 port: 35729
 }));
+
 app.set('view engine', 'njk');
 
 nunjucks_env = nunjucks.configure('development/templates/', {
 	autoescape: true,
 	noCache: true,
-	express: app
+	express: app,
+	watch: false
 });
 
 // Define the routes

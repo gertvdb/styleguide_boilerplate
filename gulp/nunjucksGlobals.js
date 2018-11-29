@@ -34,8 +34,7 @@ module.exports = {
 		data.FONT_FAMILY = this.getFonts();
 		data.NAV = this.getNav();
 		data.PAGES = this.getPages();
-		data.VERSION_INFO = JSON.parse(require('fs')
-			.readFileSync('version.json', 'utf8'));
+		data.VERSION_INFO = JSON.parse(require('fs').readFileSync('version.json', 'utf8'));
 		data.EXTENSION = '.html';
 		data.DATA = data;
 
@@ -110,8 +109,6 @@ module.exports = {
 
 			response.push(navSection);
 		}
-
-		console.log(response);
 
 		return response;
 	},

@@ -13,7 +13,7 @@ gulp.task('clean', function () {
 		'dist',
 		'.sass-cache',
 		'.temp'
-	], {read: false})
+	], {read: false, allowEmpty: true})
 		.pipe(clean());
 
 });
@@ -24,7 +24,7 @@ gulp.task('clean-dist', function () {
 	return gulp.src([
 		'deliverables/*',
 		'!deliverables/.git'
-	], {read: false})
+	], {read: false, allowEmpty: true})
 		.pipe(clean());
 
 });

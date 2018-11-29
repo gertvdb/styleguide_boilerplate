@@ -4,11 +4,14 @@
 // Using scrollNav.js - http://scrollnav.com
 
 .js-scroll-nav {
+	position: relative;
+	box-shadow: 1px 1px 2em $brand-shadow;
+
 	@include FLOW-at($screen-sm) {
-		padding-left: 24%;
+		margin-left: 25%;
 	}
 
 	@include FLOW-at($screen-md) {
-		padding-left: 14%;
+		margin-left: 15%;
 	}
 }
