@@ -55,6 +55,27 @@
 		<link rel="stylesheet" href="/css/base.css" />
 	{% endif %}
 
+	<link rel="stylesheet" href="http://codemirror.net/lib/codemirror.css">
+	<script src="http://codemirror.net/lib/codemirror.js"></script>
+	<script src="http://codemirror.net/addon/edit/matchbrackets.js"></script>
+	<script src="http://codemirror.net/addon/edit/continuecomment.js"></script>
+	<script src="http://codemirror.net/mode/css/css.js"></script>
+	<script src="http://codemirror.net/mode/xml/xml.js"></script>
+	<script src="http://codemirror.net/mode/javascript/javascript.js"></script>
+	<script src="http://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+	<script>
+        window.onload = function () {
+            [].forEach.call(document.getElementsByClassName('styleguide__code-mirror'), function(el) {
+                CodeMirror.fromTextArea(el, {
+                    mode: "text/html",
+                    theme: "default",
+                    lineNumbers: true,
+                    readOnly: true,
+                    tabMode: "indent"
+                });
+            });
+		};
+	</script>
 
 	<!-- SEO /////////////////////////////////////////////////////////
 	- http://support.google.com/webmasters/bin/answer.py?hl=nl&answer=79812&topic=2371375&ctx=topic

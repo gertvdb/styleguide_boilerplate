@@ -32,19 +32,19 @@
 {# ------Styleguide block------#}
 {# ----------------------------#}
 {% macro styleguide() %}
-    <h4 class="styleguide__sub-title">Radios</h4>
-    <p class="styleguide__p">
+    <div class="styleguide__h3 styleguide__sub-title">Radios</div>
+    <div class="styleguide__p">
         A form element building block for multiple radio buttons. (a single radio button doesn't exists per definition).
-    </p>
+    </div>
 
     {% set radiosField = radiosField('Radios') %}
-    {{ radiosField }}
+    <div class="styleguide__sample">
+        {{ radiosField }}
+    </div>
     <div class="styleguide__highlight-box">
         <div class="styleguide__highlight-box__header">Code Sample</div>
-        <pre>
-			<code class="html">
-				{{ radiosField | forceescape | nl2br}}
-			</code>
-		</pre>
+        <textarea class="styleguide__code-mirror">
+			{{ radiosField | trim }}
+		</textarea>
     </div>
 {% endmacro %}

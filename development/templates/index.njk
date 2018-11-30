@@ -12,19 +12,20 @@
 	<section class="styleguide">
 		<div class="styleguide__container">
 			<main>
-				<h1 class="styleguide__title js-scroll-nav__title">General Styleguide</h1><br/>
-				<h5>version: {{VERSION_INFO.current_version}}</h5>
-				<p class="styleguide__p">
+				<div class="styleguide__h1 styleguide__title js-scroll-nav__title">General Styleguide</div>
+				<div class="styleguide__small">version: {{VERSION_INFO.current_version}}</div>
+				<br/>
+				<div class="styleguide__p">
 					Welcome to the awesome <strong>{{DATA.CONFIG.PROJECT_TITLE}}</strong> styleguide! This is a guide & code repository
 					for designing and coding projects for <strong>{{DATA.CONFIG.PROJECT_TITLE}}</strong>.
 					We want to make it easy for you so we designed a visual language to use in your apps while respecting our brand
 					and legal/licensing restrictions. Hope you like it!!
-				</p>
-				<br/><br/><hr/><br/><br/>
-				<h1>Changelog</h1>
+				</div>
+				<div class="styleguide__hr"></div>
+				<div class="styleguide__h4">Changelog</div>
 				<div class="styleguide__changelog">
 					{% for log in VERSION_INFO.changelog %}
-						<h5>{{ log.version }}:&emsp;{{ log.message }}</h5>
+						<div class="styleguide__p">{{ log.version }}:&emsp;{{ log.message }}</div>
 					{% endfor %}
 				</div>
 			</main>
@@ -34,8 +35,8 @@
 	{#  Styleguide components #}
 	{% asyncEach name in DATA.STYLEGUIDES.GENERAL.NAV %}
 		<div class="styleguide__section-title">
-			<h1 class="js-scroll-nav__title">{{name.main}}</h1>
-			<p>{{name.description}}</p>
+			<div class="styleguide__h1 js-scroll-nav__title">{{name.main}}</div>
+			<div class="styleguide__p">{{name.description}}</div>
 		</div>
 
 
@@ -44,14 +45,14 @@
 				<main>
 					{#  Specific pages code #}
 					{% if name.main == "pages" %}
-						<h1 class="styleguide__title js-scroll-nav__sub-title">Templates</h1>
-						<p class="styleguide__p">
+						<div class="styleguide__title js-scroll-nav__sub-title">Templates</div>
+						<div class="styleguide__p">
 							We provide a few example page templates to show how all our components work together on a page.
-						</p>
+						</div>
 
 						{% for folder, templates in DATA.STYLEGUIDES.GENERAL.PAGES %}
 							{% if folder !== '_root' %}
-								<h4>{{ folder }}</h4>
+								<div>{{ folder }}</div>
 							{% endif %}
 							<ul>
 								{% for template in templates %}

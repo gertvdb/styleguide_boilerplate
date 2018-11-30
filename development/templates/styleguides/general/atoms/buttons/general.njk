@@ -32,44 +32,46 @@
 {# ----------------------------#}
 {% macro styleguide() %}
 
-	<h4 class="styleguide__sub-title">Primary button</h4>
-	<p class="styleguide__p">
+	<div class="styleguide__h3 styleguide__sub-title">Primary button</div>
+	<div class="styleguide__p">
 		Use &lt;a&gt; for navigation, &lt;button&gt; for everything else.
 		Submit/reset buttons are the only exceptions, using &lt;input [type="submit"]&gt;
 		to trigger default browser behaviour associated with submitting form input.
-	</p>
+	</div>
 
-	{% set button = button(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
-	{{ button }}
+	<div class="styleguide__sample">
+		{% set button = button(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+		{{ button }}
 
-    {% set buttonLink = buttonLink(DATA.CONFIG.TEXT_DUMMY_XSMALL, '#') %}
-    {{ buttonLink }}
+		{% set buttonLink = buttonLink(DATA.CONFIG.TEXT_DUMMY_XSMALL, '#') %}
+		{{ buttonLink }}
 
-    {% set buttonSubmit = buttonSubmit(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
-    {{ buttonSubmit }}
+		{% set buttonSubmit = buttonSubmit(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+		{{ buttonSubmit }}
 
-    {% set buttonDisabled = buttonDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
-    {{ buttonDisabled }}
+		{% set buttonDisabled = buttonDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+		{{ buttonDisabled }}
 
-    {% set buttonLinkDisabled = buttonLinkDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
-    {{ buttonLinkDisabled }}
+		{% set buttonLinkDisabled = buttonLinkDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+		{{ buttonLinkDisabled }}
 
-    {% set buttonSubmitDisabled = buttonSubmitDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
-    {{ buttonSubmitDisabled }}
+		{% set buttonSubmitDisabled = buttonSubmitDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+		{{ buttonSubmitDisabled }}
+	</div>
 
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-				{{ button | forceescape | nl2br }}
-                {{ buttonLink | forceescape | nl2br }}
-                {{ buttonSubmit | forceescape | nl2br }}
-                {{ buttonDisabled | forceescape | nl2br }}
-                {{ buttonLinkDisabled | forceescape | nl2br }}
-                {{ buttonSubmitDisabled | forceescape | nl2br }}
-			</code>
-		</pre>
+		<textarea class="styleguide__code-mirror">
+			{{ button | escape | trim}}
+			{{ buttonLink | escape | trim }}
+			{{ buttonSubmit | escape | trim}}
+			{{ buttonDisabled | escape | trim }}
+			{{ buttonLinkDisabled | escape | trim }}
+			{{ buttonSubmitDisabled | escape | trim}}
+		</textarea>
 	</div>
+
+
 
 {% endmacro %}

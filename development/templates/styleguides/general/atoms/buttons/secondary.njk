@@ -32,30 +32,33 @@
 {# ----------------------------#}
 {% macro styleguide() %}
 
-	<h4 class="styleguide__sub-title">Secondary button</h4>
-	<p class="styleguide__p">
+	<div class="styleguide__h3 styleguide__sub-title">Secondary button</div>
+	<div class="styleguide__p">
 		Use &lt;a&gt; for navigation, &lt;button&gt; for everything else.
 		Submit/reset buttons are the only exceptions, using &lt;input [type="submit"]&gt;
 		to trigger default browser behaviour associated with submitting form input.
-	</p>
+	</div>
 
-    {% set buttonSecondary = buttonSecondary(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
-    {{ buttonSecondary }}
+	<div class="styleguide__sample">
 
-    {% set buttonSecondaryLink = buttonSecondaryLink(DATA.CONFIG.TEXT_DUMMY_XSMALL, '#') %}
-    {{ buttonSecondaryLink }}
+		{% set buttonSecondary = buttonSecondary(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+		{{ buttonSecondary }}
 
-    {% set buttonSecondarySubmit = buttonSecondarySubmit(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
-    {{ buttonSecondarySubmit }}
+		{% set buttonSecondaryLink = buttonSecondaryLink(DATA.CONFIG.TEXT_DUMMY_XSMALL, '#') %}
+		{{ buttonSecondaryLink }}
 
-    {% set buttonSecondaryDisabled = buttonSecondaryDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
-    {{ buttonSecondaryDisabled }}
+		{% set buttonSecondarySubmit = buttonSecondarySubmit(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+		{{ buttonSecondarySubmit }}
 
-    {% set buttonSecondaryLinkDisabled = buttonSecondaryLinkDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
-    {{ buttonSecondaryLinkDisabled }}
+		{% set buttonSecondaryDisabled = buttonSecondaryDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+		{{ buttonSecondaryDisabled }}
 
-    {% set buttonSecondarySubmitDisabled = buttonSecondarySubmitDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
-    {{ buttonSecondarySubmitDisabled }}
+		{% set buttonSecondaryLinkDisabled = buttonSecondaryLinkDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+		{{ buttonSecondaryLinkDisabled }}
+
+		{% set buttonSecondarySubmitDisabled = buttonSecondarySubmitDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+		{{ buttonSecondarySubmitDisabled }}
+	</div>
 
 
 	<div class="styleguide__highlight-box">

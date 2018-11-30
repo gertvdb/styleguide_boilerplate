@@ -1,41 +1,12 @@
 // -------------------------------------------------------------------
 // :: STYLEGUIDE TITLE AND TEXTS
 // -------------------------------------------------------------------
+
 .styleguide__section-title{
 	padding: 10rem;
 	text-align: center;
 	background-color: $primary-color;
 	color: $s_white;
-
-	h1{
-		font-size: 2em;
-		margin-bottom: 1rem;
-		@include FLOW-at($screen-sm){
-			font-size: 7em;
-		}
-	}
-
-	p{
-		font-size: 1.3em;
-	}
-}
-
-.styleguide__title {
-	padding-top: 4em;
-}
-
-.styleguide__title + small{
-	opacity: 0.6;
-}
-
-.styleguide__sub-title {
-	margin-top: 2.5em;
-	font-weight: bold;
-}
-
-p.styleguide__p{
-	margin: 1.5em 0;
-	font-size: 14px;
 }
 
 .styleguide__sub-title + p.styleguide__p {
@@ -48,4 +19,56 @@ p.styleguide__p{
 	margin: 2.5em auto 0.7em;
 	display: block;
 	opacity: 0.5;
+}
+
+
+
+// -------------------------------------------------------------------
+// :: STYLEGUIDE NEW
+// -------------------------------------------------------------------
+
+.styleguide__h1,
+.styleguide__h2,
+.styleguide__h3,
+.styleguide__h4 {
+	font-weight: inherit;
+	line-height: 1.2;
+	margin: 1.414em 0 0.5em;
+}
+
+.styleguide__h1 {
+	font-size: 3.998rem;
+}
+
+.styleguide__h2 {
+	font-size: 2.827rem;
+}
+
+.styleguide__h3 {
+	font-size: 1.999rem;
+}
+
+.styleguide__h4 {
+	font-size: 1.414rem;
+}
+
+.styleguide__small {
+	font-size: 0.707rem;
+}
+
+.styleguide__p {
+	font-size: 1rem;
+	margin-bottom: 1.3em;
+}
+
+.styleguide__hr {
+	border-top: 1px solid $border-color;
+	width: 100%;
+	height: 1px;
+	margin: 1.3em 0;
+}
+
+.styleguide__sample {
+	padding: 1em;
+	border: 1px dashed #d4d4d4;
 }

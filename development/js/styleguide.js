@@ -8,6 +8,4 @@ $(document).ready(function(){
 
   // Functions
 	initScrollNav();
-	initHighlightBoxes();
-	initChangelog();
 });

@@ -32,13 +32,16 @@
 {# ------Styleguide block------#}
 {# ----------------------------#}
 {% macro styleguide() %}
-    <h4 class="styleguide__sub-title">Checkboxes</h4>
-    <p class="styleguide__p">
+    <div class="styleguide__h3 styleguide__sub-title">Checkboxes</div>
+    <div class="styleguide__p">
         A form element building block for single and multiple checkboxes.
-    </p>
+    </div>
 
     {% set checkboxField = checkboxField('I agree with the privacy policy.', 'agree') %}
-    {{ checkboxField }}
+    <div class="styleguide__sample">
+        {{ checkboxField }}
+    </div>
+
     <div class="styleguide__highlight-box">
         <div class="styleguide__highlight-box__header">Code Sample</div>
 		<pre>
@@ -48,10 +51,13 @@
 		</pre>
     </div>
 
-    <p class="styleguide__p">&nbsp;</p>
+    <div class="styleguide__p">&nbsp;</div>
 
     {% set checkboxesField = checkboxesField('Checkboxes') %}
-    {{ checkboxesField }}
+    <div class="styleguide__sample">
+        {{ checkboxesField }}
+    </div>
+
     <div class="styleguide__highlight-box">
         <div class="styleguide__highlight-box__header">Code Sample</div>
         <pre>

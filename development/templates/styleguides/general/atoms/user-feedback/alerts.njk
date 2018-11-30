@@ -45,14 +45,26 @@
 {# ------Styleguide block------#}
 {# ----------------------------#}
 {% macro styleguide() %}
-	<h4 class="styleguide__sub-title js-scroll-nav__sub-title">Alerts</h4>
-	<p class="styleguide__p">
+	<div class="styleguide__h3 styleguide__sub-title">General principle</div>
+	<div class="styleguide__p">
+		Always provide feedback on user interaction. This can be immediate
+		(eg. inline validation) or after the action (eg. submit a form).
+		Feedback messages are informative and provide an easy escape or
+		alternative/following action. The tone of voice should be human
+		and add personality to the experience/brand.
+	</div>
+
+	<div class="styleguide__h3 styleguide__sub-title js-scroll-nav__sub-title">Alerts</div>
+	<div class="styleguide__p">
 		An alert component to provide feedback messages to the user.
-	</p>
+	</div>
 
 
     {% set alertFeedback = alertFeedback('This is a feedback message.') %}
-    {{ alertFeedback }}
+	<div class="styleguide__sample">
+        {{ alertFeedback }}
+	</div>
+
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
 		<pre>
@@ -61,10 +73,13 @@
 			</code>
 		</pre>
 	</div>
-	<p class="styleguide__p"></p>
+	<div class="styleguide__p">&nbsp;</div>
 
     {% set errorFeedback = errorFeedback('This is a feedback message.') %}
-    {{ errorFeedback }}
+	<div class="styleguide__sample">
+        {{ errorFeedback }}
+	</div>
+
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
 		<pre>
@@ -73,10 +88,13 @@
 			</code>
 		</pre>
 	</div>
-	<p class="styleguide__p"></p>
+	<div class="styleguide__p">&nbsp;</div>
 
     {% set warningFeedback = warningFeedback('This is a feedback message.') %}
-    {{ warningFeedback }}
+	<div class="styleguide__sample">
+        {{ warningFeedback }}
+	</div>
+
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
 		<pre>
@@ -85,10 +103,12 @@
 			</code>
 		</pre>
 	</div>
-	<p class="styleguide__p"></p>
+	<div class="styleguide__p">&nbsp;</div>
 
     {% set successFeedback = successFeedback('This is a feedback message.') %}
-    {{ successFeedback }}
+	<div class="styleguide__sample">
+        {{ successFeedback }}
+	</div>
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
 		<pre>
@@ -97,10 +117,12 @@
 			</code>
 		</pre>
 	</div>
-	<p class="styleguide__p"></p>
+	<div class="styleguide__p">&nbsp;</div>
 
     {% set infoFeedback = infoFeedback('This is a feedback message.') %}
-    {{ infoFeedback }}
+	<div class="styleguide__sample">
+        {{ infoFeedback }}
+	</div>
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
 		<pre>
@@ -109,7 +131,7 @@
 			</code>
 		</pre>
 	</div>
-	<p class="styleguide__p"></p>
+	<div class="styleguide__p">&nbsp;</div>
 
 
 

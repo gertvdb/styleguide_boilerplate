@@ -2,14 +2,14 @@
 {# ------Styleguide block------#}
 {# ----------------------------#}
 {% macro styleguide(DATA) %}
-	<h1 class="styleguide__title js-scroll-nav__sub-title">Typography</h1>
-	<small>/sass/base/_quarks/_typography.scss</small>
+	<div class="styleguide__h2 styleguide__title js-scroll-nav__sub-title">Typography</div>
+	<div class="styleguide__small">/sass/base/_quarks/_typography.scss</div>
 
-	<h4 class="styleguide__sub-title">Font stack</h4>
-	<p class="styleguide__p">
+	<div class="styleguide__h3 styleguide__sub-title">Font stack</div>
+	<div class="styleguide__p">
 		Below are links to download the fonts that are used throughout this styleguide.
 		We use a limited amount of fonts to make sure the brand stands out.
-	</p>
+	</div>
 	<div>
 		<ul>
             {% for font  in DATA.FONT_FAMILY %}
@@ -18,16 +18,19 @@
 		</ul>
 	</div>
 
-	<h4 class="styleguide__sub-title">Headings</h4>
-	<p class="styleguide__p">
+	<div class="styleguide__h3 styleguide__sub-title">Headings</div>
+	<div class="styleguide__p">
 		The list of different heading sizes used throughout the project. Make sure you provide a nice vertical rhythm.
-	</p>
+	</div>
 
 	{% macro h1(text) %}
 		<h1>{{ text }}</h1>
     {% endmacro %}
     {% set h1 = h1(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
-	{{ h1 }}
+
+	<div class="styleguide__sample">
+		{{ h1 }}
+	</div>
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
@@ -38,13 +41,16 @@
 		</pre>
 	</div>
 
-	<p class="styleguide__p">&nbsp;</p>
+	<div class="styleguide__p">&nbsp;</div>
 
 	{% macro h2(text) %}
 		<h2>{{ text }}</h2>
     {% endmacro %}
     {% set h2 = h2(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
-	{{ h2 }}
+
+	<div class="styleguide__sample">
+        {{ h2 }}
+	</div>
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
@@ -55,13 +61,16 @@
 		</pre>
 	</div>
 
-	<p class="styleguide__p">&nbsp;</p>
+	<div class="styleguide__p">&nbsp;</div>
 
     {% macro h3(text) %}
 		<h3>{{ text }}</h3>
     {% endmacro %}
     {% set h3 = h3(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
-	{{ h3 }}
+
+	<div class="styleguide__sample">
+        {{ h3 }}
+	</div>
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
@@ -72,13 +81,16 @@
 		</pre>
 	</div>
 
-	<p class="styleguide__p">&nbsp;</p>
+	<div class="styleguide__p">&nbsp;</div>
 
     {% macro h4(text) %}
 		<h4>{{ text }}</h4>
     {% endmacro %}
     {% set h4 = h4(DATA.CONFIG.TEXT_DUMMY_MEDIUM) %}
-	{{ h4 }}
+
+	<div class="styleguide__sample">
+        {{ h4 }}
+	</div>
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
@@ -89,13 +101,16 @@
 		</pre>
 	</div>
 
-	<p class="styleguide__p">&nbsp;</p>
+	<div class="styleguide__p">&nbsp;</div>
 
     {% macro h5(text) %}
 		<h5>{{ text }}</h5>
     {% endmacro %}
     {% set h5 = h5(DATA.CONFIG.TEXT_DUMMY_MEDIUM) %}
-	{{ h5 }}
+
+	<div class="styleguide__sample">
+        {{ h5 }}
+	</div>
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
@@ -106,13 +121,16 @@
 		</pre>
 	</div>
 
-	<p class="styleguide__p">&nbsp;</p>
+	<div class="styleguide__p">&nbsp;</div>
 
     {% macro h6(text) %}
 		<h6>{{ text }}</h6>
     {% endmacro %}
     {% set h6 = h6(DATA.CONFIG.TEXT_DUMMY_MEDIUM) %}
-	{{ h6 }}
+
+	<div class="styleguide__sample">
+        {{ h6 }}
+	</div>
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
@@ -124,17 +142,19 @@
 	</div>
 
 
-	<h4 class="styleguide__sub-title">HTML Elements</h4>
-	<p class="styleguide__p">
+	<div class="styleguide__h3 styleguide__sub-title">HTML Elements</div>
+	<div class="styleguide__p">
 		The list of all different html element used throughout the project. Provide a nice base styling for all element that fit the design.
-	</p>
+	</div>
 
-	<small class="styleguide_small">Paragraph - &#x3C;p&#x3E;</small>
     {% macro p(text) %}
 		<p>{{ text }}</p>
     {% endmacro %}
     {% set p = p(DATA.CONFIG.TEXT_DUMMY_LARGE)%}
-	{{ p }}
+
+	<div class="styleguide__sample">
+        {{ p }}
+	</div>
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
@@ -145,14 +165,16 @@
 		</pre>
 	</div>
 
-	<p class="styleguide__p">&nbsp;</p>
+	<div class="styleguide__p">&nbsp;</div>
 
-	<small class="styleguide_small">Small - &#x3C;small&#x3E;</small>
     {% macro small(text) %}
 		<small>{{ text }}</small>
     {% endmacro %}
     {% set small = small(DATA.CONFIG.TEXT_DUMMY_MEDIUM) %}
-	{{ small }}
+
+	<div class="styleguide__sample">
+        {{ small }}
+	</div>
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
@@ -163,9 +185,8 @@
 		</pre>
 	</div>
 
-	<p class="styleguide__p">&nbsp;</p>
+	<div class="styleguide__p">&nbsp;</div>
 
-	<small class="styleguide_small">Blockquote - &#x3C;blockquote&#x3E; &#x3C;cite&#x3E;</small>
     {% macro blockQuote(text, author) %}
 		<blockquote>
 			{{ text }}
@@ -173,7 +194,10 @@
 		</blockquote>
 	{% endmacro %}
     {% set blockQuote = blockQuote(DATA.CONFIG.TEXT_DUMMY_MEDIUM, DATA.CONFIG.TEXT_DUMMY_SMALL) %}
-	{{ blockQuote }}
+
+	<div class="styleguide__sample">
+        {{ blockQuote }}
+	</div>
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
@@ -184,15 +208,17 @@
 		</pre>
 	</div>
 
-	<p class="styleguide__p">&nbsp;</p>
+	<div class="styleguide__p">&nbsp;</div>
 
-	<small class="styleguide_small">Hyperlink - &#x3C;a&#x3E;</small>
     {% macro a(text, href) %}
 		<a href="{{ href }}" title="{{ text }}">{{ text }}</a>
     {% endmacro %}
 
     {% set a = a(DATA.CONFIG.TEXT_DUMMY_SMALL, '#') %}
-	{{ a }}
+
+	<div class="styleguide__sample">
+        {{ a }}
+	</div>
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
@@ -203,15 +229,17 @@
 		</pre>
 	</div>
 
-	<p class="styleguide__p">&nbsp;</p>
+	<div class="styleguide__p">&nbsp;</div>
 
 
-	<small class="styleguide_small">Strong - &#x3C;strong&#x3E;</small>
     {% macro strong(text) %}
 		<strong>{{ text }}</strong>
 	{% endmacro %}
     {% set strong = strong(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
-	{{ strong }}
+
+	<div class="styleguide__sample">
+        {{ strong }}
+	</div>
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
@@ -222,14 +250,16 @@
 		</pre>
 	</div>
 
-	<p class="styleguide__p">&nbsp;</p>
+	<div class="styleguide__p">&nbsp;</div>
 
-	<small class="styleguide_small">Emphasize - &#x3C;em&#x3E;</small>
     {% macro em(text) %}
 		<em>{{ text }}</em>
     {% endmacro %}
     {% set em = em(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
-	{{ em }}
+
+	<div class="styleguide__sample">
+        {{ em }}
+	</div>
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
@@ -240,16 +270,18 @@
 		</pre>
 	</div>
 
-	<p class="styleguide__p">&nbsp;</p>
+	<div class="styleguide__p">&nbsp;</div>
 
 
-	<small class="styleguide_small">Quote - &#x3C;q&#x3E;</small>
     {% macro quote(text) %}
 		<q>{{ text }}</q>
     {% endmacro %}
 
     {% set quote = quote(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
-	{{ quote }}
+
+	<div class="styleguide__sample">
+        {{ quote }}
+	</div>
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
@@ -260,16 +292,18 @@
 		</pre>
 	</div>
 
-	<p class="styleguide__p">&nbsp;</p>
+	<div class="styleguide__p">&nbsp;</div>
 
 
-	<small class="styleguide_small">Highlight - &#x3C;mark&#x3E;</small>
     {% macro mark(text) %}
 		<mark>{{ text }}</mark>
     {% endmacro %}
 
     {% set mark = mark(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
-	{{ mark }}
+
+	<div class="styleguide__sample">
+        {{ mark }}
+	</div>
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
@@ -280,15 +314,17 @@
 		</pre>
 	</div>
 
-	<p class="styleguide__p">&nbsp;</p>
+	<div class="styleguide__p">&nbsp;</div>
 
-	<small class="styleguide_small">Deleted - &#x3C;del&#x3E;</small>
     {% macro del(text) %}
 		<del>{{ text }}</del>
     {% endmacro %}
 
     {% set del = del(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
-	{{ del }}
+
+	<div class="styleguide__sample">
+        {{ del }}
+	</div>
 
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>

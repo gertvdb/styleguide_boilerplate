@@ -29,7 +29,7 @@ h2,
 h3,
 h4,
 h5,
-h6{
+h6 {
 	font-family: $font-family-heading;
 }
 
@@ -40,17 +40,10 @@ h6{
 // If a margin/padding is set somewhere, remove it from below
 // Keep it DRY and prevent overwrites
 
-
-h2,
-h4,
 blockquote {
 	font-weight: 100;
 }
 
-h1,
-h3,
-h5,
-h6,
 strong {
 	font-weight: 700;
 }
@@ -63,7 +56,33 @@ small {
 // -------------------------------------------------------------------
 // :: BLOCK ELEMENTS
 // -------------------------------------------------------------------
+h1, h2, h3, h4 {
+	font-weight: inherit;
+	line-height: 1.2;
+}
 
+h1 {
+	margin-top: 0;
+	font-size: 5.063em;
+}
+
+h2 {
+	font-size: 3.375em;
+}
+
+h3 {
+	font-size: 2.25em;
+}
+
+h4 {
+	font-size: 1.5em;
+}
+
+small {
+	font-size: 0.667em;
+}
+
+/*
 h1 {
 	font-size: rem($font-size-mega);
 	line-height: 1.025;
@@ -106,6 +125,8 @@ h6 {
 	text-transform: uppercase;
 }
 
+*/
+
 p {
 	font-size: $font-size;
 
@@ -118,7 +139,6 @@ p {
 	}
 }
 
-h6,
 small,
 cite {
 	font-size: rem($font-size-small);

@@ -1,13 +1,18 @@
 // -------------------------------------------------------------------
 // :: STYLEGUIDE VISUAL COLORS
 // -------------------------------------------------------------------
+
+.styleguide__colors {
+	display: flex;
+}
+
 .styleguide__colors li {
 	min-width: 18%;
 	padding-top: 18%;
-	margin: 1% 0.5%;
 	box-shadow: 1px 1px 2em $brand-shadow;
 	border: 1px solid $brand-border;
 	border-radius: 4px 4px 0 0;
+	margin-right: 2rem;
 }
 
 .styleguide__colors small {

@@ -43,54 +43,57 @@
 {# ----------------------------#}
 {% macro styleguide() %}
 
-	<h4 class="styleguide__sub-title js-scroll-nav__sub-title">Unnumbered list</h4>
-	<p class="styleguide__p">
+	<div class="styleguide__h3 styleguide__sub-title js-scroll-nav__sub-title">Unnumbered list</div>
+	<div class="styleguide__p">
 		A basic unnumbered list element.
-	</p>
+	</div>
 
 
     {% set listUl = listUl() %}
-    {{ listUl }}
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-				{{ listUl | forceescape | nl2br}}
-			</code>
-		</pre>
+	<div class="styleguide__sample">
+        {{ listUl }}
 	</div>
 
-	<h4 class="styleguide__sub-title js-scroll-nav__sub-title">Numbered list</h4>
-	<p class="styleguide__p">
+	<div class="styleguide__highlight-box">
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<textarea class="styleguide__code-mirror">
+			{{ listUl | trim }}
+		</textarea>
+	</div>
+
+	<div class="styleguide__h3 styleguide__sub-title js-scroll-nav__sub-title">Numbered list</div>
+	<div class="styleguide__p">
 		A basic numbered list element.
-	</p>
+	</div>
 
 
     {% set listOl = listOl() %}
-    {{ listOl }}
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-				{{ listOl | forceescape | nl2br}}
-			</code>
-		</pre>
+	<div class="styleguide__sample">
+        {{ listOl }}
 	</div>
 
-	<h4 class="styleguide__sub-title js-scroll-nav__sub-title">Numbered list</h4>
-	<p class="styleguide__p">
-		A inline list element.
-	</p>
-
-    {% set inlineList = inlineList() %}
-    {{ inlineList }}
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-				{{ inlineList | forceescape | nl2br}}
-			</code>
-		</pre>
+		<textarea class="styleguide__code-mirror">
+			{{ listOl | trim }}
+		</textarea>
+	</div>
+
+	<div class="styleguide__h3 styleguide__sub-title js-scroll-nav__sub-title">Numbered list</div>
+	<div class="styleguide__p">
+		A inline list element.
+	</div>
+
+    {% set inlineList = inlineList() %}
+	<div class="styleguide__sample">
+        {{ inlineList }}
+	</div>
+
+	<div class="styleguide__highlight-box">
+		<div class="styleguide__highlight-box__header">Code Sample</div>
+		<textarea class="styleguide__code-mirror">
+			{{ inlineList | trim }}
+		</textarea>
 	</div>
 
 {% endmacro %}

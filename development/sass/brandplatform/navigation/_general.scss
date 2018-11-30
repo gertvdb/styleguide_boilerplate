@@ -6,6 +6,8 @@
 .js-scroll-nav {
 	position: relative;
 	box-shadow: 1px 1px 2em $brand-shadow;
+	display: flex;
+	flex-direction: column;
 
 	@include FLOW-at($screen-sm) {
 		margin-left: 25%;

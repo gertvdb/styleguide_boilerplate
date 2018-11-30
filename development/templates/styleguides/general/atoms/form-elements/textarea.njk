@@ -15,20 +15,20 @@
 {# ------Styleguide block------#}
 {# ----------------------------#}
 {% macro styleguide() %}
-	<h4 class="styleguide__sub-title">Textarea</h4>
-	<p class="styleguide__p">
+	<div class="styleguide__h3 styleguide__sub-title">Textarea</div>
+	<div class="styleguide__p">
 		A form element building block for textareas.
-	</p>
+	</div>
 
 
     {% set textareaField = textareaField('Textarea', 'Type something...', 'Feedback, suggestions, ideas, ... we would love to hear from you!') %}
-    {{ textareaField }}
+	<div class="styleguide__sample">
+        {{ textareaField }}
+	</div>
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-				{{ textareaField | forceescape | nl2br}}
-			</code>
-		</pre>
+		<textarea class="styleguide__code-mirror">
+			No preview possible.
+		</textarea>
 	</div>
 {% endmacro %}
