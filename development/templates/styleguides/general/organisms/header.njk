@@ -16,16 +16,17 @@
 {# ----------------------------#}
 {% macro styleguide() %}
 	<div class="styleguide__h2 styleguide__sub-title js-scroll-nav__sub-title">Header</div>
-	<small>/sass/base/organisms/_header.scss</small>
+	<div class="styleguide__small">/sass/base/organisms/_header.scss</div>
 
     {% set header = header() %}
-    {{ header }}
+	<div class="styleguide__sample">
+        {{ header }}
+	</div>
+
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-				{{ header | forceescape | nl2br}}
-			</code>
-		</pre>
+		<textarea class="styleguide__code-mirror">
+			{{ header | forceescape }}
+		</textarea>
 	</div>
 {% endmacro %}

@@ -44,7 +44,7 @@
     <div class="styleguide__highlight-box">
         <div class="styleguide__highlight-box__header">Code Sample</div>
         <textarea class="styleguide__code-mirror">
-			{{ radiosField | trim }}
+			{{ radiosField | forceescape }}
 		</textarea>
     </div>
 {% endmacro %}

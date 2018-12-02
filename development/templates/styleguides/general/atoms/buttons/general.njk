@@ -63,12 +63,12 @@
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
 		<textarea class="styleguide__code-mirror">
-			{{ button | escape | trim}}
-			{{ buttonLink | escape | trim }}
-			{{ buttonSubmit | escape | trim}}
-			{{ buttonDisabled | escape | trim }}
-			{{ buttonLinkDisabled | escape | trim }}
-			{{ buttonSubmitDisabled | escape | trim}}
+			{{ button | forceescape}}
+			{{ buttonLink | forceescape }}
+			{{ buttonSubmit | forceescape }}
+			{{ buttonDisabled | forceescape }}
+			{{ buttonLinkDisabled | forceescape }}
+			{{ buttonSubmitDisabled | forceescape }}
 		</textarea>
 	</div>
 

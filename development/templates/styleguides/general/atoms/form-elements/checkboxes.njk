@@ -44,11 +44,9 @@
 
     <div class="styleguide__highlight-box">
         <div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-				{{ checkboxField | forceescape | nl2br}}
-			</code>
-		</pre>
+        <textarea class="styleguide__code-mirror">
+			{{ checkboxField | forceescape }}
+		</textarea>
     </div>
 
     <div class="styleguide__p">&nbsp;</div>
@@ -60,10 +58,8 @@
 
     <div class="styleguide__highlight-box">
         <div class="styleguide__highlight-box__header">Code Sample</div>
-        <pre>
-			<code class="html">
-				{{ checkboxesField | forceescape | nl2br}}
-			</code>
-		</pre>
+        <textarea class="styleguide__code-mirror">
+			{{ checkboxesField | forceescape }}
+		</textarea>
     </div>
 {% endmacro %}

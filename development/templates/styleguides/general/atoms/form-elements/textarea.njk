@@ -25,10 +25,13 @@
 	<div class="styleguide__sample">
         {{ textareaField }}
 	</div>
+
+
+
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
 		<textarea class="styleguide__code-mirror">
-			No preview possible.
+            {{ textareaField | forceescape }}
 		</textarea>
 	</div>
 {% endmacro %}

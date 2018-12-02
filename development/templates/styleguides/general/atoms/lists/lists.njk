@@ -57,7 +57,7 @@
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
 		<textarea class="styleguide__code-mirror">
-			{{ listUl | trim }}
+			{{ listUl | forceescape }}
 		</textarea>
 	</div>
 
@@ -75,11 +75,11 @@
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
 		<textarea class="styleguide__code-mirror">
-			{{ listOl | trim }}
+			{{ listOl | forceescape }}
 		</textarea>
 	</div>
 
-	<div class="styleguide__h3 styleguide__sub-title js-scroll-nav__sub-title">Numbered list</div>
+	<div class="styleguide__h3 styleguide__sub-title js-scroll-nav__sub-title">Inline list</div>
 	<div class="styleguide__p">
 		A inline list element.
 	</div>
@@ -92,7 +92,7 @@
 	<div class="styleguide__highlight-box">
 		<div class="styleguide__highlight-box__header">Code Sample</div>
 		<textarea class="styleguide__code-mirror">
-			{{ inlineList | trim }}
+			{{ inlineList | forceescape }}
 		</textarea>
 	</div>
 
