@@ -9,20 +9,6 @@
 	color: $s_white;
 }
 
-.styleguide__sub-title + p.styleguide__p {
-	margin-bottom: 3.5em;
-	margin-top: 0;
-}
-
-.styleguide__info {
-	color: $font-color;
-	margin: 2.5em auto 0.7em;
-	display: block;
-	opacity: 0.5;
-}
-
-
-
 // -------------------------------------------------------------------
 // :: STYLEGUIDE NEW
 // -------------------------------------------------------------------
@@ -32,33 +18,39 @@
 .styleguide__h3,
 .styleguide__h4 {
 	font-weight: inherit;
-	line-height: 1.2;
-	margin: 1.414em 0 0.5em;
+	line-height: 1.2 !important;
+	margin: 1.414em 0 0.5em !important;
 }
 
 .styleguide__h1 {
-	font-size: 3.998rem;
+	font-size: 3.998rem !important;
+	font-weight: 900;
 }
 
 .styleguide__h2 {
-	font-size: 2.827rem;
+	font-size: 2.827rem !important;
+	font-weight: 900;
 }
 
 .styleguide__h3 {
-	font-size: 1.999rem;
+	font-size: 1.999rem !important;
+	font-weight: 300;
 }
 
 .styleguide__h4 {
-	font-size: 1.414rem;
+	font-size: 1.414rem !important;
+	font-weight: 300;
 }
 
 .styleguide__small {
-	font-size: 0.707rem;
+	font-size: 0.707rem !important;
+	font-weight: 300;
 }
 
 .styleguide__p {
-	font-size: 1rem;
-	margin-bottom: 1.3em;
+	font-size: 1rem !important;
+	margin-bottom: 1.3em !important;
+	font-weight: 300;
 }
 
 .styleguide__hr {
@@ -69,6 +61,7 @@
 }
 
 .styleguide__sample {
-	padding: 1em;
-	border: 1px dashed #d4d4d4;
+	position: relative;
+	margin-top: 2em;
+	overflow: hidden;
 }

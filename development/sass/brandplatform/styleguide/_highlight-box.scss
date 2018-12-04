@@ -74,16 +74,19 @@
 	margin: 0;
 }
 
-.styleguide__highlight-box + .styleguide__sub-title{
-	border-top: 1px solid $brand-border;
-	margin-top: 3rem;
-	padding-top: 4rem;
+.styleguide__highlight-box .CodeMirror {
+	background: #282a36;
+	color: #FFF;
+	height: auto;
+}
+
+.styleguide__highlight-box .CodeMirror-scroll {
+	max-height: 240px;
 }
 
 // -------------------------------------------------------------------
 // :: STYLEGUIDE PRETTYPRINT
 // -------------------------------------------------------------------
-
 
 .prettyprint {
 	.atn {

@@ -4,6 +4,7 @@
 {% macro styleguide(DATA) %}
 	<div class="styleguide__h2 styleguide__title js-scroll-nav__sub-title">Typography</div>
 	<div class="styleguide__small">/sass/base/_quarks/_typography.scss</div>
+	<div class="styleguide__hr"></div>
 
 	<div class="styleguide__h3 styleguide__sub-title">Font stack</div>
 	<div class="styleguide__p">
@@ -23,123 +24,111 @@
 		The list of different heading sizes used throughout the project. Make sure you provide a nice vertical rhythm.
 	</div>
 
-	{% macro h1(text) %}
+    <div class="styleguide__h4">Heading 1</div>
+    {% macro h1(text) %}
 		<h1>{{ text }}</h1>
     {% endmacro %}
-    {% set h1 = h1(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
+    {% set h1 = h1(DATA.CONFIG.TYPO_SENTENCE_U) %}
 
 	<div class="styleguide__sample">
 		{{ h1 }}
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-            	{{ h1 | forceescape | nl2br }}
-			</code>
-		</pre>
-	</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
+		<textarea class="styleguide__code-mirror">
+			{{ h1 | forceescape }}
+		</textarea>
+    </div>
 
 	<div class="styleguide__p">&nbsp;</div>
 
-	{% macro h2(text) %}
+    <div class="styleguide__h4">Heading 2</div>
+    {% macro h2(text) %}
 		<h2>{{ text }}</h2>
     {% endmacro %}
-    {% set h2 = h2(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
+    {% set h2 = h2(DATA.CONFIG.TYPO_SENTENCE_V) %}
 
 	<div class="styleguide__sample">
         {{ h2 }}
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-            	{{ h2 | forceescape | nl2br }}
-			</code>
-		</pre>
-	</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
+		<textarea class="styleguide__code-mirror">
+			{{ h2 | forceescape }}
+		</textarea>
+    </div>
 
 	<div class="styleguide__p">&nbsp;</div>
 
+    <div class="styleguide__h4">Heading 3</div>
     {% macro h3(text) %}
 		<h3>{{ text }}</h3>
     {% endmacro %}
-    {% set h3 = h3(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
+    {% set h3 = h3(DATA.CONFIG.TYPO_SENTENCE_W) %}
 
 	<div class="styleguide__sample">
         {{ h3 }}
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-            	{{ h3 | forceescape | nl2br }}
-			</code>
-		</pre>
-	</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
+		<textarea class="styleguide__code-mirror">
+			{{ h3 | forceescape }}
+		</textarea>
+    </div>
 
 	<div class="styleguide__p">&nbsp;</div>
 
+    <div class="styleguide__h4">Heading 4</div>
     {% macro h4(text) %}
 		<h4>{{ text }}</h4>
     {% endmacro %}
-    {% set h4 = h4(DATA.CONFIG.TEXT_DUMMY_MEDIUM) %}
+    {% set h4 = h4(DATA.CONFIG.TYPO_SENTENCE_X) %}
 
 	<div class="styleguide__sample">
         {{ h4 }}
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-            	{{ h4 | forceescape | nl2br }}
-			</code>
-		</pre>
-	</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
+		<textarea class="styleguide__code-mirror">
+			{{ h4 | forceescape }}
+		</textarea>
+    </div>
 
 	<div class="styleguide__p">&nbsp;</div>
 
+    <div class="styleguide__h4">Heading 5</div>
     {% macro h5(text) %}
 		<h5>{{ text }}</h5>
     {% endmacro %}
-    {% set h5 = h5(DATA.CONFIG.TEXT_DUMMY_MEDIUM) %}
+    {% set h5 = h5(DATA.CONFIG.TYPO_SENTENCE_Y) %}
 
 	<div class="styleguide__sample">
         {{ h5 }}
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-            	{{ h5 | forceescape | nl2br }}
-			</code>
-		</pre>
-	</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
+		<textarea class="styleguide__code-mirror">
+			{{ h5 | forceescape }}
+		</textarea>
+    </div>
 
 	<div class="styleguide__p">&nbsp;</div>
 
+    <div class="styleguide__h4">Heading 6</div>
     {% macro h6(text) %}
 		<h6>{{ text }}</h6>
     {% endmacro %}
-    {% set h6 = h6(DATA.CONFIG.TEXT_DUMMY_MEDIUM) %}
+    {% set h6 = h6(DATA.CONFIG.TYPO_SENTENCE_Z) %}
 
 	<div class="styleguide__sample">
         {{ h6 }}
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-            	{{ h6 | forceescape | nl2br }}
-			</code>
-		</pre>
-	</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
+		<textarea class="styleguide__code-mirror">
+			{{ h6 | forceescape }}
+		</textarea>
+    </div>
 
 
 	<div class="styleguide__h3 styleguide__sub-title">HTML Elements</div>
@@ -152,18 +141,16 @@
     {% endmacro %}
     {% set p = p(DATA.CONFIG.TEXT_DUMMY_LARGE)%}
 
-	<div class="styleguide__sample">
+    <div class="styleguide__h4">Paragraph</div>
+    <div class="styleguide__sample">
         {{ p }}
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-            	{{ p | forceescape | nl2br }}
-			</code>
-		</pre>
-	</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
+		<textarea class="styleguide__code-mirror">
+			{{ p | forceescape }}
+		</textarea>
+    </div>
 
 	<div class="styleguide__p">&nbsp;</div>
 
@@ -172,21 +159,20 @@
     {% endmacro %}
     {% set small = small(DATA.CONFIG.TEXT_DUMMY_MEDIUM) %}
 
-	<div class="styleguide__sample">
+    <div class="styleguide__h4">Small</div>
+    <div class="styleguide__sample">
         {{ small }}
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-            	{{ small | forceescape | nl2br }}
-			</code>
-		</pre>
-	</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
+		<textarea class="styleguide__code-mirror">
+			{{ small | forceescape }}
+		</textarea>
+    </div>
 
 	<div class="styleguide__p">&nbsp;</div>
 
+    <div class="styleguide__h4">Quote/Cite</div>
     {% macro blockQuote(text, author) %}
 		<blockquote>
 			{{ text }}
@@ -199,14 +185,11 @@
         {{ blockQuote }}
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-            	{{ blockQuote | forceescape | nl2br }}
-			</code>
-		</pre>
-	</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
+		<textarea class="styleguide__code-mirror">
+			{{ blockQuote | forceescape }}
+		</textarea>
+    </div>
 
 	<div class="styleguide__p">&nbsp;</div>
 
@@ -216,18 +199,16 @@
 
     {% set a = a(DATA.CONFIG.TEXT_DUMMY_SMALL, '#') %}
 
-	<div class="styleguide__sample">
+    <div class="styleguide__h4">Link</div>
+    <div class="styleguide__sample">
         {{ a }}
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-            	{{ a | forceescape | nl2br }}
-			</code>
-		</pre>
-	</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
+		<textarea class="styleguide__code-mirror">
+			{{ a | forceescape }}
+		</textarea>
+    </div>
 
 	<div class="styleguide__p">&nbsp;</div>
 
@@ -237,38 +218,35 @@
 	{% endmacro %}
     {% set strong = strong(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
 
-	<div class="styleguide__sample">
+    <div class="styleguide__h4">Strong</div>
+    <div class="styleguide__sample">
         {{ strong }}
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-            	{{ strong | forceescape | nl2br }}
-			</code>
-		</pre>
-	</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
+		<textarea class="styleguide__code-mirror">
+			{{ strong | forceescape }}
+		</textarea>
+    </div>
 
-	<div class="styleguide__p">&nbsp;</div>
+
+    <div class="styleguide__p">&nbsp;</div>
 
     {% macro em(text) %}
 		<em>{{ text }}</em>
     {% endmacro %}
     {% set em = em(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
 
-	<div class="styleguide__sample">
+    <div class="styleguide__h4">Emphasize</div>
+    <div class="styleguide__sample">
         {{ em }}
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-            	{{ em | forceescape | nl2br }}
-			</code>
-		</pre>
-	</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
+		<textarea class="styleguide__code-mirror">
+			{{ em | forceescape }}
+		</textarea>
+    </div>
 
 	<div class="styleguide__p">&nbsp;</div>
 
@@ -279,18 +257,16 @@
 
     {% set quote = quote(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
 
-	<div class="styleguide__sample">
+    <div class="styleguide__h4">Quote</div>
+    <div class="styleguide__sample">
         {{ quote }}
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-            	{{ quote | forceescape | nl2br }}
-			</code>
-		</pre>
-	</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
+		<textarea class="styleguide__code-mirror">
+			{{ quote | forceescape }}
+		</textarea>
+    </div>
 
 	<div class="styleguide__p">&nbsp;</div>
 
@@ -301,18 +277,16 @@
 
     {% set mark = mark(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
 
+    <div class="styleguide__h4">Mark</div>
 	<div class="styleguide__sample">
         {{ mark }}
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-            	{{ mark | forceescape | nl2br }}
-			</code>
-		</pre>
-	</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
+		<textarea class="styleguide__code-mirror">
+			{{ mark | forceescape }}
+		</textarea>
+    </div>
 
 	<div class="styleguide__p">&nbsp;</div>
 
@@ -322,17 +296,15 @@
 
     {% set del = del(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
 
-	<div class="styleguide__sample">
+    <div class="styleguide__h4">Del</div>
+    <div class="styleguide__sample">
         {{ del }}
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
-		<pre>
-			<code class="html">
-            	{{ del | forceescape | nl2br }}
-			</code>
-		</pre>
-	</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
+		<textarea class="styleguide__code-mirror">
+			{{ del | forceescape }}
+		</textarea>
+    </div>
 
 {% endmacro %}

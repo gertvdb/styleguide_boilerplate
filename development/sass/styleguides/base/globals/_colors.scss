@@ -15,6 +15,8 @@ $grey-light: #F6F9FB;
 $white: #FFFFFF;
 
 $blue: #0F50FF;
+$sky-blue: #87CEEB;
+
 
 $grey-blue: #D9E5F6;
 $grey-blue-dark: #93ADD1;
@@ -35,12 +37,14 @@ $pastel-blue: #CAEDF3;
 // THESE COLOUR VARIABLES SHOULD BE USED IN YOUR CSS.
 
 $primary-color: $blue;
+$primary-color-light: $sky-blue;
+
 $secondary-color: $grey-dark;
 
-$font-color: $grey-extra-dark;
-$font-color-medium: $grey-dark;
-$font-color-light: $grey;
-$font-color-disabled: $grey-light;
+$font-color: rgba(52,52,52, 1);
+$font-color-medium: rgba(52,52,52, 0.82);
+$font-color-light: rgba(52,52,52, 0.42);
+$font-color-disabled: rgba(52,52,52, 0.12);
 
 $border-color: $grey-blue;
 $border-color-active: $grey-blue-dark;

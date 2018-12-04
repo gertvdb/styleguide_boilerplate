@@ -32,18 +32,19 @@
 {# ------Styleguide block------#}
 {# ----------------------------#}
 {% macro styleguide() %}
-    <div class="styleguide__h3 styleguide__sub-title">Checkboxes</div>
+    <div class="styleguide__h3 styleguide__sub-title">Checkbox</div>
     <div class="styleguide__p">
-        A form element building block for single and multiple checkboxes.
+        A form element building a single checkbox.
     </div>
 
     {% set checkboxField = checkboxField('I agree with the privacy policy.', 'agree') %}
     <div class="styleguide__sample">
-        {{ checkboxField }}
+        <div class="styleguide__sample__body">
+            {{ checkboxField }}
+        </div>
     </div>
 
-    <div class="styleguide__highlight-box">
-        <div class="styleguide__highlight-box__header">Code Sample</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
         <textarea class="styleguide__code-mirror">
 			{{ checkboxField | forceescape }}
 		</textarea>
@@ -52,12 +53,17 @@
     <div class="styleguide__p">&nbsp;</div>
 
     {% set checkboxesField = checkboxesField('Checkboxes') %}
+    <div class="styleguide__h3 styleguide__sub-title">Checkboxes</div>
+    <div class="styleguide__p">
+        A form element building a list of checkboxes.
+    </div>
     <div class="styleguide__sample">
-        {{ checkboxesField }}
+        <div class="styleguide__sample__body">
+            {{ checkboxesField }}
+        </div>
     </div>
 
-    <div class="styleguide__highlight-box">
-        <div class="styleguide__highlight-box__header">Code Sample</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
         <textarea class="styleguide__code-mirror">
 			{{ checkboxesField | forceescape }}
 		</textarea>

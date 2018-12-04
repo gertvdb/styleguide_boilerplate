@@ -43,7 +43,7 @@
 {# ----------------------------#}
 {% macro styleguide() %}
 
-	<div class="styleguide__h3 styleguide__sub-title js-scroll-nav__sub-title">Unnumbered list</div>
+	<div class="styleguide__h3 styleguide__sub-title">Unnumbered list</div>
 	<div class="styleguide__p">
 		A basic unnumbered list element.
 	</div>
@@ -51,17 +51,18 @@
 
     {% set listUl = listUl() %}
 	<div class="styleguide__sample">
-        {{ listUl }}
+		<div class="styleguide__sample__body">
+			{{ listUl }}
+		</div>
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
+	<div class="styleguide__highlight-box cm-s-dracula">
 		<textarea class="styleguide__code-mirror">
 			{{ listUl | forceescape }}
 		</textarea>
 	</div>
 
-	<div class="styleguide__h3 styleguide__sub-title js-scroll-nav__sub-title">Numbered list</div>
+	<div class="styleguide__h3 styleguide__sub-title">Numbered list</div>
 	<div class="styleguide__p">
 		A basic numbered list element.
 	</div>
@@ -69,28 +70,30 @@
 
     {% set listOl = listOl() %}
 	<div class="styleguide__sample">
-        {{ listOl }}
+		<div class="styleguide__sample__body">
+			{{ listOl }}
+		</div>
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
+	<div class="styleguide__highlight-box cm-s-dracula">
 		<textarea class="styleguide__code-mirror">
 			{{ listOl | forceescape }}
 		</textarea>
 	</div>
 
-	<div class="styleguide__h3 styleguide__sub-title js-scroll-nav__sub-title">Inline list</div>
+	<div class="styleguide__h3 styleguide__sub-title">Inline list</div>
 	<div class="styleguide__p">
 		A inline list element.
 	</div>
 
     {% set inlineList = inlineList() %}
 	<div class="styleguide__sample">
-        {{ inlineList }}
+		<div class="styleguide__sample__body">
+			{{ inlineList }}
+		</div>
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
+	<div class="styleguide__highlight-box cm-s-dracula">
 		<textarea class="styleguide__code-mirror">
 			{{ inlineList | forceescape }}
 		</textarea>

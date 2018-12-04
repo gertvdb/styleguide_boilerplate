@@ -100,20 +100,24 @@ function initScrollNav() {
 
 		var scrollTop = $(window).scrollTop() + 20;
 
-		for(var i = 0; i < navItems.length; i++){
-			if(scrollTop >= navItems[i][1]){
-				newActiveItem = navItems[i][0];
-				updateMenu(newActiveItem);
-			}
-		}
+		if(navItems) {
+            for (var i = 0; i < navItems.length; i++) {
+                if (scrollTop >= navItems[i][1]) {
+                    newActiveItem = navItems[i][0];
+                    updateMenu(newActiveItem);
+                }
+            }
+        }
 
-		for(var j = 0; j < subItems.length; j++){
-			if(scrollTop >= subItems[j][1]){
-				newSubActiveItem = subItems[j][0];
+        if(subItems) {
+            for(var j = 0; j < subItems.length; j++) {
+                if (scrollTop >= subItems[j][1]) {
+                    newSubActiveItem = subItems[j][0];
 
-				updateSubMenu(newSubActiveItem);
+                    updateSubMenu(newSubActiveItem);
 
-			}
+                }
+            }
 		}
 	});
 

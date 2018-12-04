@@ -49,8 +49,9 @@
 						<div class="styleguide__p">
 							We provide a few example page templates to show how all our components work together on a page.
 						</div>
+						<div class="styleguide__hr"></div>
 
-						{% for folder, templates in DATA.STYLEGUIDES.GENERAL.PAGES %}
+                        {% for folder, templates in DATA.STYLEGUIDES.GENERAL.PAGES %}
 							{% if folder !== '_root' %}
 								<div>{{ folder }}</div>
 							{% endif %}

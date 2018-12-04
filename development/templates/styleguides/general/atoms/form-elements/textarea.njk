@@ -23,13 +23,13 @@
 
     {% set textareaField = textareaField('Textarea', 'Type something...', 'Feedback, suggestions, ideas, ... we would love to hear from you!') %}
 	<div class="styleguide__sample">
-        {{ textareaField }}
+		<div class="styleguide__sample__body">
+			{{ textareaField }}
+		</div>
 	</div>
 
 
-
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
+	<div class="styleguide__highlight-box cm-s-dracula">
 		<textarea class="styleguide__code-mirror">
             {{ textareaField | forceescape }}
 		</textarea>

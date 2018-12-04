@@ -39,10 +39,11 @@
 
     {% set radiosField = radiosField('Radios') %}
     <div class="styleguide__sample">
-        {{ radiosField }}
+        <div class="styleguide__sample__body">
+            {{ radiosField }}
+        </div>
     </div>
-    <div class="styleguide__highlight-box">
-        <div class="styleguide__highlight-box__header">Code Sample</div>
+    <div class="styleguide__highlight-box cm-s-dracula">
         <textarea class="styleguide__code-mirror">
 			{{ radiosField | forceescape }}
 		</textarea>

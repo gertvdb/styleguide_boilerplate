@@ -32,10 +32,11 @@
 
     {% set selectField = selectField('Select', 'Make a wise choice...', 'Hurry up and make a choice!') %}
 	<div class="styleguide__sample">
-        {{ selectField }}
+		<div class="styleguide__sample__body">
+			{{ selectField }}
+		</div>
 	</div>
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
+	<div class="styleguide__highlight-box cm-s-dracula">
 		<textarea class="styleguide__code-mirror">
 			{{ selectField | forceescape }}
 		</textarea>

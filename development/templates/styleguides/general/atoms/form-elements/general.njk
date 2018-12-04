@@ -79,16 +79,17 @@
 {% macro styleguide() %}
 	<div class="styleguide__h3 styleguide__sub-title">Textfield</div>
 	<div class="styleguide__p">
-		A form element building block for all textfield variations.
+		A form element building block for a plain text field.
 	</div>
 
     {% set textField = textField('Text input', 'Enter your text here', 'Tell the user what kind of input is expected, add a clickthrough as needed') %}
 	<div class="styleguide__sample">
-        {{ textField }}
+		<div class="styleguide__sample__body">
+			{{ textField }}
+		</div>
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
+	<div class="styleguide__highlight-box cm-s-dracula">
 		<textarea class="styleguide__code-mirror">
 			{{ textField | forceescape }}
 		</textarea>
@@ -97,15 +98,21 @@
 	<div class="styleguide__p">&nbsp;</div>
 
 
+
     {% set emailField = emailField('Email', 'info@your-domein.com', 'Don\'t worry, we won\'t spam you.') %}
+	<div class="styleguide__h3 styleguide__sub-title">Email</div>
+	<div class="styleguide__p">
+		A form element building block for a email text field.
+	</div>
 	<div class="styleguide__sample">
-        {{ emailField }}
+		<div class="styleguide__sample__body">
+			{{ emailField }}
+		</div>
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
+	<div class="styleguide__highlight-box cm-s-dracula">
 		<textarea class="styleguide__code-mirror">
-			{{ emailField | trim }}
+			{{ emailField | forceescape }}
 		</textarea>
 	</div>
 
@@ -113,14 +120,19 @@
 
 
     {% set passwordField = passwordField('Password', 'Enter your password here', 'Passwords should be 6 characters or more. Be tricky!') %}
+	<div class="styleguide__h3 styleguide__sub-title">Password</div>
+	<div class="styleguide__p">
+		A form element building block for a password text field.
+	</div>
 	<div class="styleguide__sample">
-        {{ passwordField }}
+		<div class="styleguide__sample__body">
+			{{ passwordField }}
+		</div>
 	</div>
 
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
+	<div class="styleguide__highlight-box cm-s-dracula">
 		<textarea class="styleguide__code-mirror">
-			{{ passwordField | trim }}
+			{{ passwordField | forceescape }}
 		</textarea>
 	</div>
 
@@ -128,13 +140,18 @@
 
 
     {% set numberField = numberField('Amount', '3', 'Select the number of products you want to order.') %}
-	<div class="styleguide__sample">
-        {{ numberField }}
+	<div class="styleguide__h3 styleguide__sub-title">Number</div>
+	<div class="styleguide__p">
+		A form element building block for a number text field.
 	</div>
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
+	<div class="styleguide__sample">
+		<div class="styleguide__sample__body">
+			{{ numberField }}
+		</div>
+	</div>
+	<div class="styleguide__highlight-box cm-s-dracula">
 		<textarea class="styleguide__code-mirror">
-			{{ numberField | trim }}
+			{{ numberField | forceescape }}
 		</textarea>
 	</div>
 
@@ -142,13 +159,18 @@
 
 
     {% set phoneField = phoneField('Phone number', '+32 ××× ×× ×× ××', 'Don\'t worry, we only contact you when it\'s absolutely necessary.') %}
-	<div class="styleguide__sample">
-        {{ phoneField }}
+	<div class="styleguide__h3 styleguide__sub-title">Phone</div>
+	<div class="styleguide__p">
+		A form element building block for a phone text field.
 	</div>
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
+	<div class="styleguide__sample">
+		<div class="styleguide__sample__body">
+			{{ phoneField }}
+		</div>
+	</div>
+	<div class="styleguide__highlight-box cm-s-dracula">
 		<textarea class="styleguide__code-mirror">
-			{{ phoneField | trim }}
+			{{ phoneField | forceescape }}
 		</textarea>
 	</div>
 
@@ -156,13 +178,18 @@
 
 
     {% set websiteField = websiteField('Website', 'https://', 'Tell us a little bit more about yourself.') %}
-	<div class="styleguide__sample">
-        {{ websiteField }}
+	<div class="styleguide__h3 styleguide__sub-title">Website</div>
+	<div class="styleguide__p">
+		A form element building block for a website text field.
 	</div>
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
+	<div class="styleguide__sample">
+		<div class="styleguide__sample__body">
+			{{ websiteField }}
+		</div>
+	</div>
+	<div class="styleguide__highlight-box cm-s-dracula">
 		<textarea class="styleguide__code-mirror">
-			{{ websiteField | trim }}
+			{{ websiteField | forceescape }}
 		</textarea>
 	</div>
 
@@ -170,13 +197,18 @@
 
 
     {% set searchField = searchField('Search', 'Type to search', 'Can\'t find what you\'re looking for? Try our frequently asked questions.') %}
-	<div class="styleguide__sample">
-        {{ searchField }}
+	<div class="styleguide__h3 styleguide__sub-title">Search</div>
+	<div class="styleguide__p">
+		A form element building block for a search text field.
 	</div>
-	<div class="styleguide__highlight-box">
-		<div class="styleguide__highlight-box__header">Code Sample</div>
+	<div class="styleguide__sample">
+		<div class="styleguide__sample__body">
+			{{ searchField }}
+		</div>
+	</div>
+	<div class="styleguide__highlight-box cm-s-dracula">
 		<textarea class="styleguide__code-mirror">
-			{{ searchField | trim }}
+			{{ searchField | forceescape }}
 		</textarea>
 	</div>
 {% endmacro %}
