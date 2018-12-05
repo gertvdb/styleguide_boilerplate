@@ -2,6 +2,9 @@
 {# -------Code block-------#}
 {# ------------------------#}
 
+{% set randomWords = [DATA.CONFIG.TYPO_WORDS_U, DATA.CONFIG.TYPO_WORDS_V, DATA.CONFIG.TYPO_WORDS_W, DATA.CONFIG.TYPO_WORDS_Y, DATA.CONFIG.TYPO_WORDS_X, DATA.CONFIG.TYPO_WORDS_Z] %}
+
+
 {% macro buttonLink(text, href) %}
 	<a href="{{ href }}" class="a-button" title="{{ text }}">{{ text }}</a>
 {% endmacro %}
@@ -41,22 +44,28 @@
 
 	<div class="styleguide__sample">
 		<div class="styleguide__sample__body">
-			{% set button = button(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+            {% set buttonText = randomWords | random %}
+            {% set button = button(buttonText) %}
 			{{ button }}
 
-			{% set buttonLink = buttonLink(DATA.CONFIG.TEXT_DUMMY_XSMALL, '#') %}
+            {% set buttonLinkText = randomWords | random %}
+            {% set buttonLink = buttonLink(buttonLinkText, '#') %}
 			{{ buttonLink }}
 
-			{% set buttonSubmit = buttonSubmit(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+            {% set buttonSubmitText = randomWords | random %}
+            {% set buttonSubmit = buttonSubmit(buttonSubmitText) %}
 			{{ buttonSubmit }}
 
-			{% set buttonDisabled = buttonDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+            {% set buttonDisabledText = randomWords | random %}
+            {% set buttonDisabled = buttonDisabled(buttonDisabledText) %}
 			{{ buttonDisabled }}
 
-			{% set buttonLinkDisabled = buttonLinkDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+            {% set buttonLinkDisabledText = randomWords | random %}
+            {% set buttonLinkDisabled = buttonLinkDisabled(buttonLinkDisabledText) %}
 			{{ buttonLinkDisabled }}
 
-			{% set buttonSubmitDisabled = buttonSubmitDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+            {% set buttonSubmitDisabledText = randomWords | random %}
+            {% set buttonSubmitDisabled = buttonSubmitDisabled(buttonSubmitDisabledText) %}
 			{{ buttonSubmitDisabled }}
 		</div>
 	</div>

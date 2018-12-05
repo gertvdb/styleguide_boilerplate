@@ -1,6 +1,12 @@
 {# ----------------------------#}
 {# ------Styleguide block------#}
 {# ----------------------------#}
+
+{% set randomText = [DATA.CONFIG.TYPO_SENTENCE_U, DATA.CONFIG.TYPO_SENTENCE_V, DATA.CONFIG.TYPO_SENTENCE_W, DATA.CONFIG.TYPO_SENTENCE_Y, DATA.CONFIG.TYPO_SENTENCE_X, DATA.CONFIG.TYPO_SENTENCE_Z] %}
+{% set randomWords = [DATA.CONFIG.TYPO_WORDS_U, DATA.CONFIG.TYPO_WORDS_V, DATA.CONFIG.TYPO_WORDS_W, DATA.CONFIG.TYPO_WORDS_Y, DATA.CONFIG.TYPO_WORDS_X, DATA.CONFIG.TYPO_WORDS_Z] %}
+
+
+
 {% macro styleguide(DATA) %}
 	<div class="styleguide__h2 styleguide__title js-scroll-nav__sub-title">Typography</div>
 	<div class="styleguide__small">/sass/base/_quarks/_typography.scss</div>
@@ -28,7 +34,9 @@
     {% macro h1(text) %}
 		<h1>{{ text }}</h1>
     {% endmacro %}
-    {% set h1 = h1(DATA.CONFIG.TYPO_SENTENCE_U) %}
+
+    {% set h1Text = randomText | random %}
+    {% set h1 = h1(h1Text) %}
 
 	<div class="styleguide__sample">
 		{{ h1 }}
@@ -46,7 +54,9 @@
     {% macro h2(text) %}
 		<h2>{{ text }}</h2>
     {% endmacro %}
-    {% set h2 = h2(DATA.CONFIG.TYPO_SENTENCE_V) %}
+
+    {% set h2Text = randomText | random %}
+    {% set h2 = h2(h2Text) %}
 
 	<div class="styleguide__sample">
         {{ h2 }}
@@ -64,7 +74,9 @@
     {% macro h3(text) %}
 		<h3>{{ text }}</h3>
     {% endmacro %}
-    {% set h3 = h3(DATA.CONFIG.TYPO_SENTENCE_W) %}
+
+    {% set h3Text = randomText | random %}
+    {% set h3 = h3(h3Text) %}
 
 	<div class="styleguide__sample">
         {{ h3 }}
@@ -82,7 +94,9 @@
     {% macro h4(text) %}
 		<h4>{{ text }}</h4>
     {% endmacro %}
-    {% set h4 = h4(DATA.CONFIG.TYPO_SENTENCE_X) %}
+
+    {% set h4Text = randomText | random %}
+    {% set h4 = h4(h4Text) %}
 
 	<div class="styleguide__sample">
         {{ h4 }}
@@ -100,7 +114,9 @@
     {% macro h5(text) %}
 		<h5>{{ text }}</h5>
     {% endmacro %}
-    {% set h5 = h5(DATA.CONFIG.TYPO_SENTENCE_Y) %}
+
+    {% set h5Text = randomText | random %}
+    {% set h5 = h5(h5Text) %}
 
 	<div class="styleguide__sample">
         {{ h5 }}
@@ -118,7 +134,9 @@
     {% macro h6(text) %}
 		<h6>{{ text }}</h6>
     {% endmacro %}
-    {% set h6 = h6(DATA.CONFIG.TYPO_SENTENCE_Z) %}
+
+    {% set h6Text = randomText | random %}
+    {% set h6 = h6(h6Text) %}
 
 	<div class="styleguide__sample">
         {{ h6 }}
@@ -139,7 +157,9 @@
     {% macro p(text) %}
 		<p>{{ text }}</p>
     {% endmacro %}
-    {% set p = p(DATA.CONFIG.TEXT_DUMMY_LARGE)%}
+
+    {% set pText = randomText | random %}
+    {% set p = p(pText)%}
 
     <div class="styleguide__h4">Paragraph</div>
     <div class="styleguide__sample">
@@ -157,7 +177,9 @@
     {% macro small(text) %}
 		<small>{{ text }}</small>
     {% endmacro %}
-    {% set small = small(DATA.CONFIG.TEXT_DUMMY_MEDIUM) %}
+
+    {% set smallText = randomText | random %}
+    {% set small = small(smallText) %}
 
     <div class="styleguide__h4">Small</div>
     <div class="styleguide__sample">
@@ -179,7 +201,11 @@
 			<cite>{{ author }}</cite>
 		</blockquote>
 	{% endmacro %}
-    {% set blockQuote = blockQuote(DATA.CONFIG.TEXT_DUMMY_MEDIUM, DATA.CONFIG.TEXT_DUMMY_SMALL) %}
+
+    {% set blockQuoteText = randomText | random %}
+    {% set blockQuoteAuthor = randomWords | random %}
+
+    {% set blockQuote = blockQuote(blockQuoteText, blockQuoteAuthor) %}
 
 	<div class="styleguide__sample">
         {{ blockQuote }}
@@ -197,7 +223,8 @@
 		<a href="{{ href }}" title="{{ text }}">{{ text }}</a>
     {% endmacro %}
 
-    {% set a = a(DATA.CONFIG.TEXT_DUMMY_SMALL, '#') %}
+    {% set aText = randomWords | random %}
+    {% set a = a(aText, '#') %}
 
     <div class="styleguide__h4">Link</div>
     <div class="styleguide__sample">
@@ -216,7 +243,9 @@
     {% macro strong(text) %}
 		<strong>{{ text }}</strong>
 	{% endmacro %}
-    {% set strong = strong(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
+
+    {% set strongText = randomWords | random %}
+    {% set strong = strong(strongText) %}
 
     <div class="styleguide__h4">Strong</div>
     <div class="styleguide__sample">
@@ -235,7 +264,9 @@
     {% macro em(text) %}
 		<em>{{ text }}</em>
     {% endmacro %}
-    {% set em = em(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
+
+    {% set emText = randomWords | random %}
+    {% set em = em(emText) %}
 
     <div class="styleguide__h4">Emphasize</div>
     <div class="styleguide__sample">
@@ -255,7 +286,8 @@
 		<q>{{ text }}</q>
     {% endmacro %}
 
-    {% set quote = quote(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
+    {% set quoteText = randomWords | random %}
+    {% set quote = quote(quoteText) %}
 
     <div class="styleguide__h4">Quote</div>
     <div class="styleguide__sample">
@@ -275,7 +307,8 @@
 		<mark>{{ text }}</mark>
     {% endmacro %}
 
-    {% set mark = mark(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
+    {% set markText = randomWords | random %}
+    {% set mark = mark(markText) %}
 
     <div class="styleguide__h4">Mark</div>
 	<div class="styleguide__sample">
@@ -294,7 +327,8 @@
 		<del>{{ text }}</del>
     {% endmacro %}
 
-    {% set del = del(DATA.CONFIG.TEXT_DUMMY_SMALL) %}
+    {% set delText = randomWords | random %}
+    {% set del = del(delText) %}
 
     <div class="styleguide__h4">Del</div>
     <div class="styleguide__sample">

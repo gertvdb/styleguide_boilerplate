@@ -1,6 +1,7 @@
 {# ------------------------#}
 {# -------Code block-------#}
 {# ------------------------#}
+{% set randomWords = [DATA.CONFIG.TYPO_WORDS_U, DATA.CONFIG.TYPO_WORDS_V, DATA.CONFIG.TYPO_WORDS_W, DATA.CONFIG.TYPO_WORDS_Y, DATA.CONFIG.TYPO_WORDS_X, DATA.CONFIG.TYPO_WORDS_Z] %}
 
 {% macro buttonSecondaryLink(text, href) %}
 	<a href="{{ href }}" class="a-button a-button--outline" title="{{ text }}">{{ text }}</a>
@@ -41,22 +42,29 @@
 
 	<div class="styleguide__sample">
 		<div class="styleguide__sample__body">
-			{% set buttonSecondary = buttonSecondary(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+
+            {% set buttonSecondaryText = randomWords | random %}
+            {% set buttonSecondary = buttonSecondary(buttonSecondaryText) %}
 			{{ buttonSecondary }}
 
-			{% set buttonSecondaryLink = buttonSecondaryLink(DATA.CONFIG.TEXT_DUMMY_XSMALL, '#') %}
+            {% set buttonSecondaryLinkText = randomWords | random %}
+            {% set buttonSecondaryLink = buttonSecondaryLink(buttonSecondaryLinkText, '#') %}
 			{{ buttonSecondaryLink }}
 
-			{% set buttonSecondarySubmit = buttonSecondarySubmit(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+            {% set buttonSecondarySubmitText = randomWords | random %}
+            {% set buttonSecondarySubmit = buttonSecondarySubmit(buttonSecondarySubmitText) %}
 			{{ buttonSecondarySubmit }}
 
-			{% set buttonSecondaryDisabled = buttonSecondaryDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+            {% set buttonSecondaryDisabledText = randomWords | random %}
+            {% set buttonSecondaryDisabled = buttonSecondaryDisabled(buttonSecondaryDisabledText) %}
 			{{ buttonSecondaryDisabled }}
 
-			{% set buttonSecondaryLinkDisabled = buttonSecondaryLinkDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+            {% set buttonSecondaryLinkDisabledText = randomWords | random %}
+            {% set buttonSecondaryLinkDisabled = buttonSecondaryLinkDisabled(buttonSecondaryLinkDisabledText) %}
 			{{ buttonSecondaryLinkDisabled }}
 
-			{% set buttonSecondarySubmitDisabled = buttonSecondarySubmitDisabled(DATA.CONFIG.TEXT_DUMMY_XSMALL) %}
+            {% set buttonSecondarySubmitDisabledText = randomWords | random %}
+            {% set buttonSecondarySubmitDisabled = buttonSecondarySubmitDisabled(buttonSecondarySubmitDisabledText) %}
 			{{ buttonSecondarySubmitDisabled }}
 		</div>
 	</div>
